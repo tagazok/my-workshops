@@ -1,3 +1,24 @@
 {
-    
+    "authors": [
+        {
+            "name": "Jim Bennet Leplus",
+            "url": "https://github.com/jimbobbennett",
+            "avatar": "jim.jfif"
+        },  
+        {
+            "name": "Christophre Maneu",
+            "url": "https://twitter.com/cmaneu",
+            "avatar": "christopher.png"
+        },
+        {
+            "name": "Wassim Chegham",
+            "url": "https://twitter.com/manekinekko",
+            "avatar": "wassim.png"
+        },
+        {
+            "name": "Olivier Leplus",
+            "url": "https://twitter.com/olivierleplus",
+            "avatar": "olivier.png"
+        }
+    ]
 }
