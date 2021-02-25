@@ -1,4 +1,9 @@
 {
+    "infos": {
+        "title": "MXChip Atelier IoT",
+        "github": "https://github.com/tagazok/my-workshops",
+        "description": "Ce workshop, accessible à tous les développeurs même sans connaissance en IoT ou sur Azure -, vous permettra de découvrir la programmation sur des devices IoT avec (Arduino) et Visual Studio Code), ainsi que la création d'expériences connectées avec les services Azure)."
+    },
     "authors": [
         {
             "name": "Jim Bennet Leplus",
