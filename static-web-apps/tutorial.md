@@ -63,13 +63,17 @@ So what just happened? A docker image is mounted with all the tools you need to 
 title: Start with a website
 ---
 
-Once upon a time, there was a website that needed a place to live and a backend to be more interactive.
+Once upon a time, there was a website that needed a place to live, be visible to the world and a backend to be more interactive.
 
-## Download the website template
+### Download the website template
 
 Download from resources on the left or <a href="" target="_blank">here</a>
 
+### Deploy your website on GitHub
+
 Azure Static Web Apps has been built from the start to work with GitHub so, the first thing you will do is to create a new GitHub repo and push the source code you just downloaded.
+
+Go on <a href="https://github.com" target="_blank">Github.com</a>, create a new repository and push you code to it.
 
 --sep--
 ---
@@ -78,12 +82,14 @@ title: Create a Azure Static Web App
 
 ## Create a Azure Static Web App
 
-In the Azure Portal, look for `Static Web App` in the search bar and click on the `Create` button. Or, you can directly click <a href="https://portal.azure.com/#create/Microsoft.StaticApp" target="_blank">here ^^</a>. This link will direcly bring you to the Static Web App creation form.
+In the <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>, look for `Static Web App` in the search bar. Once you are on the product page, click on the `Create` button at the top left. Or, you can directly click <a href="https://portal.azure.com/#create/Microsoft.StaticApp" target="_blank">here ^^</a>. This link will  take you directly to the Static Web App creation form.  
+
+Let's fill it!
 
 * Select your subscription.
 * Create a new resource group.
 
-<div class="infos">
+<div class="box info">
 In Azure, a resource group is a logical container that holds resources usually related to an application or a project. A resource group can therefore contain virtual machines, storage accounts, web applications, databases and more.
 </div>
 
@@ -91,43 +97,45 @@ In Azure, a resource group is a logical container that holds resources usually r
 * Select the free plan (we won't need any feature in the standard plan for this workshop).
 * Select `West Europe` for your backend.
 
-<div class="tip">
+<div class="box tip">
 It is recommended to host your backend in the closest region of your users.
 </div>
 
-* Select GitHub as a deployment source.
+* Select `GitHub` as a deployment source.
 
-We are going to host our website on GitHub. We will see later in the workshop how Static Web Apps will automaticaly will deploy our new version when we push new code on our repository.
+We are going to host our website on GitHub. Later in the workshop, we will see how Static Web Apps will automaticaly deploy our website every time we push new code to our repository.
 
-* Login with your GitHub account and select the repository and the branch of your project.
+* Log in with your GitHub account and select the repository and the branch of your project.
 
-As we mentioned at the begining of the workshop, our app will have a backend and a frontend. In ofder for Static Web App to know what to deploy and where, we need to tell it where each is located in our repo.
+As we mentioned at the begining of the workshop, our app will have a backend and a frontend. In order for Static Web App to know what to deploy and where, we need to tell it where our apps are located in our repository.
 
-Azure Static Web Apps can handle several well-known frontend framework and therefore, "compile" your Angular, React or Hugo application before deploying it.
+Azure Static Web Apps can handle several well-known frontend frameworks and therefore, "compile" your Angular, React or Hugo application before deploying it.
 
-In our case, we will have a very simple Vanilla JavaScript appliation which does not require to be built to run. So, let's choose `Custom`.
-* In the `App location`, put your `www/` folder as this is where our frontend is.
-* In the `Api location`, put your `api/` folder as this is where our backend is.
+In our case, we have a very simple Vanilla JavaScript appliation which does not require anything to run. So, let's choose `Custom`.
+* In the `App location`, enter the `www/` folder as this is where our frontend is.
+* In the `Api location`, enter the `api/` folder as this is where our backend is.
 
-* Click on `Review + Create` and then on `Create`
+* Click on `Review + Create` and then on `Create`.
 
 After a few minutes, your static web app will be created on Azure and your website deployed.
 
 ## So, what happened?
 
+    
 ### On GitHub
 
-If you are not familiar with GitHub Actions, go have a look <a href="https://github.com/features/actions" target="_blank">here</a>.
+When Azure created your Static Web App, it pushed a new YAML file in in the `.github/workflow` folder of your repository.
 
-When Azure created your Static Web App, it pushed a new yaml file in in the `.github/workflow` folder of your repo.
-
-<div class="infos">
-The files in this folder decribe the GitHub Actions, which are event-based actions that can be triggered by events like a `push`, a `new pull request`, a new `issue`, a `new collaborator` and many many more.  
+<div class="box info">
+The files in this folder decribe the GitHub Actions, which are event-based actions that can be triggered by events like a `push`, a `new pull request`, a `new issue`, a `new collaborator` and many many more.  
 
 You can see the complete list of triggers <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows" target="_blank">here</a>
 
-Let's have a look at the YAML file Azure created for us
-```javascript
+If you are not familiar with GitHub Actions, go have a look <a href="https://github.com/features/actions" target="_blank">here</a>.
+</div>
+
+Let's have a look at the YAML file Azure created for us:
+```
 on:
   push:
     branches:
@@ -137,22 +145,25 @@ on:
     branches:
       - main
 ```
-Here, you see that we are going to trigger this GitHub Action every time there is a push on the `main branch` or everytime a pull request is `opened`, `synchronize`, `reopened` or `closed`.  
-Good, as we want our website to be redeployed automaticaly every time we push on our main branch!
+Here, you see that the GitHub Action is going to be triggered every time there is a push on the `main branch` or everytime a pull request is `opened`, `synchronize`, `reopened` or `closed`.  
+As we want our website to be redeployed automaticaly every time we push on our main branch, this is perfect!
 
-Take a few minutes to read the YAML file and understand what exactly happens when the GitHub action is triggered. You can see that most of the information you entered when you created your Static Web App on Azure are here.
+Take a few minutes to read the YAML file and understand what exactly happens when the GitHub action is triggered. You can see that most of the information you entered when you created your Static Web App on Azure is here.
 
-<div class="tip">
+<div class="box tip">
 The YAML file is in your GitHub repo so you can edit it! Your frontend site folder name changed? No problem, just edit the file and push it on GitHub.
 </div>
 
+So, go back to your GitHub repo and click on the `Actions` tab. Here, you will see the list of all the GitHub actions that have been triggered so far. Click on the last one to see your application being deployed
+
+![Configuration des variables d'environnement dans Azure Function](media/github-actions.png)
 ### On Azure
 
-Wen your Static Web App is created, go to the Resource page. You can find the list of all your Static Web Apps <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites" target="_blank">here</a>
+Once your Static Web App is created, go to the Resource page. You can find the list of all your Static Web Apps <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites" target="_blank">here</a>
 
 In the overview panel of your resource, look for the `URL` parameter. This is the url of your website. 
 
-![Configuration des variables d'environnement dans Azure Function](images/resource-overview.png)
+![Configuration des variables d'environnement dans Azure Function](media/resource-overview.png)
 
 
 Go have a look, your TODO list app has been deployed and is accessible to the world!
@@ -169,7 +180,7 @@ Now that our TODO app is deployed, we want to make it interactive, we want to in
 
 Azure Static Web Apps relies on Azure Functions for your application backend. Azure Functions is an Azure Service which allows you to deploy simple functions triggered by events. In our case, events will be HTTP calls.
 
-<div class"infos">
+<div class="box info">
 Ever heard of Serverless or FaaS (Function as a Service)? Well, this is what Azure Functions is ^^.
 </div>
 
