@@ -126,11 +126,12 @@ After a few minutes, your static web app will be created on Azure and your websi
 
 When Azure created your Static Web App, it pushed a new YAML file in in the `.github/workflow` folder of your repository.
 
+The files in this folder decribe the GitHub Actions, which are event-based actions that can be triggered by events like a `push`, a `new pull request`, a `new issue`, a `new collaborator` and many many more. 
+
+You can see the complete list of triggers <a href="https://docs.github.com/en/actions/reference/
+
 <div class="box info">
-The files in this folder decribe the GitHub Actions, which are event-based actions that can be triggered by events like a `push`, a `new pull request`, a `new issue`, a `new collaborator` and many many more.  
-
-You can see the complete list of triggers <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows" target="_blank">here</a>
-
+events-that-trigger-workflows" target="_blank">here</a>
 If you are not familiar with GitHub Actions, go have a look <a href="https://github.com/features/actions" target="_blank">here</a>.
 </div>
 
