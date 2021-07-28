@@ -128,7 +128,7 @@ When Azure created your Static Web App, it pushed a new YAML file in in the `.gi
 
 The files in this folder decribe the GitHub Actions, which are event-based actions that can be triggered by events like a `push`, a `new pull request`, a `new issue`, a `new collaborator` and many many more. 
 
-You can see the complete list of triggers <a href="https://docs.github.com/en/actions/reference/
+You can see the complete list of triggers <a href="https://docs.github.com/en/actions/reference"/>here</a>
 
 <div class="box info">
 events-that-trigger-workflows" target="_blank">here</a>
@@ -206,40 +206,40 @@ Title: Test you project locally
 
 ## Test your project
 
-There are two way to test your project now. You can either push your code on GitHub (not recommended), or use the Static Web Apps CLI
+There are two ways to test your project. You can either push your code on GitHub every time you need to test (not recommended), or use the Static Web Apps CLI
 
 ### The Static Web App CLI
 
-The Static Web Apps CLI, also known as SWA CLI, serves as a local development tool for Azure Static Web Apps. In our case, we will use the API to:
+The Static Web Apps CLI, also known as SWA CLI, serves as a local development tool for Azure Static Web Apps. In our case, we will use the CLI to:
 * Serve static app assets
 * Serve API requests
 * Emulate authentication and authorization
 * Emulate Static Web Apps configuration, including routing
 
 
-You can install the CLI using npm.
+You can install the CLI via npm.
 ```bash
 npm install -g @azure/static-web-apps-cli
 ```
 
-Fin all the features the CLI provides <a href="https://github.com/Azure/static-web-apps-cli" target="_blank">here</a>
+You can find all the features the CLI provides <a href="https://github.com/Azure/static-web-apps-cli" target="_blank">here</a>
 
 ### Run your project locally
 
 The CLI offers many options but in our case, we want it to serve both our API located in our `api` folder and our web application located in our `www` folder.
 
-In your terminal, type the following command to start your project.
+In your terminal, type the following command to start your project:
 
 ```bash
 swa start ./www --api ./api --devserver-timeout=60000
 ```
 
-This CLI gives you several urls:
+This CLI gives you two urls:
 * http://0.0.0.0:4280 corresponding to your frontend
 * http://localhost:7071/api/tasks corresonding to you api
 
-<div class="info">
-The CLI may take time to launch your Azure Function. The default timeout is 30 seconds but you can increase it using the `--devserver-timeout=60000` parameter
+<div class="box info">
+The CLI may take more time than usual to launch your Azure Function. The default timeout is 30 seconds but you can increase it using the "--devserver-timeout=60000" parameter
 </div>
 
 --sep--
@@ -247,17 +247,18 @@ The CLI may take time to launch your Azure Function. The default timeout is 30 s
 title: Add authentication
 ---
 
-SWA manages authentication out of the box. There are pre-configured providers but you can add you own custom providers. Among the pre-configured ones are Twitter, Google, Microsoft, GitHub and others.
+Azure Static Web Apps manages authentication out of the box. There are pre-configured providers but you can add you own custom providers if needed. Among the pre-configured ones are `Twitter`, `Google`, `Microsoft`, `GitHub` and others.
 
-## The different urls
+## Login/Logout
 
-When we said "out of the box", we really meant it. You don't need to do anything for most of the provider. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirect to `/.auth/login/github`.
+When I said "out of the box", I really meant it. You don't need to do anything for most of the providers. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirect to `/.auth/login/github`.
 
+// Exercise
 Go add a button in the `login.html` page.
 
 By default, once logged in, your user is redirected to the same page. However, we would like our user to be redirected to our TODO page after successfully logging in. You can do that by using the `post_login_redirect_uri` query param at the end of the url. Eg. `?post_login_redirect_uri=/index.html` 
 
-## Getting user informations
+## Getting user information
 
 Once your user is authenticated, you can retrieve the associated information by fetching the url `/.auth/me`. This will return a json containing a clientPrincipal object. If the object is null, the user is not authenticated. Otherwize, the object contains several data
 
@@ -272,8 +273,9 @@ Once your user is authenticated, you can retrieve the associated information by 
 The userId is unique and can be used to identify the user. We will use it to refer to the user in the database.
 
 
+<div class="box tip">
 If you are building a React app, go <a href="https://docs.microsoft.com/en-us/learn/modules/publish-static-web-app-authentication/?WT.mc_id=javascript-17844-cxa" target="_blank">check the MSLearn module that will show you how to do</a> 
-
+</div>
 
 
 --sep--
