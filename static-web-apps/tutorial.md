@@ -197,7 +197,36 @@ You can download the extension either from the `Extension panel` (Ctrl+Shift+X) 
 
 In VSCode, open the Command panel and search for `Azure Functions: Create Function App in Azure`. As we are creating an API that will be called by our website, the trigger we are looking for is the `HTTP trigger`.  
 
+We are first going to create a function to retrive out tasks list. So, let's call our function `tasks-get`.
+
 A function template will be created for you. Let's modify it for our needs.
+
+Right now, we don't have database to store our tasks so let's use an array as a "fake" database.
+```json
+const tasks = [
+    tasks: [
+      {
+        id: 1,
+        label: "🍔 Eat",
+        status: ""
+      },
+      {
+        id: 2,
+        label: "🛏 Sleep",
+        status: ""
+      },
+      {
+        id: 3,
+        label: "</> Code",
+        status: ""
+      }
+    ]
+]
+```
+
+// Exercice
+Modify the Azure Function so it returns the list of tasks.
+
 
 --sep--
 ---
