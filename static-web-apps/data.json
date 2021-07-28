@@ -1,0 +1,14 @@
+{
+    "infos": {
+        "title": "Azure Static Web Apps",
+        "github": "https://github.com/tagazok/my-workshops",
+        "description": "Ce workshop, accessible à tous les développeurs même sans connaissance en IoT ou sur Azure -, vous permettra de découvrir la programmation sur des devices IoT avec (Arduino) et Visual Studio Code), ainsi que la création d'expériences connectées avec les services Azure)."
+    },
+    "authors": [
+        {
+            "name": "Olivier Leplus",
+            "url": "https://twitter.com/olivierleplus",
+            "avatar": "olivier.png"
+        }
+    ]
+}
