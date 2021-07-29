@@ -427,6 +427,7 @@ However, we don't want our router to mess with our assets so let's exclude all t
     }
 }
 ```
+
 However, you can still overide all the urls you want here. Let's say you have a new url for your products list as `products` makes more sense than `catelog`. You can easily do that in the `routes` object.
 
 ```javascript
