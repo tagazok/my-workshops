@@ -304,8 +304,6 @@ Now, your function is only accessible using a `GET /api/tasks` request.
 
 You've done it. You wrote your first Azure Function. Congratulations !
 
-```
-
 
 --sep--
 ---
@@ -351,6 +349,8 @@ This CLI gives you two urls:
 The CLI may take more time than usual to launch your Azure Function. The default timeout is 30 seconds but you can increase it using the "--devserver-timeout=60000" parameter
 </div>
 
+Congratulations, you now have everything you need to test your app!
+
 --sep--
 ---
 title: Add authentication
@@ -369,6 +369,13 @@ Go add a button in the `login.html` page.
 
 By default, once logged in, your user is redirected to the same page. However, we would like our user to be redirected to our TODO page after successfully logging in. You can do that by using the `post_login_redirect_uri` query param at the end of the url. Eg. `?post_login_redirect_uri=/index.html` 
 
+<div class="box tip">
+<div class="title">Tip</div>
+<div>
+If you are building a React app, go <a href="https://docs.microsoft.com/en-us/learn/modules/publish-static-web-app-authentication/?WT.mc_id=javascript-17844-cxa" target="_blank">check the MSLearn module that will show you how to do</a>
+</div>
+</div>
+
 ## Getting user information
 
 Once your user is authenticated, you can retrieve the associated information by fetching the url `/.auth/me`. This will return a json containing a clientPrincipal object. If the object is null, the user is not authenticated. Otherwize, the object contains several data
@@ -383,21 +390,27 @@ Once your user is authenticated, you can retrieve the associated information by 
 ```
 The userId is unique and can be used to identify the user. We will use it to refer to the user in the database.
 
-
-<div class="box tip">
-<div class="title">Tip</div>
+<div class="box exercise">
+<div class="title">Assignment</div>
 <div>
-If you are building a React app, go <a href="https://docs.microsoft.com/en-us/learn/modules/publish-static-web-app-authentication/?WT.mc_id=javascript-17844-cxa" target="_blank">check the MSLearn module that will show you how to do</a>
+Retrive the logged in user information and display the usernmae in the `<div id="username"></div>` element located at the top left of your webpage.
 </div>
 </div>
+
+![Configuration des variables d'environnement dans Azure Function](media/todo.png)
+
+Congratulations, you can now login to your app!
+
+--sep--
+---
+Title: Routes & Roles
+---
 
 
 --sep--
 ---
 Title: MISC
 ---
-
-
 
 
 `staticwebapp.config.json`
