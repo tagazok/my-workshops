@@ -4,7 +4,7 @@ title: Static web apps
 
 --sep--
 ---
-title:
+title: Introduction
 ---
 # Introduction to Static Web Apps
 
@@ -177,7 +177,7 @@ Congratulations, you just deployed your first Static Web App on Azure !
 title: Let's add a backend
 ---
 
-Now that our TODO app is deployed, we want to make it interactive, we want to interact with a backend!  
+Now that our TODO app is deployed, we want to make it interactive. Therefore, we want to interact with a backend!  
 
 Azure Static Web Apps relies on Azure Functions for your application backend. Azure Functions is an Azure Service which allows you to deploy simple functions triggered by events. In our case, events will be HTTP calls.
 
@@ -191,17 +191,32 @@ Ever heard of Serverless or FaaS (Function as a Service)? Well, this is what Azu
 You can create an Azure Function from the portal but let's be honnest, it's so much easier to stay in VSCode and use the Azure Functions extension.
 
 So, start by installing the Azure Function extension from VSCode.
-You can download the extension either from the `Extension panel` (Ctrl+Shift+X) directly in VSCode or <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions" target="_blank">here</a>
+You can download the extension either directly from the `Extension panel` (Ctrl+Shift+X) in VSCode or by going <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions" target="_blank">here</a> and clicking on the Install button.
 
 ## Create your Function app
 
-In VSCode, open the Command panel and search for `Azure Functions: Create Function App in Azure`. As we are creating an API that will be called by our website, the trigger we are looking for is the `HTTP trigger`.  
+Azure functions lives in an Azure Functions App. When you create your app, a function will be created. You can then add as many function as you need. 
+So, let's create our Functions App and a function to retrive out tasks list.
 
-We are first going to create a function to retrive out tasks list. So, let's call our function `tasks-get`.
+* In VSCode, open the Command panel and search for `Azure Functions: Create Function App in Azure`. 
+* Select the `api` folder. This is where our Function App will be created.
+* Choose `JavaScript` as this is the langage we are going to use to write our Function.
 
-A function template will be created for you. Let's modify it for our needs.
+<div class="box info">
+Not all the Azure Functions languages are supported. You can write your Azure Static Web App backend in JavaScript, TypeScript, Python or C#.
+</div>
 
-Right now, we don't have database to store our tasks so let's use an array as a "fake" database.
+* As we are creating a REST API that will be called by our website, the trigger we are looking for is the `HTTP trigger`. 
+* Our first function will be used to retrieve our tasks list. Let's call it `tasks-get`. 
+* Select the `Anonymous` authorization level.
+
+<div class="box info">
+If you want to learn more about the different authorization level and how to secure your API, go check <a href="https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts" target="_blank">this link</a>
+</div>
+
+A function template will be created for you so you don't start with a blank file. Let's modify it for our needs.
+
+Right now, we don't have a database to store our users or our tasks so let's use an array as a "fake" database.
 ```json
 const tasks = [
     tasks: [
@@ -224,9 +239,9 @@ const tasks = [
 ]
 ```
 
-// Exercice
+<div class="exercice">
 Modify the Azure Function so it returns the list of tasks.
-
+</div>
 
 --sep--
 ---
@@ -303,7 +318,9 @@ The userId is unique and can be used to identify the user. We will use it to ref
 
 
 <div class="box tip">
-If you are building a React app, go <a href="https://docs.microsoft.com/en-us/learn/modules/publish-static-web-app-authentication/?WT.mc_id=javascript-17844-cxa" target="_blank">check the MSLearn module that will show you how to do</a> 
+<div>
+If you are building a React app, go <a href="https://docs.microsoft.com/en-us/learn/modules/publish-static-web-app-authentication/?WT.mc_id=javascript-17844-cxa" target="_blank">check the MSLearn module that will show you how to do</a>
+</div>
 </div>
 
 
