@@ -243,6 +243,57 @@ const tasks = [
 Modify the Azure Function so it returns the list of tasks.
 </div>
 
+Once deployed, you will be able to call your function like any REST API. 
+
+### Configure your endpoints
+
+By default, when an Azure Function is created using the VSCode extension, the function will manage `GET` and `POST` requests and the url will end with your function name. In our case, the `tasks-get` function can either be called using
+* `GET https://your-website-url.com/api/tasks-get`
+* `POST https://your-website-url.com/api/tasks-get`
+
+This is not exactly what we need. Hopefuly, there is a way to configure this. Open the `function.json` file in your function folder.
+
+```json
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}
+```
+You can find here most of the information you selected when you created your unction.  
+As we only need our function to retrieve a list of tasks, let's remove the `post` method in the methods array. Our function will only be able to be called using `GET` request.
+
+The other think you may want to change the the url of your function. Having a route called `/api/tasks-get` is not very standard. You can easily change your enpoint name in the function.json file by adding a `route` parameter.
+
+```json
+{
+    ...,
+    "methods": ["get"],
+    "route": "tasks"
+    ...
+}
+
+Now, your function is only accessible using a `GET /api/tasks` request.
+
+You've done it. You wrote your first Azure Function. Congratulations !
+
+```
+
+
 --sep--
 ---
 Title: Test you project locally
