@@ -239,8 +239,11 @@ const tasks = [
 ]
 ```
 
-<div class="exercise">
+<div class="box exercise">
+<div>
+<div class="title">Assignment</div>
 Modify the Azure Function so it returns the list of tasks.
+</div>
 </div>
 
 Once deployed, you will be able to call your function like any REST API. 
@@ -349,8 +352,11 @@ Azure Static Web Apps manages authentication out of the box. There are pre-confi
 
 When I said "out of the box", I really meant it. You don't need to do anything for most of the providers. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirect to `/.auth/login/github`.
 
-<div class="exercise">
+<div class="box exercise">
+<div>
+<div><b>Assignment</b></div>
 Go add a button in the `login.html` page.
+</div>
 </div>
 
 By default, once logged in, your user is redirected to the same page. However, we would like our user to be redirected to our TODO page after successfully logging in. You can do that by using the `post_login_redirect_uri` query param at the end of the url. Eg. `?post_login_redirect_uri=/index.html` 
