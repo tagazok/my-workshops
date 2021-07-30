@@ -242,7 +242,7 @@ const tasks = [
 ]
 ```
 
-<div class="box exercise">
+<div class="box assignment">
 <div>
 Modify the Azure Function so it returns the list of tasks.
 </div>
@@ -354,7 +354,7 @@ Azure Static Web Apps manages authentication out of the box. There are pre-confi
 
 When I said "out of the box", I really meant it. You don't need to do anything for most of the providers. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirect to `/.auth/login/github`.
 
-<div class="box exercise">
+<div class="box assignment">
 Go add a button in the `login.html` page.
 </div>
 
@@ -380,7 +380,7 @@ Once your user is authenticated, you can retrieve the associated information by 
 ```
 The userId is unique and can be used to identify the user. We will use it to refer to the user in the database.
 
-<div class="box exercise">
+<div class="box assignment">
 <div>
 Retrive the logged in user information and display the usernmae in the `<div id="username"></div>` element located at the top left of your webpage.
 </div>
@@ -444,7 +444,7 @@ Here, your website root will only be accessible to logged in users. Now, if you 
 }
 ```
 
-<div class="exercise">
+<div class="box assignment">
 Create a custom-404.html page in your www folder and add a rule to redirect users to this page when they enter a url which does not exist.
 </div>
 
