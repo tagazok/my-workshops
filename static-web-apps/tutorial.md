@@ -51,7 +51,7 @@ Azure Static Web Apps relies on `Azure Functions` for your application backend. 
 <div>
 You can find all the Static Web Apps documentation here: 
 <a href="
-aka.ms/swadocs" target="_blank">aka.ms/swadocs</a>
+aka.ms/swadocs" target="_blank">https://aka.ms/swadocs</a>
 </div>
 </div>
 
