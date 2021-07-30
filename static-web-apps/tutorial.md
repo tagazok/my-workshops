@@ -59,8 +59,10 @@ Oh, and did I forget to mention there is a Free plan for Static Web App? You can
 
 --sep--
 ---
-title: Setup your environment using dev container
+title: Setup your environment using a container
 ---
+
+## Setup your environment using a container
 
 There is not much you need to start working with `Azure Static Web Apps`. If you already have all the requirements listed at the begining of the workshop, you are good to go. We will see at each step what are the extensions you will need to install.
 
