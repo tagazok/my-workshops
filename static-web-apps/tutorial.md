@@ -416,7 +416,7 @@ The userId is unique and can be used to identify the user. We will use it to ref
 
 <div class="box assignment">
 <div>
-Retrive the logged in user information and display the username in the \<div id=\"username\"\></div> element located at the top left of your webpage.
+Retrieve the logged-in user information and display the username in the <code>&lt;div id=&quot;username&quot;&gt;&lt;/div&gt;</code> element located at the top left of your webpage.
 </div>
 </div>
 
