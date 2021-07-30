@@ -183,14 +183,14 @@ The YAML file is in your GitHub repo so you can edit it! Your frontend site fold
 
 So, go back to your GitHub repo and click on the `Actions` tab. Here, you will see the list of all the GitHub actions that have been triggered so far. Click on the last one to see your application being deployed
 
-![Configuration des variables d'environnement dans Azure Function](media/github-actions.png)
+![Check your GitHub Actions](media/github-actions.png)
 ### On Azure
 
 Once your Static Web App is created, go to the Resource page. You can find the list of all your Static Web Apps <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites" target="_blank">here</a>
 
 In the overview panel of your resource, look for the `URL` parameter. This is the url of your website. 
 
-![Configuration des variables d'environnement dans Azure Function](media/resource-overview.png)
+![Resource overview of your project](media/resource-overview.png)
 
 
 Go have a look, your TODO list app has been deployed and is accessible to the world!
@@ -416,7 +416,7 @@ Retrive the logged in user information and display the username in the \<div id=
 </div>
 </div>
 
-![Configuration des variables d'environnement dans Azure Function](media/todo.png)
+![Yout TODO app is running](media/todo.png)
 
 Congratulations, you can now login to your app!
 
@@ -541,7 +541,7 @@ Creating the resource may take some time.
 Let's go back to VSCode. In the Azure Extension, you now have the `Database` tab where you should see the CosmosDB server you just created. If you don't see it, just click the refresh button.  
 Once you see your server, right click on it, select `Create Database` and give it a name. Once your database is created, right click on it, select `Create Collection` and name it `users` as it will be used to store our users.
 
-![Configuration des variables d'environnement dans Azure Function](media/create-db.png)
+![Create a Cosmos DB database](media/create-db.png)
 
 ### Add some data
 
@@ -606,7 +606,7 @@ const client = mongoClient.connect("YOUR-SERVER-CONNECTION-STRING");
 
 You can find your server connection string in the Azure portal. But, as always, you can stay in your VSCode. In the Azure Storage extension, right click on your database server and select `Copy Connection String`.
 
-![Configuration des variables d'environnement dans Azure Function](media/connection-string.png)
+![Retrive your Cosmos DB connection string](media/connection-string.png)
 
 Once your are connected to your Cosmos DB server using the mongoDB API, you can use this connection to select a database
 ```javascript
@@ -626,7 +626,7 @@ const response = await database.collection("users").findOne({
 
 Test your website locally and push your changes to GitHub. The GitHub Action will be triggered and your website deployed. Go check the url, you should see the tasks of your database.
 
-![Configuration des variables d'environnement dans Azure Function](media/finish.png)
+![Your TODO app up and running](media/finish.png)
 
 
 --sep--
