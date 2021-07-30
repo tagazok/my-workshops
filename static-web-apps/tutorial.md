@@ -19,7 +19,7 @@ At the end of this workshop, you will have a full understanding on how to develo
 ### Prerequisites
 
 To do this workshop, you will need:
-* Basic JavaScript knwoledge
+* Basic JavaScript knowledge
 * A Microsoft Azure account
 * A GitHub account
 * VSCode
@@ -32,9 +32,9 @@ title: What is Azure Static Web Apps
 
 ## What is Azure Static Web Apps
 
-Azure Static Web Apps is a service that enables developers to deploy their web applications on Azure in a seemingless way. Therefore, developers can focus on their code and spend less time adminstrating the servers!
+Azure Static Web Apps is a service that enables developers to deploy their web applications on Azure in a seemingless way. Therefore, developers can focus on their code and spend less time adminstrating servers!
 
-So, with Static Web Apps (aka SWA), developers can deploy their frontend static app and their serverless backend but it also brings some nice features like `Custom domains`, `pre-prod environment`, `authentication providers`, `custom routing` and more.
+So, with Static Web Apps (aka SWA), developers can not only deploy frontend static apps and their serverless backends but they can also benefit from some nice features like `Custom domains`, `pre-prod environment`, `authentication providers`, `custom routing` and more.
  
 
 ### For who ?
@@ -70,15 +70,15 @@ However, if you don't want to install everything or don't want to remember what 
 
 Open VSCode and search for the `Remote - Containers` extension in the extension panel on the left or go <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" target="_blank">here</a> and click `Install`.
 
-The `Remote - Containers` extension lets you use a Docker container as a full-featured development environment. The best part is that thisthe extension comes with a list of containers already setup for you... including one for Static Web Apps.
+The `Remote - Containers` extension lets you use a Docker container as a full-featured development environment. The best part is that the extension comes with a list of containers already setup for you... including one for Static Web Apps.
 
-So, open the VSCode command panel usting `Ctrl + Shift + p` and search for `Add Development Container Configuration Files...`. This will show you a list of pre-configured containers. Serach for `Azure Static Web Apps` and hit Enter.
+So, open the VSCode command panel usting `Ctrl + Shift + p` and search for `Add Development Container Configuration Files...`. This will show you a list of pre-configured containers. Search for `Azure Static Web Apps` and hit Enter.
 
 ![Add a Dev Container](media/dev-container.png)
 
 A a few files will be aded to your project with all the container configurations.
 
-You now need to reopen your project in the container. To do so, open the VSCode command panel and search for `Reopen in container`. Wait a few seconds until the docker image is ready and you are ready to go. You now have all the tools installed to work with Static Web Apps.
+You now need to reopen your project in the container. To do so, open the VSCode command panel and search for `Reopen in container`. Wait a few seconds until the docker image is ready and you are good to go. You now have all the tools installed to work with Static Web Apps.
 
 <div class="box info">
 <div>
@@ -119,7 +119,7 @@ title: Create an Azure Static Web App
 
 In the <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>, look for `Static Web Apps` in the search bar. Once you are on the product page, click on the `Create` button at the top left. Or, you can simply click <a href="https://portal.azure.com/#create/Microsoft.StaticApp" target="_blank">here</a> ^^. This link will take you directly to the Static Web App creation form.  
 
-Let's fill it!
+Let's fill it out!
 
 * Select your subscription.
 * Create a new resource group.
@@ -133,7 +133,7 @@ In Azure, a resource group is a logical container that holds resources usually r
 * Select `West Europe` for your backend.
 
 <div class="box tip">
-It is recommended to host your backend in the closest region of your users.
+It is recommended to host your backend in the region closests to your users.
 </div>
 
 * Select `GitHub` as a deployment source.
@@ -159,7 +159,7 @@ After a few minutes, your static web app will be created on Azure and your websi
 
 ### On GitHub
 
-When Azure created your Static Web App, it pushed a new YAML file in in the `.github/workflow` folder of your repository.
+When Azure created your Static Web App, it pushed a new YAML file in the `.github/workflow` folder of your repository.
 
 The files in this folder decribe the GitHub Actions, which are event-based actions that can be triggered by events like a `push`, a `new pull request`, a `new issue`, a `new collaborator` and many many more. 
 
@@ -185,7 +185,7 @@ on:
 Here, you can see that the GitHub Action is going to be triggered every time there is a `push` on the `main branch` or every time a pull request is `opened`, `synchronize`, `reopened` or `closed`.  
 As we want our website to be redeployed automaticaly every time we push on our main branch, this is perfect!
 
-Take a few minutes to read the YAML file and understand what exactly happens when the GitHub action is triggered. You can see that most of the information you entered when you created your Static Web App on Azure is here.
+Take a few minutes to read the YAML file and understand what exactly happens when the GitHub Action is triggered. You can see that most of the information you entered when you created your Static Web App on Azure is here.
 
 <div class="box tip">
 The YAML file is in your GitHub repository so you can edit it! Your frontend site folder name changed? No problem, just edit the file and push it on GitHub.
@@ -215,7 +215,7 @@ title: Let's add a backend
 
 ## Let's add a backend
 
-Now that our TODO app is deployed, we want to make it interactive. Therefore, we want to interact with a backend!  
+Now that our TODO app is deployed, we want to make it interactive. Therefore, we want it to interact with a backend!  
 
 Azure Static Web Apps relies on Azure Functions for your application backend. Azure Functions is an Azure service which enables you to deploy simple functions triggered by events. In our case, events will be HTTP requests.
 
@@ -226,15 +226,15 @@ Ever heard of Serverless or FaaS (Function as a Service)? Well, you get it, this
 
 ### Installation
 
-You can create an Azure Function from the <a href="https://portal.azure.com">Azure portal</a> but let's be honnest, it's so much easier to stay in VSCode and use the Azure Functions extension.
+You can create an Azure Function from the <a href="https://portal.azure.com">Azure portal</a> but let's be honest, it's so much easier to stay in VSCode and use the Azure Functions extension.
 
 So, start by installing the Azure Function extension from VSCode.
 You can download the extension either directly from the `Extension panel (Ctrl + Shift + X)` in VSCode or by going <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions" target="_blank">here</a> and clicking on the `Install` button.
 
 ### Create your Function app
 
-Azure functions lives in an Azure Functions App. When you create your app, a function will be created. You can then add several to it. 
-So, let's create our Functions App and a Function to retrive out tasks list.
+Azure functions live in an Azure Functions App. When you create your app, a function will be created. You can then add several functions it. 
+So, let's create our Functions App and a Function to retrieve our task list.
 
 * In VSCode, open the Command panel and search for `Azure Functions: Create Function App in Azure`. 
 * Select the `api` folder. This is where our Function App will be created.
@@ -245,7 +245,7 @@ Not all the Azure Functions languages are supported. You can write your Azure St
 </div>
 
 * As we are creating a REST API that will be called by our website, the trigger we are looking for is the `HTTP trigger`. 
-* Our first function will be used to retrieve our tasks list. Let's call it `tasks-get`. 
+* Our first function will be used to retrieve our task list. Let's call it `tasks-get`. 
 * Select the `Anonymous` authorization level.
 
 <div class="box info">
@@ -318,7 +318,7 @@ This is not exactly what we need. Hopefuly, there is a way to configure this. Op
 Here, you can find most of the information you selected when you created your function.  
 As we only need our function to retrieve a list of tasks, let's remove the `post` method in the methods array so our function can only be called using `GET` requests.
 
-The other think you may want to change is the url of your function. Having a route called `/api/tasks-get` is not very standard. You can easily change your enpoint name in the `function.json` file by adding a `route` parameter.
+The other thing you may want to change is the url of your function. Having a route called `/api/tasks-get` is not very standard. You can easily change your enpoint name in the `function.json` file by adding a `route` parameter.
 
 ```json
 {
@@ -392,7 +392,7 @@ Azure Static Web Apps manages authentication out of the box. There are pre-confi
 
 ### Sign in & Sign out
 
-When I said "out of the box", I really meant it. You don't need to do anything for most of the providers. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirect to `/.auth/login/github`.
+When I said "out of the box", I really meant it. You don't need to do anything for most of the providers. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirects to `/.auth/login/github`.
 
 <div class="box assignment">
 Add a button in the login.html so your users can sign in using GitHub.
@@ -403,13 +403,13 @@ Eg. `?post_login_redirect_uri=/index.html`
 
 <div class="box tip">
 <div>
-If you are building a React app, go <a href="https://docs.microsoft.com/en-us/learn/modules/publish-static-web-app-authentication/?WT.mc_id=javascript-17844-cxa" target="_blank">check the MSLearn module that will show you how to do.</a>
+If you are building a React app, go <a href="https://docs.microsoft.com/en-us/learn/modules/publish-static-web-app-authentication/?WT.mc_id=javascript-17844-cxa" target="_blank">check the MSLearn module that will show you how to do it.</a>
 </div>
 </div>
 
 ### Getting user information
 
-Once your user is authenticated, you can retrieve the associated information by fetching the url `/.auth/me`. This will return a json containing a clientPrincipal object. If the object is null, the user is not authenticated. Otherwize, the object contains several data like the provider, the roles and the username.
+Once your user is authenticated, you can retrieve the associated information by fetching the url `/.auth/me`. This will return a json containing a clientPrincipal object. If the object is null, the user is not authenticated. Otherwize, the object contains data like the provider, the roles and the username.
 
 ```json
 {
@@ -429,7 +429,7 @@ Retrieve the logged-in user information and display the username in the <code>&l
 
 ![Yout TODO app is running](media/todo.png)
 
-Congratulations, you can now login to your app! 🥳
+Congratulations, you can now login into your app! 🥳
 
 --sep--
 ---
@@ -439,15 +439,15 @@ Title: Routes & Roles
 ## Routes & Roles
 
 In many cases, your routes will be managed by your frontend, especially if you are using a framework such as React or Angular.   
-You may also be used to manage authorization on your backend for your API calls.
+You may also be used to managing authorization on your backend for your API calls.
 
 Azure Static Web Apps offers you the possibility to handle http requests in a single file. Start by creating a file called `staticwebapp.config.json` in your `www` folder.
 
 ### Secure our website and APIs
 
-There are many properties available to confiture your Static Web App but let's concentrate only on the few we need in our app.
+There are many properties available to configure your Static Web App but let's concentrate only on the few we need in our app.
 
-The `routes` parameter is an array of all the rules for your routes. For example, in our case, we would like to prevent non-authorized users to call our API. We can do that very easily.
+The `routes` parameter is an array of all the rules for your routes. For example, in our case, we would like to prevent non-authorized users from calling our API. We can do that very easily.
 
 ```json
 {
@@ -462,7 +462,7 @@ The `routes` parameter is an array of all the rules for your routes. For example
 }
 ```
 
-What if we want to restrict part of our frontend to authenticated users? We can do exactly the same with any frontend route.
+What if we want to restrict a part of our frontend to authenticated users? We can do exactly the same with any frontend route.
 
 ```json
 {
@@ -518,7 +518,7 @@ title: Store your data in a database
 
 ## Store your data in a database
 
-There are several databases available on Azure. One of the most powerful on is `Cosmos DB`. Azure Cosmos DB is a fully managed NoSQL database which supports several query langages. When you create your Database, you can choose which API you want to use. Among the most popular one are `MongoDB`, `SQL` or `Cassandra`.
+There are several databases available on Azure. One of the most powerful one is `Cosmos DB`. Azure Cosmos DB is a fully managed NoSQL database which supports several query langages. When you create your Database, you can choose which API you want to use. Among the most popular ones are `MongoDB`, `SQL` or `Cassandra`.
 
 ### Setup your environment
 
@@ -536,7 +536,7 @@ Let's go back to our Azure Function in VSCode. As we are using the Cosmos DB API
 In a terminal, type `npm install` and hit enter. This will download the dependencies for you in the `node_modules` folder of your Azure Functions App.
 
 While you are in VSCode, let's install the `Azure Database` extension. This will allow you to explore your database and make queries from VSCode without having to go in the portal.  
-In the extension menu of VSCode, search for `Azure Database` or go the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb" target="_blank">here</a> and click on `Install`.
+In the extension menu of VSCode, search for `Azure Database` or <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb" target="_blank">here</a> and click on `Install`.
 
 
 ### Create your database
@@ -545,8 +545,8 @@ Go in the Azure portal and search for `Azure Cosmos DB`. Once on the product pag
 
 * Select your subscription.
 * Select the same resource group you created for your project.
-* Enter a name to itendify your Cosmos DB account. (This name should be unique).
-* Select the location where your database is going to be hosted. We recommand to use the closest location to your users. 
+* Enter a name to identify your Cosmos DB account. (This name should be unique).
+* Select the location where your database is going to be hosted. We recommand using the closest location to your users. 
 * Select `Provisioned throughput` as there is a free tier to it.
 * Select `Apply` when asked if you want to Apply the free tier discount
 * Click on `Review + Create` and then on `Create`.
@@ -563,7 +563,7 @@ Once you see your server, right click on it, select `Create Database` and give i
 Let's focus on our existing Azure Functions. We will see later how to create a function to add new users and tasks to our database.  
 Right now, we just want to get our tasks from the database instead of the json array we created earlier in our function.
 
-In VSCode, right click on your `users` collection and select `Create Document`. Copy and paste the following json and make sure to replace the userId and the userDetails by the information of your logged in user. To find the userId, just login on on your web application and navigate to `/.auth/me`
+In VSCode, right click on your `users` collection and select `Create Document`. Copy and paste the following json and make sure to replace the userId and the userDetails by the information of your logged in user. To find the userId, just log into your web application and navigate to `/.auth/me`
 
 ```json
 {
@@ -594,7 +594,7 @@ In VSCode, right click on your `users` collection and select `Create Document`. 
 ```
 ### Let's code
 
-Now that we have our database setup and have added some data to it, let's make sure our user interface displays them!
+Now that we have our database setup and have added some data to it, let's make sure our user interface displays it!
 
 In your `tasks-get` Azure function, start by importing the  mongoClient from the mongodb library we installed earlier
 
@@ -602,8 +602,8 @@ In your `tasks-get` Azure function, start by importing the  mongoClient from the
 var mongoClient = require("mongodb").MongoClient;
 ```
 
-When your Static Web App calls the API, the logged in user information is sent to the function in the `x-ms-client-principal` HTTP header. 
-You can use the code bellow to retrive the same user json you get in the `clientPrincipal` property when you go to `/.auth/me`.
+When your Static Web App calls the API, the user information is sent to the function in the `x-ms-client-principal` HTTP header. 
+You can use the code below to retrieve the same user json you get in the `clientPrincipal` property when you go to `/.auth/me`.
 
 ```javascript
 
@@ -613,7 +613,7 @@ const decoded = encoded.toString('ascii');
 const user = JSON.parse(decoded);
 ```
 
-The MongoDB api is pretty simple to use:
+Let's see how the mongoDB API works:
 * First, your need to connect to your server
 
 ```javascript
@@ -628,7 +628,7 @@ Once your are connected to your Cosmos DB server using the mongoDB API, you can 
 ```javascript
 const database = client.db("YOUR-DB-NAME");
 ```
-Replace `YOUR-DB-NAME` but the name you entered when you created your database.
+Replace `YOUR-DB-NAME` by the name you entered when you created your database.
 
 Then, just query the document where the userId property is the same as the userId sent in the headers when your function is called
 ```javascript
