@@ -406,6 +406,8 @@ You may also be used to manage authorization on your backend for your API calls.
 
 Azure Static Web Apps give you the opportunity to handle http requests in a single file. Start by creating a file called `staticwebapp.config.json` in your www folder.
 
+### Secure our website and APIs
+
 There are many properties available to confiture your Static Web App but let's concentrate only on the few we need in our app.
 
 The `routes` parameter is an array of all the rules for your routes. For example, in our case, we would like to prevent non-authorized users to call our API. We can do that very easily
@@ -438,7 +440,11 @@ What if we want to restrict part of our frontend to authenticated users? We can 
 }
 ```
 
-Here, your website root will only be accessible to logged in users. Now, if you try that, you will notice that your users are redirected to a default 401 web page. We can customise that using another property of the config file. The `responseOverrides` property enables you to redirect a user to a specific page when an HTTP code is returned. Here, let's redirect all non-authenticated users to the login.html page
+Here, your website root will only be accessible to logged in users.
+
+### Manage HTTP error codes
+
+ Now, if you try that, you will notice that your users are redirected to a default 401 web page. We can customise that using another property of the config file. The `responseOverrides` property enables you to redirect a user to a specific page when an HTTP code is returned. Let's redirect all non-authenticated users to the login.html page
 
 ```json
 {
@@ -450,13 +456,20 @@ Here, your website root will only be accessible to logged in users. Now, if you 
 }
 ```
 
+Here, we simply tell our Static Web App to redirect every 401 response to the login.html page.
+
 <div class="box assignment">
 Create a custom-404.html page in your www folder and add a rule to redirect users to this page when they enter a url which does not exist.
 </div>
 
+Now, try to go to a non-existing page on your website like `/hello.html`. You should be redirected to the `404.html` page you just created.
+
 <div class="tip">
 This is also very useful if you are doing a SPA (Single Page Application) where the routing is managed on the client side. You may then need to redirect all your urls to `index.html`. Check the `navigationFallback` property in the documentation <a href="https://docs.microsoft.com/en-us/azure/static-web-apps/configuration" target="_blank">here</a>
 </div>
+
+Congratulations, your website and your APIs are now secured and you have a seamless workflow for your users.
+
 
 --sep--
 ---
