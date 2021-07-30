@@ -177,6 +177,8 @@ Congratulations, you just deployed your first Static Web App on Azure !
 title: Let's add a backend
 ---
 
+## Let's add a backend
+
 Now that our TODO app is deployed, we want to make it interactive. Therefore, we want to interact with a backend!  
 
 Azure Static Web Apps relies on Azure Functions for your application backend. Azure Functions is an Azure Service which enables you to deploy simple functions triggered by events. In our case, events will be HTTP calls.
@@ -186,14 +188,14 @@ Ever heard of Serverless or FaaS (Function as a Service)? Well, this is what Azu
 </div>
 
 
-## Installation
+### Installation
 
 You can create an Azure Function from the portal but let's be honnest, it's so much easier to stay in VSCode and use the Azure Functions extension.
 
 So, start by installing the Azure Function extension from VSCode.
 You can download the extension either directly from the `Extension panel` (Ctrl+Shift+X) in VSCode or by going <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions" target="_blank">here</a> and clicking on the Install button.
 
-## Create your Function app
+### Create your Function app
 
 Azure functions lives in an Azure Functions App. When you create your app, a function will be created. You can then add as many function as you need. 
 So, let's create our Functions App and a function to retrive out tasks list.
@@ -303,7 +305,7 @@ You've done it. You wrote your first Azure Function. Congratulations !
 Title: Test you project locally
 ---
 
-## Test your project
+## Test your project locally
 
 There are two ways to test your project. You can either push your code on GitHub every time you need to test (not recommended), or use the Static Web Apps CLI
 
@@ -348,9 +350,11 @@ Congratulations, you now have everything you need to test your app!
 title: Add authentication
 ---
 
+## Add authentication
+
 Azure Static Web Apps manages authentication out of the box. There are pre-configured providers but you can add you own custom providers if needed. Among the pre-configured ones are `Twitter`, `Google`, `Microsoft`, `GitHub` and others.
 
-## Login/Logout
+### Login/Logout
 
 When I said "out of the box", I really meant it. You don't need to do anything for most of the providers. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirect to `/.auth/login/github`.
 
@@ -366,7 +370,7 @@ If you are building a React app, go <a href="https://docs.microsoft.com/en-us/le
 </div>
 </div>
 
-## Getting user information
+### Getting user information
 
 Once your user is authenticated, you can retrieve the associated information by fetching the url `/.auth/me`. This will return a json containing a clientPrincipal object. If the object is null, the user is not authenticated. Otherwize, the object contains several data
 
@@ -394,6 +398,8 @@ Congratulations, you can now login to your app!
 ---
 Title: Routes & Roles
 ---
+
+## Routes & Roles
 
 In many cases, your routes will be managed by your frontend, especially if you are using a framework such as React or Angular.   
 You may also be used to manage authorization on your backend for your API calls.
