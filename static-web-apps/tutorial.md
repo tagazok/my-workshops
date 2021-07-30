@@ -352,7 +352,7 @@ swa start ./www --api ./api --devserver-timeout=60000
 ```
 
 This CLI gives you two urls:
-* <a href"ttp://localhost:4280" target="blank">ttp://localhost:4280</a> corresponding to your frontend
+* <a href="http://localhost:4280" target="blank">ttp://localhost:4280</a> corresponding to your frontend
 * <a href="http://localhost:7071/api/tasks" tartet="_blank">http://localhost:7071/api/tasks</a> corresonding to you api
 
 <div class="box info">
