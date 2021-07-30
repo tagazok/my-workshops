@@ -41,10 +41,10 @@ Static Web Apps (or SWA) enables developers to deploy their frontend static app,
 Azure Static Web Apps is for every developer who want to spend more time in the code editor than managing resources in the cloud.
 If you are a so-called "Full stack developer", then you probably want to deploy both your frontend and your backend in the cloud, hopefully with limited administration and configuration.
 
-### Front end
+### Front end developers
 Azure Static Web Apps supports many frameworks and static site generators out of the box. If you are using a framework like `Angular`, `React`, `Vue.js`, a site generator like `Gatsby`, `Hugo` or on of the many solution Azure Static Web Apps supports, then you don't have to take care of the deployment. And, if you have a specific need to build your app, you can configure it yourself very easily!
 
-### Backend
+### Backend developers
 Azure Static Web Apps relies on `Azure Functions` for your application backend. So, if your are developing in `JavaScript`, `Java`, `Python` or `.Net`, SWA makes it very easy to deploy your backend!
 
 <div class="box info">
