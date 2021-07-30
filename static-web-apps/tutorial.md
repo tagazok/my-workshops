@@ -624,6 +624,8 @@ Test your website locally and push your changes to GitHub. The GitHub Action wil
 Title: Bonus
 ---
 
+## Bonus
+
 You now know how to create and publish an app with a frontend, a backend, a database and some user authentication.
 However, in order to make your app fully functional, you need to add a few more features. The good news? You have everything your need to do it!
 
