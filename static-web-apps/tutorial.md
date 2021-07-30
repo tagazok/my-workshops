@@ -90,7 +90,6 @@ Let's fill it!
 * Create a new resource group.
 
 <div class="box info">
-<div class="title">Info</div>
 In Azure, a resource group is a logical container that holds resources usually related to an application or a project. A resource group can therefore contain virtual machines, storage accounts, web applications, databases and more.
 </div>
 
@@ -99,7 +98,6 @@ In Azure, a resource group is a logical container that holds resources usually r
 * Select `West Europe` for your backend.
 
 <div class="box tip">
-<div class="title">Tip</div>
 It is recommended to host your backend in the closest region of your users.
 </div>
 
@@ -133,7 +131,6 @@ The files in this folder decribe the GitHub Actions, which are event-based actio
 You can see the complete list of triggers <a href="https://docs.github.com/en/actions/reference"/>here</a>
 
 <div class="box info">
-<div class="title">Info</div>
 events-that-trigger-workflows" target="_blank">here</a>
 If you are not familiar with GitHub Actions, go have a look <a href="https://github.com/features/actions" target="_blank">here</a>.
 </div>
@@ -155,7 +152,6 @@ As we want our website to be redeployed automaticaly every time we push on our m
 Take a few minutes to read the YAML file and understand what exactly happens when the GitHub action is triggered. You can see that most of the information you entered when you created your Static Web App on Azure is here.
 
 <div class="box tip">
-<div class="title">Tip</div>
 The YAML file is in your GitHub repo so you can edit it! Your frontend site folder name changed? No problem, just edit the file and push it on GitHub.
 </div>
 
@@ -186,7 +182,6 @@ Now that our TODO app is deployed, we want to make it interactive. Therefore, we
 Azure Static Web Apps relies on Azure Functions for your application backend. Azure Functions is an Azure Service which allows you to deploy simple functions triggered by events. In our case, events will be HTTP calls.
 
 <div class="box info">
-<div class="title">Info</div>
 Ever heard of Serverless or FaaS (Function as a Service)? Well, this is what Azure Functions is ^^.
 </div>
 
@@ -208,7 +203,6 @@ So, let's create our Functions App and a function to retrive out tasks list.
 * Choose `JavaScript` as this is the langage we are going to use to write our Function.
 
 <div class="box info">
-<div class="title">Info</div>
 Not all the Azure Functions languages are supported. You can write your Azure Static Web App backend in JavaScript, TypeScript, Python or C#.
 </div>
 
@@ -217,7 +211,6 @@ Not all the Azure Functions languages are supported. You can write your Azure St
 * Select the `Anonymous` authorization level.
 
 <div class="box info">
-<div class="title">Info</div>
 <div>
 If you want to learn more about the different authorization level and how to secure your API, go check <a href="https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts" target="_blank">this link</a>
 </div>
@@ -226,6 +219,7 @@ If you want to learn more about the different authorization level and how to sec
 A function template will be created for you so you don't start with a blank file. Let's modify it for our needs.
 
 Right now, we don't have a database to store our users or our tasks so let's use an array as a "fake" database.
+
 ```json
 const tasks = [
     tasks: [
@@ -249,7 +243,6 @@ const tasks = [
 ```
 
 <div class="box exercise">
-<div class="title">Assignment</div>
 <div>
 Modify the Azure Function so it returns the list of tasks.
 </div>
@@ -345,7 +338,6 @@ This CLI gives you two urls:
 * http://localhost:7071/api/tasks corresonding to you api
 
 <div class="box info">
-<div class="title">Info</div>
 The CLI may take more time than usual to launch your Azure Function. The default timeout is 30 seconds but you can increase it using the "--devserver-timeout=60000" parameter
 </div>
 
@@ -363,14 +355,12 @@ Azure Static Web Apps manages authentication out of the box. There are pre-confi
 When I said "out of the box", I really meant it. You don't need to do anything for most of the providers. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirect to `/.auth/login/github`.
 
 <div class="box exercise">
-<div class="title">Assignment</div>
 Go add a button in the `login.html` page.
 </div>
 
 By default, once logged in, your user is redirected to the same page. However, we would like our user to be redirected to our TODO page after successfully logging in. You can do that by using the `post_login_redirect_uri` query param at the end of the url. Eg. `?post_login_redirect_uri=/index.html` 
 
 <div class="box tip">
-<div class="title">Tip</div>
 <div>
 If you are building a React app, go <a href="https://docs.microsoft.com/en-us/learn/modules/publish-static-web-app-authentication/?WT.mc_id=javascript-17844-cxa" target="_blank">check the MSLearn module that will show you how to do</a>
 </div>
@@ -380,7 +370,7 @@ If you are building a React app, go <a href="https://docs.microsoft.com/en-us/le
 
 Once your user is authenticated, you can retrieve the associated information by fetching the url `/.auth/me`. This will return a json containing a clientPrincipal object. If the object is null, the user is not authenticated. Otherwize, the object contains several data
 
-```javascript
+```json
 {
   "identityProvider": "github",
   "userId": "d75b260a64504067bfc5b2905e3b8182",
@@ -391,7 +381,6 @@ Once your user is authenticated, you can retrieve the associated information by 
 The userId is unique and can be used to identify the user. We will use it to refer to the user in the database.
 
 <div class="box exercise">
-<div class="title">Assignment</div>
 <div>
 Retrive the logged in user information and display the usernmae in the `<div id="username"></div>` element located at the top left of your webpage.
 </div>
@@ -406,6 +395,51 @@ Congratulations, you can now login to your app!
 Title: Routes & Roles
 ---
 
+In many cases, your routes will be managed by your frontend, especially if you are using a framework such as React or Angular.   
+You may also be used to manage authorization on your backend for your API calls.
+
+Azure Static Web Apps give you the opportunity to handle http requests in a single file. Start by creating a file called `staticwebapp.config.json` in your www folder.
+
+
+<div class="box info">
+https://docs.microsoft.com/en-us/azure/static-web-apps/configuration
+</div>
+
+
+```json
+{
+    "responseOverrides": {
+        "404": {
+            "redirect": "/404.html"
+        },
+        "401": {
+            "redirect": "/login.html"
+        }
+    },
+    "routes": [
+        {
+            "route": "/",
+            "allowedRoles": [
+                "authenticated"
+            ]
+        },
+        {
+            "route": "/api/tasks/*",
+            "allowedRoles": [
+                "authenticated"
+            ]
+        },
+        {
+            "route": "/api/users/*",
+            "allowedRoles": [
+                "authenticated"
+            ]
+        }
+    ]
+}
+```
+
+This is also very useful if you are doing a SPA (Single Page Application) where the routing is managed on the client side. You may then need to redirect all your urls to `index.html`
 
 --sep--
 ---
@@ -419,13 +453,7 @@ So what do we want? We want the our JavaScript framework to handle the routes so
 
 However, we don't want our router to mess with our assets so let's exclude all the other resources like stylesheets or images.
 
-```javascript
-{
-    "navigationFallback": {
-        "rewrite": "/index.html",
-        "exclude": ["*.{css,scss,js,png,gif,ico,jpg,svg}"]
-    }
-}
+
 ```
 
 However, you can still overide all the urls you want here. Let's say you have a new url for your products list as `products` makes more sense than `catelog`. You can easily do that in the `routes` object.
@@ -444,11 +472,10 @@ However, you can still overide all the urls you want here. Let's say you have a 
 
 --sep--
 ---
-title: Authorization
+title: Store your data in a database
 ---
 
-Now that our user can auehtnticate, what about adding a layer of authorization as we only want our authenticated users to access our product list.
-
+There are several databases 
 
 --sep--
 ---
