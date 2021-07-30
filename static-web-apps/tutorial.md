@@ -4,41 +4,58 @@ title: Static web apps
 
 --sep--
 ---
-title: Introduction
+title: Objectives & Prerequesites
 ---
-# Introduction to Static Web Apps
+## Objectives & Prerequesites
 
-## what is Azure Static Web Apps
+### Objectives
 
-Static web front end + backend powered by Azure Functions + neat additional features  
+In this woskhop, you will learn how to create a full application with a `frontend`, a `serverless backend`, `user authentication` and a `database` to store your data.
 
-Custom domains + pre-prod environment + authentification providers, custom routing, etc  
+Don't worry if you are not familiar with Microsoft Azure. This workshop will walk you through some of the most important services if you are a web deloper. We will see how to use `Cosmos DB` with the `Mongo DB` API, `Azure Static Web Apps` to host your application and your `Azure Functions` and `GitHub Actions` to automate your app deployment!
 
-Based on GitHub  
+At the end of this workshop, you will have a full understanding on how to develop and deploy a web app on Azure.
 
-Free plan ?  
+### Prerequisites
 
-aka.ms/swadocs
+To do this workshop, you will need:
+* Basic JavaScript knwoledge
+* A Microsoft Azure account
+* A GitHub account
+* VSCode
+* Node.js 12 or higher installed
 
-## For who ?
+--
+---
+title: What is Azure Static Web Apps
+---
+
+## What is Azure Static Web Apps
+
+Azure Static Web Apps is a solution that enables developers to deploy their web applications on Azure in a seemingless. Therefore, developers can focus on the code and spend less time adminstrating their servers!
+
+Static Web Apps (or SWA) enables developers to deploy their frontend static app, their serverless backend but also add some neat features like `Custom domains`, `pre-prod environment`, `authentication providers`, `custom routing` and more.
+ 
+
+### For who ?
+Azure Static Web Apps is for every developer who want to spend more time in the code editor than managing resources in the cloud.
+If you are a so-called "Full stack developer", then you probably want to deploy both your frontend and your backend in the cloud, hopefully with limited administration and configuration.
 
 ### Front end
-Angular, React,  Vue, Svelt, Gatsby, Hugo & more
+Azure Static Web Apps supports many frameworks and static site generators out of the box. If you are using a framework like `Angular`, `React`, `Vue.js`, a site generator like `Gatsby`, `Hugo` or on of the many solution Azure Static Web Apps supports, then you don't have to take care of the deployment. And, if you have a specific need to build your app, you can configure it yourself very easily!
 
 ### Backend
-JavaScript, Java, Python, .Net
+Azure Static Web Apps relies on `Azure Functions` for your application backend. So, if your are developing in `JavaScript`, `Java`, `Python` or `.Net`, SWA makes it very easy to deploy your backend!
 
-## Tools
-GitHub Account + Azure Accounts (add links)
+<div class="box info">
+<div>
+You can find all the Static Web Apps documentation here: 
+<a href="
+aka.ms/swadocs" target="_blank">aka.ms/swadocs</a>
+</div>
+</div>
 
-Any code editor but VSCode has some great extensions !
-- VSCode (list extensions : SWA + Functions)
-- CLIs (Functions Core Tools & SWA CLI)
-
-```bash
-npm install -g @azure/static-web-app-cli
-```
-Requieres nodejs (link to video)  
+Oh, and did I forget to mention there is a Free plan for Static Web App? You can start using it for free and only pay once your application get popular!
 
 --sep--
 ---
