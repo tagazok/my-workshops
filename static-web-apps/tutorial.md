@@ -111,7 +111,7 @@ title: Create as Azure Static Web App
 
 ## Create as Azure Static Web App
 
-In the <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>, look for `Static Web App` in the search bar. Once you are on the product page, click on the `Create` button at the top left. Or, you can directly click <a href="https://portal.azure.com/#create/Microsoft.StaticApp" target="_blank">here ^^</a>. This link will  take you directly to the Static Web App creation form.  
+In the <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>, look for `Static Web App` in the search bar. Once you are on the product page, click on the `Create` button at the top left. Or, you can directly click <a href="https://portal.azure.com/#create/Microsoft.StaticApp" target="_blank">here</a> ^^. This link will  take you directly to the Static Web App creation form.  
 
 Let's fill it!
 
@@ -156,11 +156,13 @@ When Azure created your Static Web App, it pushed a new YAML file in in the `.gi
 
 The files in this folder decribe the GitHub Actions, which are event-based actions that can be triggered by events like a `push`, a `new pull request`, a `new issue`, a `new collaborator` and many many more. 
 
-You can see the complete list of triggers <a href="https://docs.github.com/en/actions/reference"/>here</a>
+You can see the complete list of triggers <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows" target="_blank"/>here</a>
 
 <div class="box info">
+<div>
 events-that-trigger-workflows" target="_blank">here</a>
 If you are not familiar with GitHub Actions, go have a look <a href="https://github.com/features/actions" target="_blank">here</a>.
+</div>
 </div>
 
 Let's have a look at the YAML file Azure created for us:
@@ -242,7 +244,7 @@ Not all the Azure Functions languages are supported. You can write your Azure St
 
 <div class="box info">
 <div>
-If you want to learn more about the different authorization level and how to secure your API, go check <a href="https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts" target="_blank">this link</a>
+If you want to learn more about the different authorization level and how to secure your API, go check <a href="https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts" target="_blank">this link</a>.
 </div>
 </div>
 
@@ -368,7 +370,7 @@ This CLI gives you two urls:
 * <a href="http://localhost:7071/api/tasks" tartet="_blank">http://localhost:7071/api/tasks</a> corresonding to you api
 
 <div class="box info">
-The CLI may take more time than usual to launch your Azure Function. The default timeout is 30 seconds but you can increase it using the "--devserver-timeout=60000" parameter
+The CLI may take more time than usual to launch your Azure Function. The default timeout is 30 seconds but you can increase it using the <code>--devserver-timeout=60000</code> parameter
 </div>
 
 Congratulations, you now have everything you need to test your app!
@@ -656,15 +658,3 @@ You may have noticed that there is a <code>status</code> attribute in every task
 Write an Azure Function and the javascript code in your frontend to update this status.
 </div>
 </div>
-
-<!-- 
---sep--
----
-Title: MISC
----
-
-
-
-Topics:
-CI/CD preview branches (GitHub Actions) Video 4/16 
--->
