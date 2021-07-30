@@ -84,20 +84,20 @@ Once upon a time, there was a website that needed a place to live, be visible to
 
 ### Download the website template
 
-Download from resources on the left or <a href="" target="_blank">here</a>
+Download the website from the resources tab in the sidebar or click <a href="" target="_blank">here</a>.
 
 ### Deploy your website on GitHub
 
 Azure Static Web Apps has been built from the start to work with GitHub so, the first thing you will do is to create a new GitHub repo and push the source code you just downloaded.
 
-Go on <a href="https://github.com" target="_blank">Github.com</a>, create a new repository and push you code to it.
+Go to <a href="https://github.com/" target="_blank">Github.com</a>, create a new repository and push you code to it.
 
 --sep--
 ---
-title: Create a Azure Static Web App
+title: Create as Azure Static Web App
 ---
 
-## Create a Azure Static Web App
+## Create as Azure Static Web App
 
 In the <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>, look for `Static Web App` in the search bar. Once you are on the product page, click on the `Create` button at the top left. Or, you can directly click <a href="https://portal.azure.com/#create/Microsoft.StaticApp" target="_blank">here ^^</a>. This link will  take you directly to the Static Web App creation form.  
 
@@ -352,8 +352,8 @@ swa start ./www --api ./api --devserver-timeout=60000
 ```
 
 This CLI gives you two urls:
-* http://0.0.0.0:4280 corresponding to your frontend
-* http://localhost:7071/api/tasks corresonding to you api
+* <a href"ttp://localhost:4280" target="blank">ttp://localhost:4280</a> corresponding to your frontend
+* <a href="http://localhost:7071/api/tasks" tartet="_blank">http://localhost:7071/api/tasks</a> corresonding to you api
 
 <div class="box info">
 The CLI may take more time than usual to launch your Azure Function. The default timeout is 30 seconds but you can increase it using the "--devserver-timeout=60000" parameter
@@ -375,7 +375,7 @@ Azure Static Web Apps manages authentication out of the box. There are pre-confi
 When I said "out of the box", I really meant it. You don't need to do anything for most of the providers. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirect to `/.auth/login/github`.
 
 <div class="box assignment">
-Go add a button in the `login.html` page.
+Add a button in the login.html page to login your users.
 </div>
 
 By default, once logged in, your user is redirected to the same page. However, we would like our user to be redirected to our TODO page after successfully logging in. You can do that by using the `post_login_redirect_uri` query param at the end of the url. Eg. `?post_login_redirect_uri=/index.html` 
@@ -402,7 +402,7 @@ The userId is unique and can be used to identify the user. We will use it to ref
 
 <div class="box assignment">
 <div>
-Retrive the logged in user information and display the usernmae in the `<div id="username"></div>` element located at the top left of your webpage.
+Retrive the logged in user information and display the username in the \<div id=\"username\"\></div> element located at the top left of your webpage.
 </div>
 </div>
 
