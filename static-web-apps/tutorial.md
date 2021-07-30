@@ -25,7 +25,7 @@ To do this workshop, you will need:
 * VSCode
 * Node.js 12 or higher installed
 
---
+--sep--
 ---
 title: What is Azure Static Web Apps
 ---
