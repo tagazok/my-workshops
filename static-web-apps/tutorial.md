@@ -179,7 +179,7 @@ title: Let's add a backend
 
 Now that our TODO app is deployed, we want to make it interactive. Therefore, we want to interact with a backend!  
 
-Azure Static Web Apps relies on Azure Functions for your application backend. Azure Functions is an Azure Service which allows you to deploy simple functions triggered by events. In our case, events will be HTTP calls.
+Azure Static Web Apps relies on Azure Functions for your application backend. Azure Functions is an Azure Service which enables you to deploy simple functions triggered by events. In our case, events will be HTTP calls.
 
 <div class="box info">
 Ever heard of Serverless or FaaS (Function as a Service)? Well, this is what Azure Functions is ^^.
@@ -400,46 +400,57 @@ You may also be used to manage authorization on your backend for your API calls.
 
 Azure Static Web Apps give you the opportunity to handle http requests in a single file. Start by creating a file called `staticwebapp.config.json` in your www folder.
 
+There are many properties available to confiture your Static Web App but let's concentrate only on the few we need in our app.
 
-<div class="box info">
-https://docs.microsoft.com/en-us/azure/static-web-apps/configuration
-</div>
-
+The `routes` parameter is an array of all the rules for your routes. For example, in our case, we would like to prevent non-authorized users to call our API. We can do that very easily
 
 ```json
 {
-    "responseOverrides": {
-        "404": {
-            "redirect": "/404.html"
-        },
-        "401": {
-            "redirect": "/login.html"
-        }
-    },
-    "routes": [
-        {
-            "route": "/",
-            "allowedRoles": [
-                "authenticated"
-            ]
-        },
-        {
-            "route": "/api/tasks/*",
-            "allowedRoles": [
-                "authenticated"
-            ]
-        },
-        {
-            "route": "/api/users/*",
-            "allowedRoles": [
-                "authenticated"
-            ]
-        }
+   "routes": [
+      {
+          "route": "/api/tasks/*",
+          "allowedRoles": [
+              "authenticated"
+          ]
+      }
     ]
 }
 ```
 
-This is also very useful if you are doing a SPA (Single Page Application) where the routing is managed on the client side. You may then need to redirect all your urls to `index.html`
+What if we want to restrict part of our frontend to authenticated users? We can do exactly the same with any frontend route
+
+```json
+{
+   "routes": [
+      {
+          "route": "/",
+          "allowedRoles": [
+              "authenticated"
+          ]
+      }
+    ]
+}
+```
+
+Here, your website root will only be accessible to logged in users. Now, if you try that, you will notice that your users are redirected to a default 401 web page. We can customise that using another property of the config file. The `responseOverrides` property enables you to redirect a user to a specific page when an HTTP code is returned. Here, let's redirect all non-authenticated users to the login.html page
+
+```json
+{
+   "responseOverrides": {
+        "401": {
+            "redirect": "/login.html"
+        }
+    },
+}
+```
+
+<div class="exercise">
+Create a custom-404.html page in your www folder and add a rule to redirect users to this page when they enter a url which does not exist.
+</div>
+
+<div class="tip">
+This is also very useful if you are doing a SPA (Single Page Application) where the routing is managed on the client side. You may then need to redirect all your urls to `index.html`. Check the `navigationFallback` property in the documentation <a href="https://docs.microsoft.com/en-us/azure/static-web-apps/configuration" target="_blank">here</a>
+</div>
 
 --sep--
 ---
