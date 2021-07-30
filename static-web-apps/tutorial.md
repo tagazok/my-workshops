@@ -627,4 +627,3 @@ Title: MISC
 
 Topics:
 CI/CD preview branches (GitHub Actions) Video 4/16
-Edit app, api and output location in the github action (video 4/16)

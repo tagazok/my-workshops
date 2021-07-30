@@ -2,7 +2,7 @@
     "infos": {
         "title": "Azure Static Web Apps",
         "github": "https://github.com/tagazok/my-workshops",
-        "description": "Ce workshop, accessible à tous les développeurs même sans connaissance en IoT ou sur Azure -, vous permettra de découvrir la programmation sur des devices IoT avec (Arduino) et Visual Studio Code), ainsi que la création d'expériences connectées avec les services Azure)."
+        "description": "The workshops will show you how to develop an end to end web application with a frontend, a backend, a database and some authentication management using Azure Static Web Apps, Cosmos DB, VSCode and GitHub Actions"
     },
     "authors": [
         {
