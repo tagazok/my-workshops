@@ -114,7 +114,6 @@ Azure Static Web Apps can handle several well-known frontend frameworks and ther
 In our case, we have a very simple Vanilla JavaScript appliation which does not require anything to run. So, let's choose `Custom`.
 * In the `App location`, enter the `www/` folder as this is where our frontend is.
 * In the `Api location`, enter the `api/` folder as this is where our backend is.
-
 * Click on `Review + Create` and then on `Create`.
 
 After a few minutes, your static web app will be created on Azure and your website deployed.
@@ -470,47 +469,143 @@ This is also very useful if you are doing a SPA (Single Page Application) where 
 
 Congratulations, your website and your APIs are now secured and you have a seamless workflow for your users.
 
+--sep--
+---
+title: Store your data in a database
+---
+
+## Store your data in a database
+
+There are several databases available in Azure. One of the most powerful is `Cosmos DB`. Azure Cosmos DB is a fully managed NoSQL database which supports several query langages. When you create your Database, you can choose which API you want to use. Among the most popular one are `MongoDB`, `SQL` or `Cassandra`.
+
+### Setup your environment
+
+Let's go back to our Azure Function in VSCode. As we are using the Cosmos DB API, we will need a library to connect to it. In the `/api` folder, open the `package.json` file and add `"mongodb": "^4.0.1"` to the `dependencies` property. We will also need the `uuid` library later in the tutorial so, let's add both!
+
+```json
+...
+  "dependencies": {
+    "mongodb": "^4.0.1",
+    "uuid": "^8.3.2"
+  },
+...
+```
+
+In a termina, type `npm install` and hit enter. This will download the dependencies for you in the `node_modules` folder of your Azure Functions App.
+
+While you are in VSCode, let's install the `Azure Database` extension. This will allow you to explore your database and make queries from VSCode without having to go in the portal.  
+In the extension menu of VSCode, search for `Azure Database` or go the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb" target="_blank">online marketplace</a> and click on `Install`.
+
+
+### Create our database
+
+Go in the Azure portal and search for `Azure Cosmos DB`. Once on the product page, click on `Create` at the top left. For our application, we are going to use the `Mongo DB` API so select `Azure Cosmos DB API for MongoDB`
+
+* Select your subscription.
+* Select the same resource group you created for your project.
+* Enter a name to itendify your Cosmos DB account. This name should be unique.
+* Select the location where your database is going to be hosted. We recommand to use the closest location to your users. 
+* Select `Provisioned throughput` as there is a free tier
+* Select `Apply` when asked if you want to Apply the free tier discount
+* Click on `Review + Create` and then on `Create`.
+
+Creating the resource may take some time.
+
+Let's go back to VSCode. In the Azure Extension, you now have the `Database` tab where you should see the CosmosDB server you just created. If you don't see it, just click the refresh button.  
+Once you see your server, right click on it, select `Create Database` and give it a name. Once your database is created, right click on it, select `Create Collection` and name it `users` as it will be used to store our users.
+
+![Configuration des variables d'environnement dans Azure Function](media/create-db.png)
+
+### Add some data
+
+Let's focus on our existing Azure Functions. We will see later how to create a function to add new users and tasks to our database.  
+Right now, we just want to replace our tasks list stored in a json by the one in our database.
+
+In VSCode, right click on your `users` collection and select `Create Document`. Copy and paste the following json and make sure to replace the userId and the userDetails by the information of your logged in user. To find the userId, just login on on your app and go to `/.auth/me`
+
+```json
+{
+  "_id": {
+    "$oid": "AUTO-GENERATED"
+  },
+  "userId": "YOUT-USER-ID",
+  "identityProvider": "github",
+  "userDetails": "YOUR-USERNAME",
+  "tasks": [
+    {
+      "id": "fb9a3e5f-8e40-40ec-a031-ca2d1739b0d2",
+      "label": "Buy tomatoes",
+      "status": "checked"
+    },
+    {
+      "id": "fb9a3e5f-8e40-40ec-a031-ca2d1739b0d2",
+      "label": "Learn Azure",
+      "status": ""
+    },
+    {
+      "id": "71303a8d-d1b3-4264-94ed-30aa16e783d9",
+      "label": "Go to space",
+      "status": ""
+    }
+  ]
+}
+```
+### Let's code
+
+Now that we have our database setup and have added some data to it, let's make sure our user interface displays them!
+
+In your `tasks-get` Azure function, start by importing the  mongoClient from the mongodb library we installed earlier
+
+```javascript
+var mongoClient = require("mongodb").MongoClient;
+```
+
+We are now ready to go in our function code to retrieve the data from the database!  
+When your Static Web App calls the API, the logged in user information are sent to the function in the `x-ms-client-principal` HTTP headers. 
+You can use the code bellow to retrive the same user json you get in the `clientPrincipal` property when you go to `/.auth/me`.
+
+```javascript
+const header = req.headers['x-ms-client-principal'];
+const encoded = Buffer.from(header, 'base64');
+const decoded = encoded.toString('ascii');
+const user = JSON.parse(decoded);
+```
+
+The Mongo DB api is pretty simple to use:
+* First, your need to connect to your server
+```javascript
+const client = mongoClient.connect("YOUR-SERVER-CONNECTION-STRING");
+```
+
+You can find your server connection string in the Azure portal. But, as always, you can stay in your VSCode. In the Azure Storage extension, right click on your database server and select `Copy Connection String`.
+
+![Configuration des variables d'environnement dans Azure Function](media/connection-string.png)
+
+Once your are connected to your Cosmos DB server using the mongoDB API, you can use this connection to select a database
+```javascript
+const database = client.db("YOUR-DB-NAME");
+```
+Replace `YOUR-DB-NAME` but the name you put when you created your database.
+
+Then, just query the document where the userId is the same as the userId sent in the headers when your function is called
+```javascript
+const response = await database.collection("users").findOne({
+    userId: user.userId
+});
+```
+<div class="box assignment">
+  Update your Azure function so it returns the tasks in the database associated to your logged in user.
+</div>
+
+Test your website locally and push your changes to GitHub. The GitHub Action will be triggered and your website deployed. Go check the url, you should see the tasks of your database.
+
+![Configuration des variables d'environnement dans Azure Function](media/finish.png)
 
 --sep--
 ---
 Title: MISC
 ---
 
-
-`staticwebapp.config.json`
-
-So what do we want? We want the our JavaScript framework to handle the routes so we simply ask Staticweb app to redirect all urls to index.html
-
-However, we don't want our router to mess with our assets so let's exclude all the other resources like stylesheets or images.
-
-
-```
-
-However, you can still overide all the urls you want here. Let's say you have a new url for your products list as `products` makes more sense than `catelog`. You can easily do that in the `routes` object.
-
-```javascript
-{
-    ...,
-    "routes": [
-        {
-            "route": "/catalog",
-            "redirect": "/products"
-        }
-    ]
-}
-```
-
---sep--
----
-title: Store your data in a database
----
-
-There are several databases 
-
---sep--
----
-title: 
----
 
 
 Topics:
