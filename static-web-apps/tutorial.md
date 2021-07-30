@@ -657,7 +657,7 @@ However, in order to make your TODO app fully functional, you need to add a few 
 
 <div class="box assignment">
 <div>
-Create two new Azure Function. You don't need to create a new project, just create new function from VSCode.
+Create two new Azure Functions. You don't need to create a new project, just create new function from VSCode.
 <ul>
 <li>One Azure Function to add a new Task  .
 </ul>
