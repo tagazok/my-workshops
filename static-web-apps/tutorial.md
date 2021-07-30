@@ -628,6 +628,7 @@ You now know how to create and publish an app with a frontend, a backend, a data
 However, in order to make your app fully functional, you need to add a few more features. The good news? You have everything your need to do it!
 
 <div class="box assignment">
+<div>
 Create two new Azure Functions. You don't need to create a new project, just create new function from VSCode.
 <ul>
 <li>One Azure Function to add a new Task  .
@@ -639,6 +640,7 @@ We have already added the source code to call the API in the frontend you all yo
 </ul>
 You may have noticed that there is a <code>status</code> attribute in every task in your database. The value can be either <code>""</code> or <code>"checked"</code>. Right now, there is no way to change this status.   
 Write an Azure Function and the javascript code in your frontend to update this status.
+</div>
 </div>
 
 --sep--
