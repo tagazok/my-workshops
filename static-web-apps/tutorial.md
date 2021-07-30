@@ -670,3 +670,17 @@ You may have noticed that there is a <code>status</code> attribute in every task
 Write an Azure Function and the javascript code in your frontend to update this status.
 </div>
 </div>
+
+--sep--
+---
+Title: Conclusion
+---
+
+## Conclusion
+
+Congratulations, you've reach the end of this workshop!
+
+### Crédit
+This workshop was written by Olivier Leplus.
+
+Thanks to Maud Levy, ... and ... for the tests, reviews and feedback ❤️
