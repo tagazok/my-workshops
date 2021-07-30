@@ -15,12 +15,12 @@
         {
             "label": "Project template",
             "type": "fas fa-download",
-            "link": "https://github.com/tagazok/my-workshops/raw/master/static-web-app/data/swa-workshop.zip"
+            "link": "https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop.zip"
         },
         {
-          "label": "The Show me SWA video series",
-          "type": "fas fa-youtube",
-          "link": "https://www.youtube.com"
-      }
+            "label": "The Show me SWA video series",
+            "type": "fab fa-youtube",
+            "link": "https://www.youtube.com/watch?v=w-tLZjO6XMc&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG"
+        }
     ]
 }

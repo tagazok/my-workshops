@@ -84,7 +84,7 @@ Once upon a time, there was a website that needed a place to live, be visible to
 
 ### Download the website template
 
-Download the website from the resources tab in the sidebar or click <a href="" target="_blank">here</a>.
+Download the website from the resources tab in the sidebar or click <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop.zip" target="_blank">here</a>.
 
 ### Deploy your website on GitHub
 
