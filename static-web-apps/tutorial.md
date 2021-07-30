@@ -62,17 +62,27 @@ Oh, and did I forget to mention there is a Free plan for Static Web App? You can
 title: Setup your environment using dev container
 ---
 
-Don't know what a dev container is ? see video
+There is not much you need to start working with `Azure Static Web Apps`. If you already have all the requirements listed at the begining of the workshop, you are good to go. We will see at each step what are the extensions you will need to install.
 
-// TODO: Check if need docker ?
+However, if you don't want to install everything or don't want to remember what is needed to build and deploy a Static Web App, we've got you cover.
 
-Click on the remote development extension icon and select `Add Development Container Configuration Files...` and search for `Azure Static Web Apps`
+Open your VSCode and search for the `Remote - Containers` extension of go <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" target="_blank">here</a> and click `Install`.
 
-A few files will be added to your project with all the container configurations
+The Remote - Containers extension lets you use a Docker container as a full-featured development environment. The best part is the extension comes with a list of containers already setup for you.
 
-Click again on the remote development extension icon to reopen your project in a container.
+Open the VSCode command panel usting `Ctrl + Shift + p` and search for `Add Development Container Configuration Files...`. This will show you a list of pre-configured containers. Serach for `Azure Static Web Apps` and hit Enter.
 
-So what just happened? A docker image is mounted with all the tools you need to work on your Progressive Web App
+![Add a Dev Container](media/dev-container.png)
+
+This will add a few files to your project with all the container configurations.
+
+You now need to reopen your project in the container. To do so, open the VSCode command panel and search for `Reopen in container`. Wait a few seconds until the docker image is ready and you are ready to go. You now have all the tools installed to work with Static Web Apps.
+
+<div class="box info">
+<div>
+The Container Extension uses Docker. If you don't have Docker already installed on your computer, go on <a href="https://www.docker.com/get-started">https://www.docker.com/get-started</a> to download and install it.
+</div>
+</div>
 
 
 --sep--
@@ -88,7 +98,7 @@ Download the website from the resources tab in the sidebar or click <a href="htt
 
 ### Deploy your website on GitHub
 
-Azure Static Web Apps has been built from the start to work with GitHub so, the first thing you will do is to create a new GitHub repo and push the source code you just downloaded.
+Azure Static Web Apps has been built from the begining to work with GitHub so, the first thing you will do is to create a new GitHub repo and push the source code you just downloaded.
 
 Go to <a href="https://github.com/" target="_blank">Github.com</a>, create a new repository and push you code to it.
 
