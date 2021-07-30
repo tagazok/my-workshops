@@ -10,5 +10,17 @@
             "url": "https://twitter.com/olivierleplus",
             "avatar": "olivier.png"
         }
+    ],
+    "resources": [
+        {
+            "label": "Project template",
+            "type": "fas fa-download",
+            "link": "https://github.com/tagazok/my-workshops/raw/master/static-web-app/data/swa-workshop.zip"
+        },
+        {
+          "label": "The Show me SWA video series",
+          "type": "fas fa-youtube",
+          "link": "https://www.youtube.com"
+      }
     ]
 }
