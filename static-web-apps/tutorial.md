@@ -478,7 +478,7 @@ Here, we simply tell our Static Web App to redirect every 401 response to the lo
 Create a custom-404.html page in your www folder and add a rule to redirect users to this page when they enter a url which does not exist.
 </div>
 
-Now, try to go to a non-existing page on your website like `/hello.html`. You should be redirected to the `404.html` page you just created.
+Now, try to go to a non-existing page on your website like `/hello.html`. You should be redirected to the `custom-404.html` page you just created.
 
 <div class="tip">
 This is also very useful if you are doing a SPA (Single Page Application) where the routing is managed on the client side. You may then need to redirect all your urls to `index.html`. Check the `navigationFallback` property in the documentation <a href="https://docs.microsoft.com/en-us/azure/static-web-apps/configuration" target="_blank">here</a>
@@ -617,6 +617,29 @@ const response = await database.collection("users").findOne({
 Test your website locally and push your changes to GitHub. The GitHub Action will be triggered and your website deployed. Go check the url, you should see the tasks of your database.
 
 ![Configuration des variables d'environnement dans Azure Function](media/finish.png)
+
+
+--sep--
+---
+Title: Bonus
+---
+
+You now know how to create and publish an app with a frontend, a backend, a database and some user authentication.
+However, in order to make your app fully functional, you need to add a few more features. The good news? You have everything your need to do it!
+
+<div class="box assignment">
+Create two new Azure Functions. You don't need to create a new project, just create new function from VSCode.
+<ul>
+<li>One Azure Function to add a new Task  .
+</ul>
+We have already added the source code to call the API in the frontend you all you need to do is to create the Azure Function and connect it to the database.   
+
+<ul>
+<li>One Azure Function to check the tasks</li>
+</ul>
+You may have noticed that there is a <code>status</code> attribute in every task in your database. The value can be either <code>""</code> or <code>"checked"</code>. Right now, there is no way to change this status.   
+Write an Azure Function and the javascript code in your frontend to update this status.
+</div>
 
 --sep--
 ---
