@@ -279,7 +279,7 @@ const tasks = [
     {
         id: 2,
         label: "🛏 Sleep",
-      status: ""
+        status: ""
     },
     {
         id: 3,
@@ -673,24 +673,32 @@ Title: Bonus
 
 ## Bonus
 
+### Finish your application
+
 You now know how to create and publish an app with a frontend, a backend, a database and some user authentication.
 However, in order to make your TODO app fully functional, you need to add a few more features. The good news? You have everything your need to do it!
 
+#### Add a new task
+
 <div class="box assignment">
-<div>
-Create two new Azure Functions. You don't need to create a new project, just create new function from VSCode.
-<ul>
-<li>One Azure Function to add a new Task  .
-</ul>
+Create one Azure Function to add a new Task. You don't need to create a new project, just create new function from VSCode.
+</div>
+
 We have already added the source code to call the API in the frontend so all you need to do is to create the Azure Function and connect it to the database.   
 
-<ul>
-<li>One Azure Function to check the tasks</li>
-</ul>
+#### Update a task
+
 You may have noticed that there is a <code>status</code> attribute in every task in your database. The value can be either <code>""</code> or <code>"checked"</code>. Right now, there is no way to change this status.   
+
+
+<div class="box assignment">
 Write an Azure Function and the javascript code in your frontend to update this status.
 </div>
-</div>
+
+
+### Monitor your app
+
+// TODO Application Insights
 
 --sep--
 ---
@@ -704,4 +712,3 @@ Congratulations, you've reach the end of this workshop!
 ### Crédit
 This workshop was written by Olivier Leplus.
 
-Thanks to Maud Levy, ... and ... for the tests, reviews and feedback ❤️
