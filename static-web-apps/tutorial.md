@@ -57,6 +57,34 @@ aka.ms/swadocs" target="_blank">https://aka.ms/swadocs</a>
 
 Oh, and did I forget to mention there is a Free tier for Static Web Apps? You can start using it for free and only pay once your application gets popular!
 
+
+--sep--
+---
+title: Start with a website
+---
+
+## Start with a website
+
+Once upon a time, there was a website that needed a place to live, be visible to the world and a backend to be more interactive.
+
+### Download the website template
+
+Download the website from the resources tab in the sidebar or click <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop.zip" target="_blank">here</a>.
+
+### Deploy your website on GitHub
+
+Azure Static Web Apps has been built from the begining to work with GitHub. So, the first thing you will do is create a new GitHub repository and push the source code you just downloaded.
+
+<div class="box assignment">
+<div>
+Go to <a href="https://github.com/" target="_blank">Github.com</a>, create a new repository and push you code to it.
+</div>
+</div>
+
+
+You now have your projet. Open the `swa-workshop` in VSCode.
+
+
 --sep--
 ---
 title: Setup your environment using a container
@@ -86,29 +114,6 @@ The Container Extension uses Docker. If you don't have Docker already installed 
 </div>
 </div>
 
-
---sep--
----
-title: Start with a website
----
-
-## Start with a website
-
-Once upon a time, there was a website that needed a place to live, be visible to the world and a backend to be more interactive.
-
-### Download the website template
-
-Download the website from the resources tab in the sidebar or click <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop.zip" target="_blank">here</a>.
-
-### Deploy your website on GitHub
-
-Azure Static Web Apps has been built from the begining to work with GitHub. So, the first thing you will do is create a new GitHub repository and push the source code you just downloaded.
-
-<div class="box assignment">
-<div>
-Go to <a href="https://github.com/" target="_blank">Github.com</a>, create a new repository and push you code to it.
-</div>
-</div>
 
 --sep--
 ---
@@ -149,9 +154,15 @@ Azure Static Web Apps can handle several well-known frontend frameworks and ther
 In our case, we have a very simple Vanilla JavaScript appliation which does not require anything to run. So, let's choose `Custom`.
 * In the `App location`, enter the `www/` folder as this is where our frontend is.
 * In the `Api location`, enter the `api/` folder as this is where our backend is.
+* In the `Optput`, enter the `www/` folder as your frontend does not need any build system to run.
+
+![Enter GitHub information when creating SWA](media/swa-github.png)
+
 * Click on `Review + Create` and then on `Create`.
 
 After a few minutes, your static web app will be created on Azure and your website deployed.
+
+Once the resource is created, `pull` your code as a few files have been added to your GitHub repo by Azure.
 
 ## So, what just happened?
 
@@ -236,7 +247,7 @@ You can download the extension either directly from the `Extension panel (Ctrl +
 Azure functions live in an Azure Functions App. When you create your app, a function will be created. You can then add several functions it. 
 So, let's create our Functions App and a Function to retrieve our task list.
 
-* In VSCode, open the Command panel and search for `Azure Functions: Create Function App in Azure`. 
+* In VSCode, open the Command panel and search for `Azure Functions: Create new project`. 
 * Select the `api` folder. This is where our Function App will be created.
 * Choose `JavaScript` as this is the langage we are going to use to write our Function.
 
@@ -275,7 +286,7 @@ const tasks = [
         label: "</> Code",
         status: ""
     }
-]
+];
 ```
 
 <div class="box assignment">
@@ -395,7 +406,9 @@ Azure Static Web Apps manages authentication out of the box. There are pre-confi
 When I said "out of the box", I really meant it. You don't need to do anything for most of the providers. Let's use the GitHub one for our application. The only thing you will have to do is a button that redirects to `/.auth/login/github`.
 
 <div class="box assignment">
-Add a button in the login.html so your users can sign in using GitHub.
+<div>
+Add a button in the login.html so your users can sign in using GitHub. Then, navitage to <a href="http://localhost:4280/login.html" target="_blank">http://localhost:4280/login.html</a>.
+</div>
 </div>
 
 By default, once logged in, your users are redirected to the same page. However, we would like our users to be redirected to our TODO page after successfully logging in. You can do that by using the `post_login_redirect_uri` query param at the end of the url.  
@@ -423,7 +436,7 @@ The `userId` is unique and can be used to identify the user. We will use it late
 
 <div class="box assignment">
 <div>
-Retrieve the logged-in user information and display the username in the <code>&lt;div id=&quot;username&quot;&gt;&lt;/div&gt;</code> element located at the top left of your webpage.
+Complete the <code>getUser()</code> methor to retrieve the logged-in user information and display the username in the <code>&lt;div id=&quot;username&quot;&gt;&lt;/div&gt;</code> element located at the top left of your webpage.
 </div>
 </div>
 
@@ -442,6 +455,12 @@ In many cases, your routes will be managed by your frontend, especially if you a
 You may also be used to managing authorization on your backend for your API calls.
 
 Azure Static Web Apps offers you the possibility to handle http requests in a single file. Start by creating a file called `staticwebapp.config.json` in your `www` folder.
+
+<div class="box info">
+<div>
+Yout need to restart the CLI each time your make a change in the <code>staticwebapp.config.json</code> file
+</div>
+</div>
 
 ### Secure our website and APIs
 
