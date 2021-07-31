@@ -636,10 +636,10 @@ Let's see how the mongoDB API works:
 * First, your need to connect to your server
 
 ```javascript
-const client = mongoClient.connect("YOUR-SERVER-CONNECTION-STRING");
+const client = await mongoClient.connect("YOUR-SERVER-CONNECTION-STRING");
 ```
 
-You can find your server connection string in the Azure portal. But, as always, you can stay in your VSCode. In the Azure Storage extension, right click on your database server and select `Copy Connection String`.
+You can find your server connection string in the Azure portal. But, as always, you can stay in your VSCode. In the Azure Database extension, right click on your database server and select `Copy Connection String`.
 
 ![Retrive your Cosmos DB connection string](media/connection-string.png)
 
@@ -650,11 +650,13 @@ const database = client.db("YOUR-DB-NAME");
 Replace `YOUR-DB-NAME` by the name you entered when you created your database.
 
 Then, just query the document where the userId property is the same as the userId sent in the headers when your function is called
+
 ```javascript
 const response = await database.collection("users").findOne({
     userId: user.userId
 });
 ```
+
 <div class="box assignment">
   Update your Azure function so it returns the tasks in the database associated to your logged in user.
 </div>
