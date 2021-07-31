@@ -688,11 +688,12 @@ However, in order to make your TODO app fully functional, you need to add a few 
 
 #### Add a new task
 
+We have already added the source code to call the API in the frontend so all you need to do is to create the Azure Function and connect it to the database.  
+
 <div class="box assignment">
 Create one Azure Function to add a new Task. You don't need to create a new project, just create new function from VSCode.
 </div>
 
-We have already added the source code to call the API in the frontend so all you need to do is to create the Azure Function and connect it to the database.   
 
 #### Update a task
 
