@@ -384,7 +384,7 @@ This CLI gives you two urls:
 * <a href="http://localhost:4280" target="blank">http://localhost:4280</a> corresponding to your frontend.
 * <a href="http://localhost:7071/api/tasks" tartet="_blank">http://localhost:7071/api/tasks</a> corresonding to you api.
 
-<div class="box info">
+<div class="box tip">
 <div>
 The CLI may take more time than usual to launch your Azure Function, especially the first time. The default timeout is 30 seconds but you can increase it by using the <code>--devserver-timeout=60000</code> parameter
 </div>
