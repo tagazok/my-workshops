@@ -377,7 +377,7 @@ The CLI offers many options but in our case, we want it to serve both our API lo
 In your terminal, type the following command to start your project:
 
 ```bash
-swa start ./www --api ./api --devserver-timeout=60000
+swa start ./www --api ./api
 ```
 
 This CLI gives you two urls:
