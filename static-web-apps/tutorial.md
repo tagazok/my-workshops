@@ -720,10 +720,4 @@ Congratulations, you've reach the end of this workshop!
 
 ## Solution
 
-You can download the complete code with the features to add and update a task <a href="" target="_blank">here</a>
-
-## Credits
-
-This workshop was written by <a href="https://twitter.com/olivierleplus" target="_blank">Olivier Leplus</a>.
-
-Thanks to <a href="https://twitter.com/maudstweets" target="_blank">Maud Levy</a>, ..., ... & ... for the feedback and to all the persons who reviewed the workshop
+You can download the complete code with the features to add and update a task <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop-final.zip" target="_blank">here</a>
