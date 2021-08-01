@@ -572,16 +572,16 @@ Go in the Azure portal and search for `Azure Cosmos DB`. Once on the product pag
 Creating the resource may take some time so grab a cup of hot chocolate and be ready to deal with Cosmos DB!
 
 Let's go back to VSCode. In the Azure Extension, you now have the `Database` tab where you should see the CosmosDB server you just created. If you don't see it, just click the refresh button.  
-Once you see your server, right click on it, select `Create Database` and give it a name. Once your database is created, right click on it, select `Create Collection` and name it `users` as it will be used to store our users.
+Once you see your server, right click on it, select `Create Database` and give it a name. Once your database is created, right click on it, select `Create Collection` and name it `tasks` as it will be used to store our tasks.
 
 ![Create a Cosmos DB database](media/create-db.png)
 
 ### Add some data
 
-Let's focus on our existing Azure Functions. We will see later how to create a function to add new users and tasks to our database.  
+Let's focus on our existing Azure Functions. We will see later how to create a function to add new tasks in our database.  
 Right now, we just want to get our tasks from the database instead of the json array we created earlier in our function.
 
-In VSCode, right click on your `users` collection and select `Create Document`. Copy and paste a task of the following json and make sure to replace the userId by the one of your logged in user. To find the userId, just log into your web application and navigate to `/.auth/me`
+In VSCode, right click on your `tasks` collection and select `Create Document`. Copy and paste a task of the following json and make sure to replace the userId by the one of your logged in user. To find the userId, just log into your web application and navigate to `/.auth/me`
 
 ```json
 {
@@ -624,7 +624,7 @@ Now that we have our database setup and have added some data to it, let's make s
 In your `tasks-get` Azure function, start by importing the  mongoClient from the mongodb library we installed earlier
 
 ```javascript
-var mongoClient = require("mongodb").MongoClient;
+const mongoClient = require("mongodb").MongoClient;
 ```
 
 When your Static Web App calls the API, the user information is sent to the function in the `x-ms-client-principal` HTTP header. 
