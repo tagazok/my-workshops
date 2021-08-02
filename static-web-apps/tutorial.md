@@ -709,6 +709,6 @@ Title: Conclusion
 
 Congratulations, you've reach the end of this workshop!
 
-### Crédit
-This workshop was written by Olivier Leplus.
+## Solution
 
+You can download the complete code with the features to add and update a task <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop-final.zip" target="_blank">here</a>
