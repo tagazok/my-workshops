@@ -377,14 +377,14 @@ The CLI offers many options but in our case, we want it to serve both our API lo
 In your terminal, type the following command to start your project:
 
 ```bash
-swa start ./www --api ./api --devserver-timeout=60000
+swa start ./www --api ./api
 ```
 
 This CLI gives you two urls:
 * <a href="http://localhost:4280" target="blank">http://localhost:4280</a> corresponding to your frontend.
 * <a href="http://localhost:7071/api/tasks" tartet="_blank">http://localhost:7071/api/tasks</a> corresonding to you api.
 
-<div class="box info">
+<div class="box tip">
 <div>
 The CLI may take more time than usual to launch your Azure Function, especially the first time. The default timeout is 30 seconds but you can increase it by using the <code>--devserver-timeout=60000</code> parameter
 </div>
@@ -506,7 +506,7 @@ Here, your website root will only be accessible to logged in users.
 {
    "responseOverrides": {
         "401": {
-            "redirect": "/login.html"
+            "rewrite": "/login.html"
         }
     },
 }
@@ -541,13 +541,12 @@ There are several databases available on Azure. One of the most powerful one is 
 
 ### Setup your environment
 
-Let's go back to our Azure Function in VSCode. As we are using the Cosmos DB API, we will need a library to connect to our database. In the `/api` folder, open the `package.json` file and add `"mongodb": "^4.0.1"` to the `dependencies` property. We will also need the `uuid` library later in the tutorial so, let's add both!
+Let's go back to our Azure Function in VSCode. As we are using the Cosmos DB API, we will need a library to connect to our database. In the `/api` folder, open the `package.json` file and add `"mongodb": "^4.0.1"` to the `dependencies` property.
 
 ```json
 ...
   "dependencies": {
-    "mongodb": "^4.0.1",
-    "uuid": "^8.3.2"
+    "mongodb": "^4.0.1"
   },
 ...
 ```
@@ -573,16 +572,16 @@ Go in the Azure portal and search for `Azure Cosmos DB`. Once on the product pag
 Creating the resource may take some time so grab a cup of hot chocolate and be ready to deal with Cosmos DB!
 
 Let's go back to VSCode. In the Azure Extension, you now have the `Database` tab where you should see the CosmosDB server you just created. If you don't see it, just click the refresh button.  
-Once you see your server, right click on it, select `Create Database` and give it a name. Once your database is created, right click on it, select `Create Collection` and name it `users` as it will be used to store our users.
+Once you see your server, right click on it, select `Create Database` and give it a name. Once your database is created, right click on it, select `Create Collection` and name it `tasks` as it will be used to store our tasks.
 
 ![Create a Cosmos DB database](media/create-db.png)
 
 ### Add some data
 
-Let's focus on our existing Azure Functions. We will see later how to create a function to add new users and tasks to our database.  
+Let's focus on our existing Azure Functions. We will see later how to create a function to add new tasks in our database.  
 Right now, we just want to get our tasks from the database instead of the json array we created earlier in our function.
 
-In VSCode, right click on your `users` collection and select `Create Document`. Copy and paste the following json and make sure to replace the userId and the userDetails by the information of your logged in user. To find the userId, just log into your web application and navigate to `/.auth/me`
+In VSCode, right click on your `tasks` collection and select `Create Document`. Copy and paste a task of the following json and make sure to replace the userId by the one of your logged in user. To find the userId, just log into your web application and navigate to `/.auth/me`
 
 ```json
 {
@@ -590,25 +589,32 @@ In VSCode, right click on your `users` collection and select `Create Document`. 
     "$oid": "AUTO-GENERATED"
   },
   "userId": "YOUT-USER-ID",
-  "identityProvider": "github",
-  "userDetails": "YOUR-USERNAME",
-  "tasks": [
-    {
-      "id": "fb9a3e5f-8e40-40ec-a031-ca2d1739b0d2",
-      "label": "Buy tomatoes",
-      "status": "checked"
-    },
-    {
-      "id": "fb9a3e5f-8e40-40ec-a031-ca2d1739b0d2",
-      "label": "Learn Azure",
-      "status": ""
-    },
-    {
-      "id": "71303a8d-d1b3-4264-94ed-30aa16e783d9",
-      "label": "Go to space",
-      "status": ""
-    }
-  ]
+  "label": "Buy tomatoes",
+  "status": "checked"
+}
+```
+
+Do it again for the two following tasks
+
+```json
+{
+  "_id": {
+    "$oid": "AUTO-GENERATED"
+  },
+  "userId": "YOUT-USER-ID",
+  "label": "Learn Azure",
+  "status": ""
+}
+```
+
+```json
+{
+  "_id": {
+    "$oid": "AUTO-GENERATED"
+  },
+  "userId": "YOUT-USER-ID",
+  "label": "Go to space",
+  "status": ""
 }
 ```
 ### Let's code
@@ -618,7 +624,7 @@ Now that we have our database setup and have added some data to it, let's make s
 In your `tasks-get` Azure function, start by importing the  mongoClient from the mongodb library we installed earlier
 
 ```javascript
-var mongoClient = require("mongodb").MongoClient;
+const mongoClient = require("mongodb").MongoClient;
 ```
 
 When your Static Web App calls the API, the user information is sent to the function in the `x-ms-client-principal` HTTP header. 
@@ -652,9 +658,11 @@ Replace `YOUR-DB-NAME` by the name you entered when you created your database.
 Then, just query the document where the userId property is the same as the userId sent in the headers when your function is called
 
 ```javascript
-const response = await database.collection("users").findOne({
+const response = await database.collection("tasks").find({
     userId: user.userId
 });
+
+const tasks = await response.toArray();
 ```
 
 <div class="box assignment">
@@ -680,11 +688,12 @@ However, in order to make your TODO app fully functional, you need to add a few 
 
 #### Add a new task
 
+We have already added the source code to call the API in the frontend so all you need to do is to create the Azure Function and connect it to the database.  
+
 <div class="box assignment">
 Create one Azure Function to add a new Task. You don't need to create a new project, just create new function from VSCode.
 </div>
 
-We have already added the source code to call the API in the frontend so all you need to do is to create the Azure Function and connect it to the database.   
 
 #### Update a task
 
