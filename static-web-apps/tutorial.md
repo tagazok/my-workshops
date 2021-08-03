@@ -67,17 +67,33 @@ title: Start with a website
 
 Once upon a time, there was a website that needed a place to live, be visible to the world and a backend to be more interactive.
 
-### Download the website template
+There are two ways you can start using the project template
+
+### From a GitHub Template
+
+Go to <a href="https://github.com/tagazok/swa-workshop" target="_blank">this repository</a> and click on `Use this template`. 
+
+![Add a Dev Container](media/githubtemplate.png)
+
+You will be redirected to the repository creation page. Just enter a name for your new repository and click on `Create repository from template`.
+
+### From a zip fils
+#### Download the website template
 
 Download the website from the resources tab in the sidebar or click <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop.zip" target="_blank">here</a>.
 
-### Deploy your website on GitHub
+#### Deploy your website on GitHub
 
 Azure Static Web Apps has been built from the begining to work with GitHub. So, the first thing you will do is create a new GitHub repository and push the source code you just downloaded.
 
+
 <div class="box assignment">
 <div>
-Go to <a href="https://github.com/" target="_blank">Github.com</a>, create a new repository and push you code to it.
+Choose your path
+<ul>
+<li>Create the repository from the GitHub Template</li>
+<li>Go to <a href="https://github.com/" target="_blank">Github.com</a>, create a new repository and push you code to it.</li>
+</ul>
 </div>
 </div>
 
@@ -91,6 +107,9 @@ title: Setup your environment using a container
 ---
 
 ## Setup your environment using a container
+
+**Note:** This step is optional. You can either use a container like described below, or install all the tools yourself as we walk through the workshop.
+
 
 There is not much you need to start working with `Azure Static Web Apps`. If you already have all the requirements listed at the begining of the workshop, you are good to go. We will see at each step what are the tools and the VSCode extensions you will need to install.
 
