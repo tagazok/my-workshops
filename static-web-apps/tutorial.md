@@ -678,7 +678,7 @@ It's not safe to store your private key or connection strings in your code. Azur
 To check how to add your Mongo DB connection string in the environment variavles of your Static Web App, check this quick video.
 
 <a href="https://www.youtube.com/watch?v=R9qhGra9FHs&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&t=112s" target="_blank">
-  <img src="media/swa-tips-video-environment.webp">
+  <img src="media/swa-tips-video-environment.png">
 </a>
 
 #### The quick and dirty way
