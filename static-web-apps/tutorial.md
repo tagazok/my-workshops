@@ -675,9 +675,9 @@ It's not safe to store your private key or connection strings in your code. Azur
 // TODO
 To check how to add your Mongo DB connection string in the environment variavles of your Static Web App, check this quick video.
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=R9qhGra9FHs&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&t=112s" title="Add your Cosmos DB env variable in your SWA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+<a href="https://www.youtube.com/watch?v=R9qhGra9FHs&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&t=112s" target="_blank">
+  <img src="media/swa-tips-video-environment.webp">
+</a>
 
 #### The quick and dirty way
 
