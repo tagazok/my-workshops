@@ -774,6 +774,4 @@ You can download the complete code with the features to add and update a task <a
 
 This workshop was created by <a href="" target="_blank">Olivier Leplus</a>
 
-Thanks to Maud Levy, Simon Waight, Christophe Harrison, Sylvain Pontoreau
-
-Bruce Lane
+Thanks to <a href="https://twitter.com/maudstweetse" target="_blank">Maud Levy</a>, <a href="https://twitter.com/simonwaight" target="_blank">Simon Waight</a>, Christophe Harrison, Sylvain Pontoreau for their feedback
