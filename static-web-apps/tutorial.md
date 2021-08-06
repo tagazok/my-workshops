@@ -71,7 +71,7 @@ There are two ways you can start using the project template
 
 ### From a GitHub Template
 
-Go to <a href="https://github.com/tagazok/swa-workshop" target="_blank">this repository</a> and click on `Use this template`. 
+Go to <a href="https://github.com/tagazok/swa-workshop" target="_blank">this GitHub repository</a> and click on `Use this template`. 
 
 ![Add a Dev Container](media/githubtemplate.png)
 
@@ -92,7 +92,7 @@ Azure Static Web Apps has been built from the begining to work with GitHub. So, 
 Choose your path
 <ul>
 <li>Create the repository from the GitHub Template</li>
-<li>Go to <a href="https://github.com/" target="_blank">Github.com</a>, create a new repository and push you code to it.</li>
+<li>Go to <a href="https://github.com/" target="_blank">Github.com</a>, create a new repository and push your code to it.</li>
 </ul>
 </div>
 </div>
@@ -173,7 +173,7 @@ Azure Static Web Apps can handle several well-known frontend frameworks and ther
 In our case, we have a very simple Vanilla JavaScript appliation which does not require anything to run. So, let's choose `Custom`.
 * In the `App location`, enter the `www/` folder as this is where our frontend is.
 * In the `Api location`, enter the `api/` folder as this is where our backend is.
-* In the `Optput`, enter the `www/` folder as your frontend does not need any build system to run.
+* In the `Output`, enter the `www/` folder as your frontend does not need any build system to run.
 
 ![Enter GitHub information when creating SWA](media/swa-github.png)
 
@@ -660,13 +660,28 @@ const user = JSON.parse(decoded);
 Let's see how the mongoDB API works:
 * First, your need to connect to your server
 
+In order to connect your application to your database, you will need a connection string.  
+You can find your server connection string in the Azure portal. But, as always, you can stay in your VSCode. In the Azure Database extension, right click on your database server and select `Copy Connection String`.
+
+![Retrive your Cosmos DB connection string](media/connection-string.png)
+
+Now, let's connect!  
+You have two ways to connect, a clean and secure way and the quick and dirty way
+
+#### The clean and secure way
+
+It's not safe to store your private key or connection strings in your code. Azure Static Web Apps porovides a way to store environment variables that you can then use in your app.
+
+// TODO
+Add you connection string in the enviromnent variables of your Static Web App in the Azure Portal.
+
+#### The quick and dirty way
+
 ```javascript
 const client = await mongoClient.connect("YOUR-SERVER-CONNECTION-STRING");
 ```
 
-You can find your server connection string in the Azure portal. But, as always, you can stay in your VSCode. In the Azure Database extension, right click on your database server and select `Copy Connection String`.
-
-![Retrive your Cosmos DB connection string](media/connection-string.png)
+### Request your data
 
 Once your are connected to your Cosmos DB server using the mongoDB API, you can use this connection to select a database
 ```javascript
@@ -726,7 +741,15 @@ Write an Azure Function and the javascript code in your frontend to update this 
 
 ### Monitor your app
 
-// TODO Application Insights
+You now know how to create ressources on Azure and how connection string work. 
+
+You may have noticed that, once deployed, we don't have any log for our app. Therefore, we have no way to know what happens.
+
+<div class="box assignment">
+<div>
+Create an <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview" target="_blank">App Insights</a> resource in your ressource group and connect it to your Static Web App.
+</div>
+</div>
 
 --sep--
 ---
@@ -740,3 +763,11 @@ Congratulations, you've reach the end of this workshop!
 ## Solution
 
 You can download the complete code with the features to add and update a task <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop-final.zip" target="_blank">here</a>
+
+## Credits
+
+This workshop was created by <a href="" target="_blank">Olivier Leplus</a>
+
+Thanks to Maud Levy, Simon Waight, Christophe Harrison, Sylvain Pontoreau
+
+Bruce Lane
