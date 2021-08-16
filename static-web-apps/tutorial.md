@@ -77,7 +77,7 @@ Go to <a href="https://github.com/tagazok/swa-workshop" target="_blank">this Git
 
 You will be redirected to the repository creation page. Just enter a name for your new repository and click on `Create repository from template`.
 
-### From a zip fils
+### From a zip file
 #### Download the website template
 
 Download the website from the resources tab in the sidebar or click <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop.zip" target="_blank">here</a>.
@@ -106,7 +106,7 @@ You now have your projet. Open the `swa-workshop` in VSCode.
 title: Setup your environment using a container
 ---
 
-## Setup your environment using a container
+## Setup your environment using a dev container
 
 **Note:** This step is optional. You can either use a container like described below, or install all the tools yourself as we walk through the workshop.
 
@@ -419,6 +419,10 @@ title: Add authentication
 ## Add authentication
 
 Azure Static Web Apps manages authentication out of the box. There are pre-configured providers but you can add you own custom providers if needed. Among the pre-configured ones are `Twitter`, `Google`, `Microsoft`, `GitHub` and others.
+
+<div class="box info">
+If you are using the CLI, you won't really be connecting to the selected provider. The CLI offers a proxy to simulare the connection to the provider and gives you a fake userId.
+</div>
 
 ### Sign in & Sign out
 
