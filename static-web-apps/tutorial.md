@@ -72,7 +72,7 @@ There are two ways you can start using the project template for this workshop
 
 Go to <a href="https://github.com/tagazok/swa-workshop" target="_blank">this GitHub repository</a> and click on `Use this template`. 
 
-![Add a Dev Container](images/githubtemplate.png)
+![Add a Dev Container](media/githubtemplate.png)
 
 You will be redirected to the repository creation page. Just enter a name for your new repository and click on `Create repository from template`.
 
@@ -116,7 +116,7 @@ The `Remote - Containers` extension lets you use a Docker container as a fully-f
 
 So, open the VSCode command panel usting `Ctrl + Shift + p` and search for `Add Development Container Configuration Files...`. This will show you a list of pre-configured containers. Search for `Azure Static Web Apps` and hit Enter.
 
-![Add a Dev Container](images/dev-container.png)
+![Add a Dev Container](media/dev-container.png)
 
 A a few files will be aded to your project with all the container configurations.
 
@@ -170,13 +170,13 @@ In our case, we have a very simple JavaScript appliation which does not require 
 * In the `Api location`, enter the `api/` folder as this is where our backend is.
 * In the `Output`, enter the `www/` folder as your frontend does not need any build system to run.
 
-![Enter GitHub information when creating SWA](images/swa-github.png)
+![Enter GitHub information when creating SWA](media/swa-github.png)
 
 * Click on `Review + Create` and then on `Create`.
 
 After a few minutes, your Static Web App will be created on Azure and your website deployed.
 
-Once the Azure Resources are created, you should `pull` your repository in VSCode as a few files have been added to your GitHub repo by Azure.
+Once the resource is created, you should `pull` your repository in VSCode as a few files have been added to your GitHub repo by Azure.
 
 ## So, what just happened?
 
@@ -219,7 +219,7 @@ The YAML file is in your GitHub repository so you can edit it! Your frontend sit
 
 Now, go to your GitHub repository in a web browser and click on the `Actions` tab. Here, you will see the list of all the GitHub Actions that have been triggered so far. Click on the last one to see your application being deployed.
 
-![Check your GitHub Actions](images/github-actions.png)
+![Check your GitHub Actions](media/github-actions.png)
 
 ### On Azure
 
@@ -227,7 +227,7 @@ Once your Static Web App is created, go to the Resource page. You can find the l
 
 In the Overview panel of your Static Web App, look for the `URL` parameter. This is the url of your website. 
 
-![Resource overview of your project](images/resource-overview.png)
+![Resource overview of your project](media/resource-overview.png)
 
 Open the link and you can see that your TODO list app has been deployed and is accessible to the world!
 
@@ -439,7 +439,7 @@ If you are building a React app, go <a href="https://docs.microsoft.com/learn/mo
 
 ### Getting user information
 
-Once your user is authenticated, you can retrieve the user's information by fetching the url `/.auth/me`. This will return JSON containing a clientPrincipal object. If the object is null, the user is not authenticated. Otherwise, the object contains data like the provider, the roles and the username.
+Once your user is authenticated, you can retrieve the user's information by fetching the url `/.auth/me`. This will return some JSON containing a clientPrincipal object. If the object is null, the user is not authenticated. Otherwise, the object contains data like the provider, the roles and the username.
 
 ```json
 {
@@ -457,7 +457,7 @@ Complete the <code>getUser()</code> methor to retrieve the logged-in user inform
 </div>
 </div>
 
-![Your TODO app is running](images/todo.png)
+![Your TODO app is running](media/todo.png)
 
 Congratulations, you can now log into your app! 🥳
 
@@ -559,7 +559,7 @@ There are several databases available on Azure. One of the most powerful ones is
 
 ### Setup your dev environment
 
-Let's go back to our Azure Function in VSCode. We will be the using Cosmos DB MongoDB API, so we need a library to connect to our database. In the `/api` folder, open the `package.json` file and add `"mongodb": "^4.0.1"` to the `dependencies` property as shown below.
+Let's go back to our Azure Function in VSCode. We will be using the Cosmos DB MongoDB API, so we need a library to connect to our database. In the `/api` folder, open the `package.json` file and add `"mongodb": "^4.0.1"` to the `dependencies` property as shown below.
 
 ```json
 ...
@@ -583,7 +583,7 @@ Start by opening the <a href="https://portal.azure.com/#create/Microsoft.Documen
 * Select the same Resource Group you used earlier in this workshop.
 * Enter a name to identify your Cosmos DB Account. This name must be unique.
 * Select the Location where your Account is going to be hosted. We recommand using the same location as your Static Web Apps. 
-* Select `Provisioned throughput` as there and ensure you select the Free Tier Discounts.
+* Select `Provisioned throughput` there and ensure you select the Free Tier Discounts.
 * Select `Apply` when asked if you want to Apply the free tier discount
 * Click on `Review + Create` and then on `Create`.
 
@@ -595,7 +595,7 @@ OK, let's go back to VSCode. In the Azure Extension, you now have the `Database`
 
 Once you see your Account, right click on it, select `Create Database` and enter a name. Once your Database is created, right click on it, select `Create Collection` and name it `tasks` as it will be used to store our tasks.
 
-![Create a Cosmos DB database](images/create-db.png)
+![Create a Cosmos DB database](media/create-db.png)
 
 ### Add some data
 
@@ -668,7 +668,7 @@ In order to connect your application to your database, you will need a connectio
 
 You can find your server connection string in the Azure Portal. But, as always, you can stay in your VSCode. In the Azure Database extension, right click on your database server and select `Copy Connection String`.
 
-![Retrive your Cosmos DB connection string](images/connection-string.png)
+![Retrive your Cosmos DB connection string](media/connection-string.png)
 
 Now, let's connect!  
 
@@ -718,7 +718,7 @@ const tasks = await response.toArray();
 
 Test your website locally and push your changes to GitHub. The GitHub Action will be triggered and your website deployed. Go check the public URL, you should see the tasks of your database.
 
-![Your TODO app up and running](images/finish.png)
+![Your TODO app up and running](media/finish.png)
 
 
 --sep--
