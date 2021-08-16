@@ -166,9 +166,9 @@ As we mentioned at the begining of the workshop, our app will have a backend and
 Azure Static Web Apps can handle several well-known frontend frameworks and can "compile" your Angular, React or Hugo application before deploying them.
 
 In our case, we have a very simple JavaScript appliation which does not require anything to run. So, let's choose `Custom`.
-* In the `App location`, enter the `www/` folder as this is where our frontend is.
-* In the `Api location`, enter the `api/` folder as this is where our backend is.
-* In the `Output`, enter the `www/` folder as your frontend does not need any build system to run.
+* In the `App location`, enter the `/www` folder as this is where our frontend is.
+* In the `Api location`, enter the `/api` folder as this is where our backend is.
+* In the `Output`, enter the `/www` folder as your frontend does not need any build system to run.
 
 ![Enter GitHub information when creating SWA](media/swa-github.png)
 
