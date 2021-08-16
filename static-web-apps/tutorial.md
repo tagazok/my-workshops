@@ -779,9 +779,3 @@ Congratulations, you've reach the end of this workshop!
 ## Solution
 
 You can download the completed app code with the features to add and update a task <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop-final.zip" target="_blank">here</a>
-
-## Credits
-
-This workshop was created by <a href="" target="_blank">Olivier Leplus</a>.
-
-Thanks to <a href="https://twitter.com/maudstweetse" target="_blank">Maud Levy</a>, <a href="https://twitter.com/simonwaight" target="_blank">Simon Waight</a>, Christophe Harrison, Sylvain Pontoreau for their feedback.
