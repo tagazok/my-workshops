@@ -416,7 +416,7 @@ title: Add authentication
 
 ## Add authentication
 
-Azure Static Web Apps manages authentication out of the box. There are pre-configured providers and you can add you own custom providers if needed. Among the pre-configured ones are `Twitter`, `Google`, `Microsoft`, `GitHub` and others.
+Azure Static Web Apps manages authentication out of the box. There are pre-configured providers and you can add you own custom providers if needed. Among the pre-configured ones are `Twitter` are `GitHub`
 
 <div class="box info">
 If you are using the CLI, you won't really be connecting to the selected provider. The CLI offers a proxy to simulare the connection to the provider and gives you a fake userId.
