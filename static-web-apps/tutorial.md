@@ -51,7 +51,7 @@ Azure Static Web Apps relies on `Azure Functions` for your application backend. 
 <div class="box info">
 <div>
 You can find the official Static Web Apps documentation here: 
-<a href="https://aka.ms/swadocs?ocid=OCID" target="_blank">https://aka.ms/swadocs</a>
+<a href="https://aka.ms/swadocs?ocid=OCID&wt.mc_id=WTMCID" target="_blank">https://aka.ms/swadocs</a>
 </div>
 </div>
 
@@ -110,7 +110,7 @@ There is not much you need to start working with `Azure Static Web Apps`. If you
 
 However, if you don't want to install everything, or don't want to remember what is needed to build and deploy a Static Web App, we've got you covered.
 
-Open VSCode and search for the `Remote - Containers` extension in the extension panel on the left or go <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers&ocid=OCID" target="_blank">here</a> and click `Install`.
+Open VSCode and search for the `Remote - Containers` extension in the extension panel on the left or go <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers&ocid=OCID&wt.mc_id=WTMCID" target="_blank">here</a> and click `Install`.
 
 The `Remote - Containers` extension lets you use a Docker container as a fully-featured development environment. The best part is that the extension comes with a list of containers already setup for you... including one for Static Web Apps.
 
@@ -136,7 +136,7 @@ title: Create an Azure Static Web App
 
 ## Create an Azure Static Web App
 
-Start by opening the <a href="https://portal.azure.com/#create/Microsoft.StaticApp?ocid=OCID" target="_blank">Create Static Web App form</a> in the Azure Portal. This link will take you directly to the Static Web App creation form. You may be prompted to log into your Azure Subscription. If you don't have one you can create a Free trial.  
+Start by opening the <a href="https://portal.azure.com/#create/Microsoft.StaticApp?ocid=OCID&wt.mc_id=WTMCID" target="_blank">Create Static Web App form</a> in the Azure Portal. This link will take you directly to the Static Web App creation form. You may be prompted to log into your Azure Subscription. If you don't have one you can create a Free trial.  
 
 Let's fill it out!
 
@@ -223,7 +223,7 @@ Now, go to your GitHub repository in a web browser and click on the `Actions` ta
 
 ### On Azure
 
-Once your Static Web App is created, go to the Resource page. You can find the list of all your Static Web Apps <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites?ocid=OCID" target="_blank">here</a>
+Once your Static Web App is created, go to the Resource page. You can find the list of all your Static Web Apps <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites?ocid=OCID&wt.mc_id=WTMCID" target="_blank">here</a>
 
 In the Overview panel of your Static Web App, look for the `URL` parameter. This is the url of your website. 
 
@@ -254,7 +254,7 @@ You can create an Azure Function from the <a href="https://portal.azure.com/?oci
 
 So, start by installing the Azure Function extension from VSCode.
 
-You can download the extension either directly from the `Extension panel (Ctrl + Shift + X)` in VSCode or by going <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions&ocid=OCID" target="_blank">here</a> and clicking on the `Install` button.
+You can download the extension either directly from the `Extension panel (Ctrl + Shift + X)` in VSCode or by going <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions&ocid=OCID&wt.mc_id=WTMCID" target="_blank">here</a> and clicking on the `Install` button.
 
 ### Create your Function app
 
@@ -276,7 +276,7 @@ Azure Static Web Apps don't support all the languages you can develop Azure Func
 
 <div class="box info">
 <div>
-If you want to learn more about the different authorization levels for Functions and how to secure your API, check out the docs <a href="https://docs.microsoft.com/azure/azure-functions/security-concepts?ocid=OCID" target="_blank">here</a>.
+If you want to learn more about the different authorization levels for Functions and how to secure your API, check out the docs <a href="https://docs.microsoft.com/azure/azure-functions/security-concepts?ocid=OCID&wt.mc_id=WTMCID" target="_blank">here</a>.
 </div>
 </div>
 
@@ -437,7 +437,7 @@ Eg. `?post_login_redirect_uri=/index.html`
 
 <div class="box tip">
 <div>
-If you are building a React app, go <a href="https://docs.microsoft.com/learn/modules/publish-static-web-app-authentication/?ocid=OCID" target="_blank">check the Microsoft Learn module</a> that will show you how to do it.
+If you are building a React app, go <a href="https://docs.microsoft.com/learn/modules/publish-static-web-app-authentication/?ocid=OCID&wt.mc_id=WTMCID" target="_blank">check the Microsoft Learn module</a> that will show you how to do it.
 </div>
 </div>
 
@@ -546,7 +546,7 @@ Now, try to go to a non-existent page on your website like `/hello.html`. You sh
 
 <div class="box tip">
 <div>
-This is also very useful if you are doing a Single Page Application (SPA) where the routing is managed on the client. You may then need to redirect all your URLs to <code>index.html</code>. Check the <code>navigationFallback</code> property in the documentation <a href="https://docs.microsoft.com/azure/static-web-apps/configuration?ocid=OCID" target="_blank">here</a>.
+This is also very useful if you are doing a Single Page Application (SPA) where the routing is managed on the client. You may then need to redirect all your URLs to <code>index.html</code>. Check the <code>navigationFallback</code> property in the documentation <a href="https://docs.microsoft.com/azure/static-web-apps/configuration?ocid=OCID&wt.mc_id=WTMCID" target="_blank">here</a>.
 </div>
 </div>
 
@@ -577,11 +577,11 @@ In a terminal, type `npm install` and hit enter. This will download the dependen
 
 While you are in VSCode, let's install the `Azure Database` extension. This will allow you to explore your database and make queries from VSCode without having to go to the Azure Portal.
 
-In the extension menu of VSCode, search for `Azure Database` or <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb&ocid=OCID" target="_blank">here</a> and click on `Install`.
+In the extension menu of VSCode, search for `Azure Database` or <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb&ocid=OCID&wt.mc_id=WTMCID" target="_blank">here</a> and click on `Install`.
 
 ### Create your database
 
-Start by opening the <a href="https://portal.azure.com/#create/Microsoft.DocumentDB?ocid=OCID" target="_blank">Create Azure Cosmos DB form</a> in the Azure Portal. For our application, we are going to use the `MongoDB` API so select `Azure Cosmos DB API for MongoDB`
+Start by opening the <a href="https://portal.azure.com/#create/Microsoft.DocumentDB?ocid=OCID&wt.mc_id=WTMCID" target="_blank">Create Azure Cosmos DB form</a> in the Azure Portal. For our application, we are going to use the `MongoDB` API so select `Azure Cosmos DB API for MongoDB`
 
 * Select your Subscription.
 * Select the same Resource Group you used earlier in this workshop.
@@ -762,7 +762,7 @@ You may have noticed that, once deployed, we don't have any logs for our app whi
 
 <div class="box assignment">
 <div>
-Create an <a href="https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview?ocid=OCID" target="_blank">Application Insights</a> resource in your Resource Group and connect it to your Static Web App.
+Create an <a href="https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview?ocid=OCID&wt.mc_id=WTMCID" target="_blank">Application Insights</a> resource in your Resource Group and connect it to your Static Web App.
 </div>
 </div>
 
