@@ -682,7 +682,6 @@ You have two ways to connect, a clean and secure way and the quick and dirty way
 
 It's not safe to store your private key or connection strings in your code. Azure Static Web Apps porovides a way to store environment variables that you can then use in your app.
 
-// TODO
 
 To check how to add your MongoDB connection string in the environment variables of your Static Web App, check this quick video.
 
