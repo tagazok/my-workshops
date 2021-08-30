@@ -110,7 +110,7 @@ There is not much you need to start working with `Azure Static Web Apps`. If you
 
 However, if you don't want to install everything, or don't want to remember what is needed to build and deploy a Static Web App, we've got you covered.
 
-Open VSCode and search for the `Remote - Containers` extension in the extension panel on the left or go <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers?ocid=OCID" target="_blank">here</a> and click `Install`.
+Open VSCode and search for the `Remote - Containers` extension in the extension panel on the left or go <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers&ocid=OCID" target="_blank">here</a> and click `Install`.
 
 The `Remote - Containers` extension lets you use a Docker container as a fully-featured development environment. The best part is that the extension comes with a list of containers already setup for you... including one for Static Web Apps.
 
@@ -254,7 +254,7 @@ You can create an Azure Function from the <a href="https://portal.azure.com/?oci
 
 So, start by installing the Azure Function extension from VSCode.
 
-You can download the extension either directly from the `Extension panel (Ctrl + Shift + X)` in VSCode or by going <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions?ocid=OCID" target="_blank">here</a> and clicking on the `Install` button.
+You can download the extension either directly from the `Extension panel (Ctrl + Shift + X)` in VSCode or by going <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions&ocid=OCID" target="_blank">here</a> and clicking on the `Install` button.
 
 ### Create your Function app
 
@@ -577,7 +577,7 @@ In a terminal, type `npm install` and hit enter. This will download the dependen
 
 While you are in VSCode, let's install the `Azure Database` extension. This will allow you to explore your database and make queries from VSCode without having to go to the Azure Portal.
 
-In the extension menu of VSCode, search for `Azure Database` or <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb?ocid=OCID" target="_blank">here</a> and click on `Install`.
+In the extension menu of VSCode, search for `Azure Database` or <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb&ocid=OCID" target="_blank">here</a> and click on `Install`.
 
 ### Create your database
 
