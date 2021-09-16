@@ -10,7 +10,7 @@ title: Objectives & Prerequesites
 
 ### Objectives
 
-In this woskhop, you will learn how to create a full application with a `frontend`, a `serverless backend`, `user authentication` and a `database` to store your data.
+In this workshop, you will learn how to create a full application with a `frontend`, a `serverless backend`, `user authentication` and a `database` to store your data.
 
 Don't worry if you are not familiar with Microsoft Azure. This workshop will walk you through some of the most important services if you are a web developer. We will see how to use `Cosmos DB` with the `MongoDB` API, `Azure Static Web Apps` to host your client application and `Azure Functions` for your backend and `GitHub Actions` to automate your app deployment!
 
