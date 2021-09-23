@@ -25,6 +25,7 @@ To do this workshop, you will need:
 * Visual Studio Code (VSCode)
 * Node.js 12 or higher installed
 * Docker (optional)
+* Azure Functions Core Tools (V3)
 
 --sep--
 ---
