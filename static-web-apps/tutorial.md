@@ -100,10 +100,10 @@ You now have your baseline project. Open the `swa-workshop` folder in VSCode.
 
 --sep--
 ---
-title: Setup your environment using a container
+title: [OPTIONAL] Setup your environment using a container
 ---
 
-## Setup your environment using a dev container
+## [OPTIONAL] Setup your environment using a dev container
 
 **Note:** This step is optional. You can either use a container as described below, or install all the tools yourself as we walk through the workshop.
 
