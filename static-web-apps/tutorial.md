@@ -36,6 +36,8 @@ title: What is Azure Static Web Apps
 
 Azure Static Web Apps is a service that enables developers to deploy their web applications on Azure in a seamless way. This means developers can focus on their code and spend less time administering servers!
 
+<button mat-raised-button>Basic</button>
+
 So, with Azure Static Web Apps (aka SWA), developers can not only deploy frontend static apps and their serverless backends but they can also benefit from features like `Custom domains`, `pre-prod environments`, `authentication providers`, `custom routing` and more.
  
 ### Who is it for?
