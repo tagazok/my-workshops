@@ -21,11 +21,11 @@ At the end of this workshop, you will have a full understanding on how to develo
 To do this workshop, you will need:
 * Basic JavaScript knowledge
 * A Microsoft Azure account
-* A GitHub account
-* Visual Studio Code (VSCode)
-* Node.js 12 or higher installed
+* [A GitHub account](http://github.com/)
+* [Visual Studio Code](https://code.visualstudio.com/) (VSCode)
+* [Node.js 12 or 14 installed](https://nodejs.org/)
 * Docker (optional)
-* Azure Functions Core Tools (V3)
+* [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v3%2Clinux%2Ccsharp%2Cportal%2Cbash%2Ckeda#v2&ocid=OCID&wt.mc_id=WTMCID) (V3)
 
 --sep--
 ---
