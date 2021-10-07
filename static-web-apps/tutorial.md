@@ -117,7 +117,7 @@ Open VSCode and search for the `Remote - Containers` extension in the extension 
 
 The `Remote - Containers` extension lets you use a Docker container as a fully-featured development environment. The best part is that the extension comes with a list of containers already setup for you... including one for Static Web Apps.
 
-So, open the VSCode command panel usting `Ctrl + Shift + p` and search for `Add Development Container Configuration Files...`. This will show you a list of pre-configured containers. Search for `Azure Static Web Apps` and hit Enter.
+So, open the VSCode command panel using `Ctrl + Shift + p` and search for `Add Development Container Configuration Files...`. This will show you a list of pre-configured containers. Search for `Azure Static Web Apps` and hit Enter.
 
 ![Add a Dev Container](media/dev-container.png)
 
@@ -265,7 +265,7 @@ Azure Functions live in an Azure Functions App. When you create your Function Ap
 
 So, let's create our Functions App and a Function to retrieve our task list for our TODO frontend.
 
-* In VSCode, open the Command panel and search for `Azure Functions: Create new project`. 
+* In VSCode, open the Command panel using `Ctrl + Shift + p` and search for `Azure Functions: Create new project`. 
 * Select the `api` folder. This is where our Function App will be created.
 * Choose `JavaScript` as this is the langage we are going to use to write our Function.
 
