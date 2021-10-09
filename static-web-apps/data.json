@@ -11,6 +11,9 @@
             "avatar": "olivier.png"
         }
     ],
+    "tracking: {
+        "OCID": "AID123456789"
+    },
     "resources": [
         {
             "label": "Project template",
