@@ -408,6 +408,13 @@ This CLI gives you two urls:
 <div>
 The CLI may take more time than usual to launch your Azure Function, especially the first time. The default timeout is 30 seconds but you can increase it by using the <code>--devserver-timeout=60000</code> parameter
 </div>
+<div>
+If you have an error like:
+<code>
+'func' is not recognized as an internal or external command
+ </code>
+Don't hesitate to restart your IDE, Terminal or computer and verify by taping func in another terminal to see if you have correctly install <a href="https://docs.microsoft.com/fr-fr/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cportal%2Cbash%2Ckeda">Azure functions core tools</a>
+</div>
 </div>
 
 Congratulations, you now have everything you need to test your app on your computer! 🥳
