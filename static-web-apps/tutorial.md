@@ -396,7 +396,7 @@ The CLI offers many options, but in our case we want it to serve both our API lo
 In your terminal, type the following command to start your project:
 
 ```bash
-swa start ./www --api ./api
+swa start ./www --api-location ./api
 ```
 
 This CLI gives you two urls:
