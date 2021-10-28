@@ -238,6 +238,64 @@ Congratulations, you just deployed your first Static Web App on Azure! 🥳
 
 --sep--
 ---
+Title: Test you project locally
+---
+
+## Test your project locally
+
+There are two ways to test your project. You can either push your code on GitHub every time you need to test it (not recommended), or use the `Static Web Apps CLI`.
+
+### The Static Web App CLI
+
+The Static Web Apps Command Line Interface, also known as the `SWA CLI`, serves as a local development tool for Azure Static Web Apps. In our case, we will use the CLI to:
+
+* Serve static app assets
+* Serve API requests
+* Emulate authentication and authorization
+* Emulate Static Web Apps configuration, including routing
+
+You can install the CLI via npm.
+
+```bash
+npm install -g @azure/static-web-apps-cli
+```
+
+We are only going to use a few features of the CLI so if you want to become a SWA CLI expert, you can find all the features the CLI provides <a href="https://github.com/Azure/static-web-apps-cli" target="_blank">here</a>
+
+### Run your project locally
+
+The CLI offers many options, but in our case we want it to serve both our API located in our `api` folder and our web application located in our `www` folder.
+
+In your terminal, type the following command to start your project:
+
+```bash
+swa start ./www --api-location ./api
+```
+
+This CLI gives you two urls:
+
+* <a href="http://localhost:4280" target="blank">http://localhost:4280</a> corresponding to your frontend.
+* <a href="http://localhost:7071/api/tasks" tartet="_blank">http://localhost:7071/api/tasks</a> corresonding to you API.
+
+<div class="box tip">
+<div>
+<div>
+The CLI may take more time than usual to launch your Azure Function, especially the first time. The default timeout is 30 seconds but you can increase it by using the <code>--devserver-timeout=60000</code> parameter
+</div>
+<div>
+If you have an error like:
+<code>
+'func' is not recognized as an internal or external command
+ </code>
+Don't hesitate to restart your IDE, Terminal or computer and verify by taping func in another terminal to see if you have correctly install <a href="https://docs.microsoft.com/fr-fr/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cportal%2Cbash%2Ckeda">Azure functions core tools</a>
+</div>
+</div>
+</div>
+
+Congratulations, you now have everything you need to test your app on your computer! 🥳
+
+--sep--
+---
 title: Let's add a backend
 ---
 
@@ -362,64 +420,6 @@ The other thing you may want to change is the URL of your Function. Having a rou
 Now, your Function is only accessible using a `GET /api/tasks` request.
 
 You've done it! You wrote your first Azure Function. Congratulations! 🥳
-
---sep--
----
-Title: Test you project locally
----
-
-## Test your project locally
-
-There are two ways to test your project. You can either push your code on GitHub every time you need to test it (not recommended), or use the `Static Web Apps CLI`.
-
-### The Static Web App CLI
-
-The Static Web Apps Command Line Interface, also known as the `SWA CLI`, serves as a local development tool for Azure Static Web Apps. In our case, we will use the CLI to:
-
-* Serve static app assets
-* Serve API requests
-* Emulate authentication and authorization
-* Emulate Static Web Apps configuration, including routing
-
-You can install the CLI via npm.
-
-```bash
-npm install -g @azure/static-web-apps-cli
-```
-
-We are only going to use a few features of the CLI so if you want to become a SWA CLI expert, you can find all the features the CLI provides <a href="https://github.com/Azure/static-web-apps-cli" target="_blank">here</a>
-
-### Run your project locally
-
-The CLI offers many options, but in our case we want it to serve both our API located in our `api` folder and our web application located in our `www` folder.
-
-In your terminal, type the following command to start your project:
-
-```bash
-swa start ./www --api-location ./api
-```
-
-This CLI gives you two urls:
-
-* <a href="http://localhost:4280" target="blank">http://localhost:4280</a> corresponding to your frontend.
-* <a href="http://localhost:7071/api/tasks" tartet="_blank">http://localhost:7071/api/tasks</a> corresonding to you API.
-
-<div class="box tip">
-<div>
-<div>
-The CLI may take more time than usual to launch your Azure Function, especially the first time. The default timeout is 30 seconds but you can increase it by using the <code>--devserver-timeout=60000</code> parameter
-</div>
-<div>
-If you have an error like:
-<code>
-'func' is not recognized as an internal or external command
- </code>
-Don't hesitate to restart your IDE, Terminal or computer and verify by taping func in another terminal to see if you have correctly install <a href="https://docs.microsoft.com/fr-fr/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cportal%2Cbash%2Ckeda">Azure functions core tools</a>
-</div>
-</div>
-</div>
-
-Congratulations, you now have everything you need to test your app on your computer! 🥳
 
 --sep--
 ---
