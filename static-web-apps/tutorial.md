@@ -686,25 +686,20 @@ You can find your server connection string in the Azure Portal. But, as always, 
 
 ![Retrive your Cosmos DB connection string](media/connection-string.png)
 
+Add your connection string to your ```local.settings.json``` file
+```javascript
+"values": {
+  ...
+  "": "<Your-Connection-String",
+  ...
+}
+```
+
 Now, let's connect!  
 
-You have two ways to connect, a clean and secure way and the quick and dirty way...
-
-#### The clean and secure way
-
-It's not safe to store your private key or connection strings in your code. Azure Static Web Apps porovides a way to store environment variables that you can then use in your app.
-
-
-To check how to add your MongoDB connection string in the environment variables of your Static Web App, check this quick video.
-
-<a href="https://www.youtube.com/watch?v=R9qhGra9FHs&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&t=112s" target="_blank">
-  <img src="media/swa-tips-video-environment.png">
-</a>
-
-#### The quick and dirty way
 
 ```javascript
-const client = await mongoClient.connect("YOUR-SERVER-CONNECTION-STRING");
+const client = await mongoClient.connect(process.env.COSMOSDB_CONNECTION_STRING);
 ```
 
 ### Request your data
