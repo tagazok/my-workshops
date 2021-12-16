@@ -1,0 +1,24 @@
+{
+    "infos": {
+        "title": "Machine Learning with Custom Vision",
+        "github": "https://github.com/tagazok/my-workshops",
+        "description": "This workshops will teach you how to develop an end to end web application with a frontend, a backend, a database and some user authentication using Azure Static Web Apps, Cosmos DB, VSCode and GitHub Actions!"
+    },
+    "authors": [
+        {
+            "name": "Olivier Leplus",
+            "url": "https://twitter.com/olivierleplus",
+            "avatar": "olivier.png"
+        }
+    ],
+    "tracking": {
+        "ocid": "AID123456789"
+    },
+    "resources": [
+        {
+            "label": "Project template",
+            "type": "fas fa-download",
+            "link": "https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/data.zip"
+        }
+    ]
+}
