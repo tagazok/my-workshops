@@ -690,7 +690,7 @@ Add your connection string to your ```local.settings.json``` file
 ```javascript
 "values": {
   ...
-  "": "<Your-Connection-String",
+  "COSMOSDB_CONNECTION_STRING": "<Your-Connection-String",
   ...
 }
 ```
