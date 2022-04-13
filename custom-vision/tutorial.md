@@ -490,6 +490,41 @@ https://customvisionworkshop-prediction.cognitiveservices.azure.com/
 
 --sep--
 ---
+title: Deploy your project
+---
+
+To deploy a Static Web App application, you need to push it on GitHub.  
+Before puthing any code to a public repository, you need to make sure there is no sensitive information in your code. Publishing things like credentials, API keys, passwords, etc. is a bad idea...
+
+APIs in Azure Static Web Apps are powered by Azure Functions, which allows you to define application settings in the `local.settings.json` file when you're running the application locally. This file defines application settings in the Values property of the configuration.  
+
+The following sample local.settings.json shows how to add a value for the `PROJECT_ID`.
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "PROJECT_ID": "<YOUR_PROJECT_ID>"
+  }
+}
+```
+
+Settings defined in the Values property can be referenced from code as environment variables. In Node.js functions, for example, they're available in the process.env object.
+
+```javascript
+const projectId = process.env.PROJECT_ID;
+```
+
+The `local.settings.json` file should be in your `.gitignore` file and therefore not pushed to your GitHub repository. Since the local settings remain on your machine, you need to manually configure your settings in Azure.
+
+
+<div class="box assignment">
+  Move the project Id, Iteration name and prediction key to the local.settings.json file.
+</div>
+
+--sep--
+---
 Title: Bonus
 ---
 
