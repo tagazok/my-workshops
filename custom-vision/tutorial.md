@@ -493,6 +493,10 @@ https://customvisionworkshop-prediction.cognitiveservices.azure.com/
 title: Deploy your project
 ---
 
+## Deploy your project
+
+### Start by securing your sensitive information
+
 To deploy a Static Web App application, you need to push it on GitHub.  
 Before puthing any code to a public repository, you need to make sure there is no sensitive information in your code. Publishing things like credentials, API keys, passwords, etc. is a bad idea...
 
@@ -520,8 +524,16 @@ The `local.settings.json` file should be in your `.gitignore` file and therefore
 
 
 <div class="box assignment">
-  Move the project Id, Iteration name and prediction key to the local.settings.json file.
+  Move the project Id, Iteration name and prediction key to the local.settings.json file.<br />
+  Test your project using the swa CLI to make sure everyting works
 </div>
+
+
+### Publish your sensitive information to Azure
+
+There is two ways to create settings for your project. You can go to your project in the `Azure Portal` or you can do it directly from `VSCode` using the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps" target="_blank">Static Web Apps extension</a>.
+
+### Deploy your project
 
 --sep--
 ---
