@@ -86,7 +86,9 @@ Image classification tags whole images where Object Detection finds the location
 * Select `General [A2] for `Domain` as our dogs are not related to any other domain.
 
 <div class="box info">
+<div>
 You can find more information about the differences between Domains in the <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/select-domain" target="_blank">Custom Vision documentation</a>.
+</div>
 </div>
 
 ### Upload your images
@@ -367,7 +369,6 @@ swa start ./www --api-location ./api
 This CLI gives you two urls:
 
 * <a href="http://localhost:4280" target="blank">http://localhost:4280</a> corresponding to your frontend.
-* <a href="http://localhost:7071/api/tasks" tartet="_blank">http://localhost:7071/api/tasks</a> corresonding to you API.
 
 <div class="box tip">
 <div>
@@ -394,7 +395,7 @@ title: Let's add a backend
 
 ## Let's add a backend
 
-Now that our TODO frontend is deployed, we want to make it interactive and need to add a backend!  
+Now that our frontend is deployed, we want to make it interactive and need to add a backend!  
 
 Azure Static Web Apps relies on Azure Functions for your application backend. Azure Functions is an Azure service which enables you to deploy simple code-based microservices triggered by events. In our case, events will be HTTP requests.
 
@@ -425,7 +426,7 @@ Azure Static Web Apps don't support all the languages you can develop Azure Func
 </div>
 
 * As we are creating a REST API that will be called by our website, the trigger we are looking for is the `HTTP trigger`. 
-* Our first Function will be used to retrieve our task list. Let's call it `tasks-get`. 
+* Our first Function will be used to retrieve our task list. Let's call it `dogs`. 
 * Select the `Anonymous` authorization level.
 
 <div class="box info">
@@ -439,8 +440,53 @@ A Function scaffold will be created for you so you don't start with a blank proj
 
 --sep--
 ---
-title: Call your model
+title: Call your model using the REST API
 ---
+
+There are two ways to call your model. You can either use the `REST API` or use the `Custom Vision SDK`.
+
+Let's start by using the `REST API`.
+* Go to the `Performance` screen and click select the `Prediction URL`
+We are going to use the web interface we deployed in the previous step of this tutorial. You don't have to change anything in the front end. All we will do is going to be in the `index.je` file of the Azure Function.
+
+The first thing to do is to get the image in the function. You can use a 3rd party library to do so. We recommand you use <a href="https://www.npmjs.com/package/@anzp/azure-function-multipart" target="_blank">azure-function-multipart</a> but any library will do.
+The `fetch` API was only recently added to node.js. Therefore, you may also need to use a 3rd party library to make the API call. We recommand that you use <a href="https://www.npmjs.com/package/node-fetch" target="_blank">node-fetch</a>.
+
+Once you have installed these libraries, you can start coding.
+Add these two lines at the top of your `index.js` file to use the libraries.
+
+```js	
+const parseMultipartFormData = require('@anzp/azure-function-multipart').default;
+const fetch = require('node-fetch');
+```	
+
+<div class="box assignment">
+  Use parseMultipartFormData to get the file and fetch to call the REST API using the prediction URL. 
+</div>
+
+Use one of the images in the `testing-images| folder to test you code. You should see the prediction like in the screenshot below.
+![Enter GitHub information when creating SWA](images/result-frontend.png)
+
+--sep--
+---
+title: Call your model using the SDK
+---
+
+Using the `REST API` is a bit cumbersome. You can use the `Custom Vision SDK` to call your model.
+Microsoft provides several SDKs for Custom Vision. In our case, as we are only using our code to make prediction, we will only need the <a href="https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction" target="_blank">cognitiveservices-customvision-prediction</a> package.
+
+The SDK for Custom Vision uses a slightly different URL than the one you copied earlier. The value you copied will look something like the following:
+```
+https://customvisionworkshop-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/0dd3299b-6a41-40fe-ab06-dd20e886ccd4/classify/iterations/Iteration1/image
+```
+To create the endpoint value, remove everything after azure.com. Your endpoint value should look like this:
+```
+https://customvisionworkshop-prediction.cognitiveservices.azure.com/
+```
+
+<div class="box assignment">
+  Use parseMultipartFormData to get the file and fetch to call the REST API using the prediction URL. 
+</div>
 
 --sep--
 ---
