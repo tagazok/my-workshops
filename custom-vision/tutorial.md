@@ -329,7 +329,7 @@ Congratulations, you just deployed your first Static Web App on Azure! 🥳
 Title: Test you project locally
 ---
 
-## Test your project locally
+## Test your project localy
 
 There are two ways to test your project. You can either push your code on GitHub every time you need to test it (not recommended), or use the `Static Web Apps CLI`.
 
