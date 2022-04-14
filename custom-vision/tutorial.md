@@ -464,10 +464,6 @@ title: Call your model using the SDK
 
 Using the `REST API` is a bit cumbersome. You can use the `Custom Vision SDK` to call your model.
 
-### Using Node.js
-
-Microsoft provides several SDKs for Custom Vision. In our case, as we are only using our code to make prediction, we will only need the <a href="https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction" target="_blank">cognitiveservices-customvision-prediction</a> package.
-
 The SDK for Custom Vision uses a slightly different URL than the one you copied earlier. The value you copied will look something like the following:
 ```
 https://customvisionworkshop-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/0dd3299b-6a41-40fe-ab06-dd20e886ccd4/classify/iterations/Iteration1/image
@@ -477,13 +473,18 @@ To create the endpoint value, remove everything after azure.com. Your endpoint v
 https://customvisionworkshop-prediction.cognitiveservices.azure.com/
 ```
 
-<div class="box assignment">
-  Use parseMultipartFormData to get the file and fetch to call the REST API using the prediction URL. 
-</div>
+### Using Node.js
+
+Microsoft provides several SDKs for Custom Vision. In our case, as we are only using our code to make prediction, we will only need the <a href="https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction" target="_blank">cognitiveservices-customvision-prediction</a> package.
 
 ### Using Python
 
 Microsoft provides several SDKs for Custom Vision. In our case, as we are only using our code to make prediction, we will only need the <a href="https://pypi.org/project/azure-cognitiveservices-vision-customvision/" target="_blank">azure-cognitiveservices-vision-customvision</a> package.
+
+
+<div class="box assignment">
+  Replace the code you wrote in the previous step to use the Custom Vision SDK instead.
+</div>
 
 --sep--
 ---
@@ -517,6 +518,12 @@ Settings defined in the Values property can be referenced from code as environme
 const projectId = process.env.PROJECT_ID;
 ```
 
+In python, they are accessible as environment variables.
+
+```python
+projectId = os.environ["PROJECT_ID"]
+```
+
 The `local.settings.json` file should be in your `.gitignore` file and therefore not pushed to your GitHub repository. Since the local settings remain on your machine, you need to manually configure your settings in Azure.
 
 
@@ -531,6 +538,15 @@ The `local.settings.json` file should be in your `.gitignore` file and therefore
 There is two ways to create settings for your project. You can go to your project in the `Azure Portal` or you can do it directly from `VSCode` using the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps" target="_blank">Static Web Apps extension</a>.
 
 ### Deploy your project
+
+Now that you have secured your code, you only need to push it to your GitHub repository. This will trigger a GitHub Action and your project will be automaticaly deployed on Azure
+
+Go back to your Custom Vision resource in the Azure portal
+![Resource overview of your project](images/resource-overview.png)
+In the `Overview` menu, you can find the public url of your website. Click on it.
+
+You've made it. You have published your website on Azure.
+
 
 --sep--
 ---
