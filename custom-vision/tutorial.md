@@ -473,6 +473,8 @@ To create the endpoint value, remove everything after azure.com. Your endpoint v
 https://customvisionworkshop-prediction.cognitiveservices.azure.com/
 ```
 
+Now, let's change our Azure Function to use the SDK.  
+
 ### Using Node.js
 
 Microsoft provides several SDKs for Custom Vision. In our case, as we are only using our code to make prediction, we will only need the <a href="https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction" target="_blank">cognitiveservices-customvision-prediction</a> package.
