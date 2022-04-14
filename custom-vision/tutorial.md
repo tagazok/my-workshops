@@ -12,7 +12,7 @@ title: Objectives & Prerequesites
 
 In this workshop, you will learn how to build a model to detect dog breeds. You'll start by installing and configuring the necessary tools, then creating the custom model by uploading and tagging images. And finally, you will use the model using the Custom Vision REST API and the Software Development Kit (SDK).
 
-![Add a Dev Container](images/result.png)
+![Add a Dev Container](media/result.png)
 
 ### Prerequisites
 
@@ -145,7 +145,7 @@ Then, in the Custom Vision portal
 
 Notice the `tag` and `probability` scores. The `tag` is the breed of the dog, and the `probability` is the confidence that the model has in the breed. Try with another images :)
 
-![Test result in portal](images/testinwebsite.png)
+![Test result in portal](media/testinwebsite.png)
 
 
 ### Publish your model
@@ -202,7 +202,7 @@ For this workshop, we won't ask you to create a website from scratch. As we want
 
 Go to <a href="https://github.com/tagazok/customvision-workshop" target="_blank">this GitHub repository</a> and click on `Use this template`. 
 
-![GitHub template](images/githubtemplate.png)
+![GitHub template](media/githubtemplate.png)
 
 You will be redirected to the repository creation page. Just enter a name for your new repository and click on `Create repository from template`.
 
@@ -253,7 +253,7 @@ In our case, we have a very simple JavaScript appliation which does not require 
 * In the `Api location`, enter the `/api-nodejs` or `api-python` (depending on your preference) folder as this is where our backend is.
 * In the `Output`, enter the `/www` folder as your frontend does not need any build system to run.
 
-![Enter GitHub information when creating SWA](images/swa-github.png)
+![Enter GitHub information when creating SWA](media/swa-github.png)
 
 * Click on `Review + Create` and then on `Create`.
 
@@ -302,7 +302,7 @@ The YAML file is in your GitHub repository so you can edit it! Your frontend sit
 
 Now, go to your GitHub repository in a web browser and click on the `Actions` tab. Here, you will see the list of all the GitHub Actions that have been triggered so far. Click on the last one to see your application being deployed.
 
-![Check your GitHub Actions](images/github-actions.png)
+![Check your GitHub Actions](media/github-actions.png)
 
 ### On Azure
 
@@ -310,7 +310,7 @@ Once your Static Web App is created, go to the Resource page. You can find the l
 
 In the Overview panel of your Static Web App, look for the `URL` parameter. This is the url of your website. 
 
-![Resource overview of your project](images/resource-overview.png)
+![Resource overview of your project](media/resource-overview.png)
 
 Open the link and you can see that your TODO list app has been deployed and is accessible to the world!
 
@@ -467,7 +467,7 @@ content = file.stream.read()
 </div>
 
 Use one of the images in the `testing-images` folder to test you code. You should see the prediction like in the screenshot below.
-![Enter GitHub information when creating SWA](images/result-frontend.png)
+![Enter GitHub information when creating SWA](media/result-frontend.png)
 
 
 --sep--
@@ -559,7 +559,7 @@ There is two ways to create settings for your project. You can go to your projec
 Now that you have secured your code, you only need to push it to your GitHub repository. This will trigger a GitHub Action and your project will be automaticaly deployed on Azure
 
 Go back to your Custom Vision resource in the Azure portal
-![Resource overview of your project](images/resource-overview.png)
+![Resource overview of your project](media/resource-overview.png)
 In the `Overview` menu, you can find the public url of your website. Click on it.
 
 You've made it. You have published your website on Azure.
