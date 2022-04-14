@@ -28,7 +28,7 @@ To do this workshop, you will need:
 * [A Microsoft Azure account](https://portal.azure.com/?ocid=OCID&wt.mc_id=WTMCID)
 * [A GitHub account](http://github.com/)
 * [Visual Studio Code](https://code.visualstudio.com/) (VSCode)
-* [Node.js 14 installed](https://nodejs.org/)
+* [Node.js 14 installed](https://nodejs.org/download/release/v14.19.1/)
 * Python 3.8 or greater with pip installed
 * [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v3%2Clinux%2Ccsharp%2Cportal%2Cbash%2Ckeda#v2&ocid=OCID&wt.mc_id=WTMCID) (V3)
 
@@ -91,6 +91,7 @@ Image classification tags whole images where Object Detection finds the location
 
 * Select `Multiclass` for `Classification Types` as our dogs will only have one breed
 * Select `General [A2]` for `Domain` as our dogs are not related to any other domain
+* Click on the `Create project` button
 
 <div class="box info">
 <div>
@@ -103,18 +104,18 @@ You can find more information about the differences between Domains in the <a hr
 Once the project is created, it's time to upload images. These images will be used to train your model.
 
 <div class="box tip">
-As a general rule, the more images you can use to train a model the better. You want to include as much variety in the images as possible, including different lighting, angles, and settings.
+As a general rule, the more images you can use to train a model the better. You want to include as much variety in the images as possible, including different lightning, angles, and settings.
 </div>
 
-We will provide you with a few images of dogs to train your model. Download the `Training images set` in the `Resources` menu of this workshop.
+We will provide you with a few images of dogs to train your model. Download the `Training images set` in the `Resources` menu of this workshop and extract the zip file.
 
 Now, go in the Custom Vision portal:
 * Click on `Add images`
 * Navigate to the `training-images` folder you just downloaded
 * Select all the images marked as `american-staffordshire-terrier` in the folder, and click `Open`.
 * Enter `american-staffordshire-terrier` for the tag and click `Upload 8 files`
-* Ckick `Done`
-* Repeat the above steps for the other breeds.
+* Click `Done`
+* Click on `Add images` and repeat the above steps for the other breeds.
   * `australian-shepherd`
   * `buggle`
   * `german-wirehaired-pointer`
@@ -126,10 +127,10 @@ Now, go in the Custom Vision portal:
 
 Now that you have uploaded and tagged your images, it's time to train your model.
 
-* Ckick `Train` to open the training dialog.
+* Click on the `Train` button to open the training dialog.
 * Leave `Quick Training` selected and click `Train` to begin the training process.
 
-It will take a few minutes to train your model.
+It will take between 2 to 5 minutes to train your model.
 
 --sep--
 ---
@@ -142,7 +143,7 @@ With the model trained, it's time to turn our attention to using it. We'll start
 
 ### Test your model in the Custom Vision portal
 
-Let's see how well our model works. <b>It's important to use images which weren't used to train the model</b>. After all, if the model has already seen the image it's going to know the answer. Start by downloading the `Testing images set` in the `Resources` menu of this workshop.
+Let's see how well our model works. <b>It's important to use images which weren't used to train the model</b>. After all, if the model has already seen the image it's going to know the answer. Start by downloading the `Testing images set` in the `Resources` menu of this workshop and extract the zip file.
 
 Then, in the Custom Vision portal
 * Click on the `Quick Test` button
@@ -150,7 +151,7 @@ Then, in the Custom Vision portal
 * Navigate to the `testing-images` folder you just downloaded	and select one of the dog images
 * Click `Open`
 
-Notice the `tag` and `probability` scores. The `tag` is the breed of the dog, and the `probability` is the confidence that the model has in the breed. Try with another images :)
+Notice the `tag` and `probability` scores. The `tag` is the breed of the dog, and the `probability` is the confidence that the model has in its prediction. Try with another images :)
 
 ![Test result in portal](media/testinwebsite.png)
 
@@ -161,7 +162,7 @@ Playing with your model in the Custom Vision portal is funny. But, the goal of c
 
 * Go to the `Performance` tab and click `Publish`
 * Enter `dogs` as `Model name`
-* Select the resource in your subscription
+* Select the resource in your subscription named `myresource-Prediction`
 * Click `Publish`
 
 --sep--
@@ -169,31 +170,31 @@ Playing with your model in the Custom Vision portal is funny. But, the goal of c
 title: Azure Static Web App
 ---
 
-## What is Azure Static Web Apps
+## What is Azure Static Web Apps (SWA)
 
-Azure Static Web Apps is a service that enables developers to deploy their web applications on Azure in a seamless way. This means developers can focus on their code and spend less time administering servers!
+Azure SWA is a service that enables developers to deploy their web applications on Azure in a seamless way. This means developers can focus on their code and spend less time administrating servers!
 
-So, with Azure Static Web Apps (aka SWA), developers can not only deploy frontend static apps and their serverless backends but they can also benefit from features like `Custom domains`, `pre-prod environments`, `authentication providers`, `custom routing` and more.
+So, with Azure SWA, developers can not only deploy frontend static apps and their serverless backends but they can also benefit from features like `Custom domains`, `pre-prod environments`, `authentication providers`, `custom routing` and more.
  
 ### Who is it for?
-Azure Static Web Apps is for every developer who wants to spend more time in their code editor than they do managing resources in the cloud.
+Azure SWA is for every developer who wants to spend more time in their code editor than they do managing resources in the cloud.
 
 If you are a so-called "Full stack developer", then you probably want to deploy both your frontend and your backend to the cloud, ideally with limited administration and configuration management.
 
-### Front end developers
-Azure Static Web Apps supports many frameworks and static site generators out of the box. If you are using a framework like `Angular`, `React`, `Vue.js`, a site generator like `Gatsby`, `Hugo` or one of the many solutions Azure Static Web Apps supports, then you don't have to take care of the deployment. If you have a specific need to customise the build for your app, you can configure it yourself very easily!
+### Frontend developers
+Azure SWA supports many frameworks and static site generators out of the box. If you are using a framework like `Angular`, `React`, `Vue.js`, a site generator like `Gatsby`, `Hugo` or one of the many solutions Azure SWA supports, then you don't have to take care of the deployment. If you have a specific need to customise the build for your app, you can configure it yourself very easily!
 
 ### Backend developers
-Azure Static Web Apps relies on `Azure Functions` for your application backend. So, if you are developing in `JavaScript`, `Java`, `Python` or `.NET`, SWA makes it very easy to deploy your backend as well!
+Azure SWA relies on `Azure Functions` for your application backend. So, if you are developing in `JavaScript`, `Java`, `Python` or `.NET`, SWA makes it very easy to deploy your backend as well!
 
 <div class="box info">
 <div>
-You can find the official Static Web Apps documentation here: 
+You can find the official SWA documentation here: 
 <a href="https://aka.ms/swadocs?ocid=OCID&wt.mc_id=WTMCID" target="_blank">https://aka.ms/swadocs</a>
 </div>
 </div>
 
-Oh, and did I forget to mention there is a Free tier for Static Web Apps? You can start using it for free and only pay once your application gets popular!
+Oh, and did I forget to mention there is a Free tier for SWA? You can start using it for free and only pay once your application gets popular!
 
 
 --sep--
@@ -205,7 +206,7 @@ title: Get the website template
 
 Once upon a time, there was a website that needed a place to live, be visible to the world and have a backend to be more interactive.
 
-For this workshop, we won't ask you to create a website from scratch. As we want you to focus on the Custom Vision integration, we have build one for you.
+For this workshop, we won't ask you to create a website from scratch. As we want you to focus on the Custom Vision integration, we've built one for you.
 
 Go to <a href="https://github.com/tagazok/template-customvision-workshop" target="_blank">this GitHub repository</a> and click on `Use this template`. 
 
@@ -231,13 +232,13 @@ Start by opening the <a href="https://portal.azure.com/#create/Microsoft.StaticA
 Let's fill it out!
 
 * Select your Subscription.
-* Create a new Resource Group.
+* Select your Resource Group.
 
 <div class="box info">
 In Azure, a Resource Group is a logical structure that holds resources usually related to an application or a project. A Resource Group can contain virtual machines, storage accounts, web applications, databases and more.
 </div>
 
-* Give a Name to your Static Web App.
+* Give a Name to your Static Web App, for instance `simplon-swa`.
 * Select the Free Plan (we won't need any feature in the Standard Plan for this workshop).
 * Select `West Europe` for your backend.
 
@@ -247,15 +248,16 @@ It is recommended to host your backend in a Region closest to your users.
 
 * Select `GitHub` as a deployment source.
 
-We are going to host our website source code on GitHub. Later in the workshop, we will see how Static Web Apps will automaticaly deploy our website every time we push new code to our repository.
+We are going to host our website source code on GitHub. Later in the workshop, we will see how Static Web Apps will automaticalLy deploy our website every time we push new code to our repository.
 
-* Sign in with your GitHub account and select the repository and the branch of your project.
+* Sign in with your GitHub account
+* Select the organization (your account), the repository(customvision-workshop) and the branch of your project (main).
 
-As we mentioned at the begining of the workshop, our app will have a backend and a frontend. In order for Static Web App to know what to deploy and where, we need to tell it where our apps are located in our repository.
+As we mentioned at the beginning of the workshop, our app will have a backend and a frontend. In order for Static Web App to know what to deploy and where, we need to tell it where our apps are located in our repository.
 
 Azure Static Web Apps can handle several well-known frontend frameworks and can "compile" your Angular, React or Hugo application before deploying them.
 
-In our case, we have a very simple JavaScript appliation which does not require anything to run. So, let's choose `Custom`.
+In our case, we have a very simple JavaScript application which does not require anything to run. So in the Build Presets option, let's choose `Custom`.
 * In the `App location`, enter the `/www` folder as this is where our frontend is.
 * In the `Api location`, enter the `/api` or `api` (depending on your preference) folder as this is where our backend is.
 * In the `Output`, enter the `/www` folder as your frontend does not need any build system to run.
@@ -274,7 +276,7 @@ Once the resource is created, you should `pull` your repository in VSCode as a f
 
 When Azure created your Static Web App, it pushed a new YAML file to the `.github/workflow` folder of your repository.
 
-The files in this folder decribe GitHub Actions, which are event-based actions that can be triggered by events like a `push`, a `new pull request`, a `new issue`, a `new collaborator` and more. 
+The files in this folder describe GitHub Actions, which are event-based actions that can be triggered by events like a `push`, a `new pull request`, a `new issue`, a `new collaborator` and more. 
 
 You can see the complete list of triggers <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows" target="_blank">here</a>
 
@@ -284,7 +286,7 @@ If you are not familiar with GitHub Actions, you can read about them <a href="ht
 </div>
 </div>
 
-Let's have a look at the YAML file Azure created for us:
+Let's have a look at the beginning of the YAML file Azure created for us:
 
 ```yaml
 on:
@@ -299,7 +301,7 @@ on:
 
 Here, you can see that the GitHub Action is going to be triggered every time there is a `push` on the `main` branch or every time a Pull Request is `opened`, `synchronize`, `reopened` or `closed`.  
 
-As we want our website to be redeployed automaticaly every time we push on our main branch, this is perfect!
+As we want our website to be redeployed automaticalLy every time we push on our main branch, this is perfect!
 
 Take a few minutes to read the YAML file and understand what exactly happens when the GitHub Action is triggered. You can see that most of the information you entered when you created your Static Web App on Azure is here.
 
@@ -313,7 +315,7 @@ Now, go to your GitHub repository in a web browser and click on the `Actions` ta
 
 ### On Azure
 
-Once your Static Web App is created, go to the Resource page. You can find the list of all your Static Web Apps <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites?ocid=OCID&wt.mc_id=WTMCID" target="_blank">here</a>
+Once your Static Web App is created, go to the Resource page in your Azure portal. You can find the list of all your Static Web Apps <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites?ocid=OCID&wt.mc_id=WTMCID" target="_blank">here</a>.
 
 In the Overview panel of your Static Web App, look for the `URL` parameter. This is the url of your website. 
 
@@ -329,7 +331,7 @@ Congratulations, you just deployed your first Static Web App on Azure! 🥳
 Title: Test you project locally
 ---
 
-## Test your project localy
+## Test your project locally
 
 There are two ways to test your project. You can either push your code on GitHub every time you need to test it (not recommended), or use the `Static Web Apps CLI`.
 
@@ -348,7 +350,7 @@ You can install the CLI via npm.
 npm install -g @azure/static-web-apps-cli
 ```
 
-We are only going to use a few features of the CLI so if you want to become a SWA CLI expert, you can find all the features the CLI provides <a href="https://github.com/Azure/static-web-apps-cli" target="_blank">here</a>
+We are only going to use a few features of the CLI so if you want to become a SWA CLI expert, you can find all the features the CLI provides <a href="https://github.com/Azure/static-web-apps-cli" target="_blank">here</a>.
 
 ### Run your project locally
 
@@ -580,7 +582,7 @@ You could have also added the settings in the portal by going to your Static Web
 
 ### Deploy your project
 
-Now that you have secured your code, you only need to push it to your GitHub repository. This will trigger a GitHub Action and your project will be automaticaly deployed on Azure
+Now that you have secured your code, you only need to push it to your GitHub repository. This will trigger a GitHub Action and your project will be automaticalLy deployed on Azure
 
 Go back to your Custom Vision resource in the Azure portal
 
