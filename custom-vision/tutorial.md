@@ -419,11 +419,11 @@ title: Call your model using the REST API
 
 There are two ways to call your model. You can either use the `REST API` or use the `Custom Vision SDK`.
 
-### Using Node.js
-
 Let's start by using the `REST API`.
 * Go to the `Performance` screen and click select the `Prediction URL`  
 We are going to use the web interface we deployed in the previous step of this tutorial. You don't have to change anything in the front end. All we will do is going to be in the `index.js` or `__init__.py` file of the Azure Function.
+
+### Using Node.js
 
 The first thing to do is to retrieve the image in the function. You can use a 3rd party library to do so. We recommand you use <a href="https://www.npmjs.com/package/@anzp/azure-function-multipart" target="_blank">azure-function-multipart</a> but any library will do.  
 The `fetch` API was only recently added to node.js. Therefore, you may also need to use a 3rd party library to make the API call to the Custom Vision REST API. We recommand that you use <a href="https://www.npmjs.com/package/node-fetch" target="_blank">node-fetch</a>.
@@ -449,11 +449,26 @@ Don't hesitate to read the documentation of these two libraries to understand ho
   Return the response to the frontend.
 </div>
 
+
+### Using Python
+
+To call an API in Python, you will need a 3rd party library. We recommand that you use <a href="https://pypi.org/project/requests/" target="_blank">requests</a>. Go check the documentation to see how to make a POST request using requests <a href="https://docs.python-requests.org/en/latest/user/quickstart/#more-complicated-post-requests" target="_blank">here</a>
+
+You will need to send the file the the Custom Vision API. Here is how you can do to get the content of the file sent to the Azure function.
+```python
+file = req.files["file"]
+filename = file.filename
+content = file.stream.read()
+```
+
+<div class="box assignment">
+  Use request to call the REST API using the prediction URL.
+  Return the response to the frontend.
+</div>
+
 Use one of the images in the `testing-images` folder to test you code. You should see the prediction like in the screenshot below.
 ![Enter GitHub information when creating SWA](images/result-frontend.png)
 
-
-### Using Python
 
 --sep--
 ---
@@ -530,7 +545,7 @@ The `local.settings.json` file should be in your `.gitignore` file and therefore
 
 
 <div class="box assignment">
-  Move the project Id, Iteration name and prediction key to the local.settings.json file.<br />
+  Move the project Id, Iteration name and prediction key to the local.settings.json file. If you are still using the API (of if you have just commented your code), also add the Prediction url used for calling the REST API<br />
   Test your project using the swa CLI to make sure everyting works
 </div>
 
