@@ -115,6 +115,7 @@ Now, go in the Custom Vision portal:
 
 
 ### Train your model
+  
 
 Now that you have uploaded and tagged your images, it's time to train your model.
 
@@ -130,7 +131,7 @@ title: Test & Publish your model
 
 ## Test & Publish
 
-With the model trained it's time to turn our attention to using it. We'll start by testing it in the Custom Vision website. Then we'll explore how we can call the model from code by using the REST API or the SDK.
+With the model trained, it's time to turn our attention to using it. We'll start by testing it in the Custom Vision website. Then we'll explore how we can call the model from our code by using the REST API or the SDK.
 
 ### Test your model in the Custom Vision portal
 
@@ -142,7 +143,10 @@ Then, in the Custom Vision portal
 * Navigate to the `testing-images` folder you just downloaded	and select one of the dog images
 * Click `Open`
 
-Notice the `tag`and `probability`scores. The `tag` is the breed of the dog, and the `probability` is the confidence that the model has in the breed. Try with another images :)
+Notice the `tag` and `probability` scores. The `tag` is the breed of the dog, and the `probability` is the confidence that the model has in the breed. Try with another images :)
+
+![Test result in portal](images/testinwebsite.png)
+
 
 ### Publish your model
 
