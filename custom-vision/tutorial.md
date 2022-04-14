@@ -7,8 +7,6 @@ title: Machine Learning with Custom Vision
 title: Objectives & Prerequesites
 ---
 
-## Objectives & Prerequesites
-
 ### Objectives
 
 In this workshop, you will learn how to build a model to detect dog breeds. You'll start by installing and configuring the necessary tools, then creating the custom model by uploading and tagging images. And finally, you will use the model using the Custom Vision REST API and the Software Development Kit (SDK).
@@ -205,7 +203,7 @@ Go to <a href="https://github.com/tagazok/template-customvision-workshop" target
 
 ![GitHub template](media/githubtemplate.png)
 
-You will be redirected to the repository creation page. Just enter a name for your new repository and click on `Create repository from template`.
+You will be redirected to the repository creation page. Just enter `customvision-workshop` as name for your new repository and click on `Create repository from template`.
 
 <div class="box assignment">
 Create the repository from the GitHub Template and clone it on your computer.
@@ -433,8 +431,10 @@ Once you have installed these libraries using `npm install <LIBRARY_NAME>`, you 
 Add these two lines at the top of your `index.js` file to use the libraries.
 
 ```js	
+
 const parseMultipartFormData = require('@anzp/azure-function-multipart').default;
 const fetch = require('node-fetch');
+
 ```	
 
 You can then easily get the file sent by the frontend by doing

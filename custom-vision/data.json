@@ -2,7 +2,7 @@
     "infos": {
         "title": "Machine Learning with Custom Vision",
         "github": "https://github.com/tagazok/my-workshops",
-        "description": "Train a Machine learning model using Custom Vision and ise it in a web application deployer on Azure Static Web Apps"
+        "description": "Train a Machine learning model using Custom Vision and ise it in a web application deployer on Azure Static Web Apps using Azure Functions as a backend."
     },
     "authors": [
         {
