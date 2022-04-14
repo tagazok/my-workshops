@@ -13,11 +13,11 @@ In this workshop, you will learn how to build a model to detect dog breeds. You'
 
 <center><small>Train your model on the Custom Vision portal</small></center>
 
-![Add a Dev Container](images/result.png)
+![Add a Dev Container](media/result.png)
 
 <center><small>Deploy an application to detect dog breeds</small></center>
 
-![Add a Dev Container](images/result-frontend.png)
+![Add a Dev Container](media/result-frontend.png)
 
 
 
