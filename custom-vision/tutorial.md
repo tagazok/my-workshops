@@ -558,6 +558,7 @@ Install the extension and login with your Azure Account if you haven't done it b
 * Click on the Azure icon on the sidenav and then on the `Static Web Apps` tab.
 * Open your project and right click on `Application Settings` in your branch
 * Click on `Upload Local Settings`
+
 ![Upload Local Settings menu](media/uploadsettings.png)
 
 Your local settings should now appear in the `Application Settings` section of your project. Check your project using the CLI and it should now work again.
