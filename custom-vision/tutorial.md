@@ -152,7 +152,7 @@ Notice the `tag` and `probability` scores. The `tag` is the breed of the dog, an
 
 Playing with your model in the Custom Vision portal is funny. But, the goal of creating a model in Custom Vision is to use it in different applications. To access it from outside of the Custom Vision website it needs to be published.
 
-* Go to the `Performance`tag and click `Publish`
+* Go to the `Performance` tab and click `Publish`
 * Enter `dogs` as `Model name`
 * xxxx
 * Click `Publish`
@@ -198,36 +198,19 @@ title: Start with a website
 
 Once upon a time, there was a website that needed a place to live, be visible to the world and have a backend to be more interactive.
 
-There are two ways you can start using the project template for this workshop
+For this workshop, we won't ask you to create a website from scratch. As we want you to focus on the Custom Vision integration, we have build one for you.
 
-### From a GitHub Template
+Go to <a href="https://github.com/tagazok/customvision-workshop" target="_blank">this GitHub repository</a> and click on `Use this template`. 
 
-Go to <a href="https://github.com/tagazok/swa-workshop" target="_blank">this GitHub repository</a> and click on `Use this template`. 
-
-![Add a Dev Container](images/githubtemplate.png)
+![GitHub template](images/githubtemplate.png)
 
 You will be redirected to the repository creation page. Just enter a name for your new repository and click on `Create repository from template`.
 
-### From a zip file
-#### Download the website template
-
-Download the website from the resources tab in the sidebar or click <a href="https://github.com/tagazok/my-workshops/raw/master/static-web-apps/data/swa-workshop.zip" target="_blank">here</a>.
-
-#### Deploy your website on GitHub
-
-Azure Static Web Apps has been built to work with GitHub by default. So, the first thing you will do is create a new GitHub repository and push the source code you just downloaded.
-
 <div class="box assignment">
-<div>
-Choose your path
-<ul>
-<li>Create the repository from the GitHub Template</li>
-<li>Go to <a href="https://github.com/" target="_blank">Github.com</a>, create a new repository and push your code to it.</li>
-</ul>
-</div>
+Create the repository from the GitHub Template and clone it on your computer.
 </div>
 
-You now have your baseline project. Open the `swa-workshop` folder in VSCode.
+You now have your baseline project. Open the `customvision-workshop` folder in VSCode.
 
 --sep--
 ---
