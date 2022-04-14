@@ -359,7 +359,7 @@ The CLI offers many options, but in our case we want it to serve both our API lo
 In your terminal, type the following command to start your project:
 
 ```bash
-swa start ./www --api-location ./api
+swa start ./www
 ```
 
 This CLI gives you two urls:
@@ -442,19 +442,18 @@ Once you have installed these libraries using `npm install <LIBRARY_NAME>`, you 
 Add these two lines at the top of your `index.js` file to use the libraries.
 
 ```js	
-
 const parseMultipartFormData = require('@anzp/azure-function-multipart').default;
 const fetch = require('node-fetch');
 
 ```	
 
-You can then easily get the file sent by the frontend by doing
+You can then easily get the file sent by the frontend by doing:
 
 ```js
 const file = files[0].bufferFile
 ```
   
-Don't hesitate to read the documentation of these two libraries to understand how they work and how to use thema.
+Don't hesitate to read the documentation of these two libraries to understand how they work and how to use them.
 
 <div class="box assignment">
   Use parseMultipartFormData to get the file and fetch to call the REST API using the prediction URL. 
@@ -464,7 +463,7 @@ Don't hesitate to read the documentation of these two libraries to understand ho
 
 ### Using Python
 
-To call an API in Python, you will need a 3rd party library. We recommand that you use <a href="https://pypi.org/project/requests/" target="_blank">requests</a>. Go check the documentation to see how to make a POST request using requests <a href="https://docs.python-requests.org/en/latest/user/quickstart/#more-complicated-post-requests" target="_blank">here</a>
+To call an API in Python, you will need a 3rd party library. We recommand that you use <a href="https://pypi.org/project/requests/" target="_blank">requests</a>. Go check the documentation to see how to make a POST request using requests <a href="https://docs.python-requests.org/en/latest/user/quickstart/#more-complicated-post-requests" target="_blank">here</a>.
 
 You will need to send the file the the Custom Vision API. Here is how you can do to get the content of the file sent to the Azure function.
 ```python
@@ -526,7 +525,7 @@ title: Deploy your project
 ### Start by securing your sensitive information
 
 To deploy a Static Web App application, you need to push it on GitHub.  
-Before puthing any code to a public repository, you need to make sure there is no sensitive information in your code. Publishing things like credentials, API keys, passwords, etc. is a bad idea...
+Before pushing any code to a public repository, you need to make sure there is no sensitive information in your code. Publishing things like credentials, API keys, passwords, etc. is a bad idea...
 
 APIs in Azure Static Web Apps are powered by Azure Functions, which allows you to define application settings in the `local.settings.json` file when you're running the application locally. This file defines application settings in the Values property of the configuration.  
 
@@ -559,7 +558,7 @@ The `local.settings.json` file should be in your `.gitignore` file and therefore
 
 <div class="box assignment">
   Move the project Id, Iteration name and prediction key to the local.settings.json file. If you are still using the API (of if you have just commented your code), also add the Prediction url used for calling the REST API<br />
-  Test your project using the swa CLI to make sure everyting works
+  Test your project using the swa CLI to make sure everything works.
 </div>
 
 
@@ -582,9 +581,9 @@ You could have also added the settings in the portal by going to your Static Web
 
 ### Deploy your project
 
-Now that you have secured your code, you only need to push it to your GitHub repository. This will trigger a GitHub Action and your project will be automaticalLy deployed on Azure
+Now that you have secured your code, you only need to push it to your GitHub repository. This will trigger a GitHub Action and your project will be automaticalLy deployed on Azure.
 
-Go back to your Custom Vision resource in the Azure portal
+Go back to your Custom Vision resource in the Azure portal.
 
 ![Resource overview of your project](media/resource-overview.png)
 In the `Overview` menu, you can find the public url of your website. Click on it.
@@ -602,10 +601,10 @@ Congratulations, you've reach the end of this workshop! 🚀
 
 ## Solution
 
-Did you know? You had the soltution all along ;)
+Did you know? You had the solution all along ;)
 You can checkout the `solution branch` of the template repository to get the complete code of this workshop.
 Or, you can download it from <a href="https://github.com/tagazok/template-customvision-workshop/tree/solution" target="_blank">here</a>.
 
 ## Credits ❤️
 
-This workshop is based of <a href="https://github.com/jlooper/workshop-library/tree/main/full/ml-model-custom-vision" target="_blank">this workshop</a> created by <a href="https://twitter.com/jenlooper" target="_blank">Jen Looper</a>.
+This workshop is inspired from <a href="https://github.com/jlooper/workshop-library/tree/main/full/ml-model-custom-vision" target="_blank">this workshop</a> created by <a href="https://twitter.com/jenlooper" target="_blank">Jen Looper</a>.
