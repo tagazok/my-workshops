@@ -30,6 +30,16 @@
             "label": "Testing images set",
             "type": "fas fa-download",
             "link": "https://github.com/tagazok/my-workshops/raw/master/custom-vision/data/testing-images.zip"
+        },
+        {
+            "label": "The Show me SWA video series (FR)",
+            "type": "fab fa-youtube",
+            "link": "https://www.youtube.com/watch?v=w-tLZjO6XMc&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG"
+        },
+        {
+            "label": "Azure Tips and Tricks: Static Web Apps (EN)",
+            "type": "fab fa-youtube",
+            "link": "https://www.youtube.com/playlist?list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG"
         }
     ]
 }
