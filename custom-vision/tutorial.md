@@ -10,7 +10,7 @@ title: Objectives & Prerequesites
 
 ### Objectives
 
-In this workshop, you will learn how to build a model to detect dog breeds. You'll start by installing and configuring the necessary tools, then creating the custom model by uploading and tagging images, and finally use the model using the Custom Vision REST API and the Software Development Kit (SDK).
+In this workshop, you will learn how to build a model to detect dog breeds. You'll start by installing and configuring the necessary tools, then creating the custom model by uploading and tagging images. And finally, you will use the model using the Custom Vision REST API and the Software Development Kit (SDK).
 
 ![Add a Dev Container](images/result.png)
 
@@ -18,23 +18,23 @@ In this workshop, you will learn how to build a model to detect dog breeds. You'
 
 To do this workshop, you will need:
 * Basic JavaScript or Python knowledge
-* A Microsoft Azure account
+* [A Microsoft Azure account](https://portal.azure.com/?ocid=OCID&wt.mc_id=WTMCID)
 * [A GitHub account](http://github.com/)
 * [Visual Studio Code](https://code.visualstudio.com/) (VSCode)
 * [Node.js 14 installed](https://nodejs.org/)
-* [Python 3.8 or greater with pip installed]()
+* Python 3.8 or greater with pip installed
 * [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v3%2Clinux%2Ccsharp%2Cportal%2Cbash%2Ckeda#v2&ocid=OCID&wt.mc_id=WTMCID) (V3)
 
 --sep--
 ---
-title: Setup your Custom Vision Resource
+title: Create a Custom Vision Resource
 ---
 
-## Create your Azure resources
+## Create the Azure resources
 
-As with any project, a few tools are going to be needed. In particular you'll need a coe editor, an Azure subscription, and a couple of keys for Custom Vision
+As with any project, a few tools are going to be needed. In particular you'll need a code editor, an Azure subscription, and a couple of keys for Custom Vision.
 
-Start by opening the <a href="https://ms.portal.azure.com/#blade/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/CustomVision?ocid=OCID&wt.mc_id=WTMCID" target="_blank">Custom Vision dashboard</a> in the Azure Portal. Then, click on the `Create`button. This link will take you to the Custom Vision creation form. You may be prompted to log into your Azure Subscription. If you don't have one you can create a Free trial.  
+Start by opening the <a href="https://ms.portal.azure.com/#blade/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/CustomVision?ocid=OCID&wt.mc_id=WTMCID" target="_blank">Custom Vision dashboard</a> in the Azure Portal. Then, click on the `Create` button. This link will take you to the Custom Vision creation form. You may be prompted to log into your Azure Subscription. If you don't have one you can create a Free trial.  
 
 Let's fill it out!
 
@@ -46,12 +46,12 @@ Let's fill it out!
 In Azure, a Resource Group is a logical structure that holds resources usually related to an application or a project. A Resource Group can contain virtual machines, storage accounts, web applications, databases and more.
 </div>
 
-* Select `West Europe` as Region if you are in Europe. Or chose the closed region you are in.
+* Select `West Europe` as Region if you are in Europe. Or choose the closed region you are in.
 * Give a Name to your Project.
-* Select the Free F0 Plan for the training and prediction pricing tiers.
+* Select the Free `F0 Plan` for the training and prediction pricing tiers.
 
 <div class="box tip">
-It is recommended to host your resource in a Region closest to your users.
+It is recommended to host your resourcse in a Region close to your users.
 </div>
 
 * Click on `Review + Create` and then on `Create`.
@@ -65,7 +65,7 @@ You now have all the necesary tools for creating your custom vision model.
 title: Train your model
 ---
 
-## Train your model
+## Train your model  
 
 ### Create your Custom Vision Project
 
@@ -443,7 +443,10 @@ A Function scaffold will be created for you so you don't start with a blank proj
 title: Call your model using the REST API
 ---
 
+## Call your model using the REST API
 There are two ways to call your model. You can either use the `REST API` or use the `Custom Vision SDK`.
+
+### Using Node.js
 
 Let's start by using the `REST API`.
 * Go to the `Performance` screen and click select the `Prediction URL`
@@ -467,12 +470,20 @@ const fetch = require('node-fetch');
 Use one of the images in the `testing-images| folder to test you code. You should see the prediction like in the screenshot below.
 ![Enter GitHub information when creating SWA](images/result-frontend.png)
 
+
+### Using Python
+
 --sep--
 ---
 title: Call your model using the SDK
 ---
 
+## Call your model using the SDK
+
 Using the `REST API` is a bit cumbersome. You can use the `Custom Vision SDK` to call your model.
+
+### Using Node.js
+
 Microsoft provides several SDKs for Custom Vision. In our case, as we are only using our code to make prediction, we will only need the <a href="https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction" target="_blank">cognitiveservices-customvision-prediction</a> package.
 
 The SDK for Custom Vision uses a slightly different URL than the one you copied earlier. The value you copied will look something like the following:
@@ -487,6 +498,10 @@ https://customvisionworkshop-prediction.cognitiveservices.azure.com/
 <div class="box assignment">
   Use parseMultipartFormData to get the file and fetch to call the REST API using the prediction URL. 
 </div>
+
+### Using Python
+
+Microsoft provides several SDKs for Custom Vision. In our case, as we are only using our code to make prediction, we will only need the <a href="https://pypi.org/project/azure-cognitiveservices-vision-customvision/" target="_blank">azure-cognitiveservices-vision-customvision</a> package.
 
 --sep--
 ---
