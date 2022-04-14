@@ -82,8 +82,8 @@ First, navigate to <a href="https://www.customvision.ai/?ocid=OCID&wt.mc_id=WTMC
 Image classification tags whole images where Object Detection finds the location of content within an image.
 </div>
 
-* Select `Multiclass`for  `Classification Types` as our dogs will only have one breed.
-* Select `General [A2] for `Domain` as our dogs are not related to any other domain.
+* Select `Multiclass` for `Classification Types` as our dogs will only have one breed
+* Select `General [A2]` for `Domain` as our dogs are not related to any other domain
 
 <div class="box info">
 <div>
@@ -101,11 +101,11 @@ As a general rule, the more images you can use to train a model the better. You 
 
 We will provide you with a few images of dogs to train your model. Download the `Training images set` in the `Resources` menu of this workshop.
 
-In the Custom Vision portal:
-* Select `Add images`
+Now, go in the Custom Vision portal:
+* Click on `Add images`
 * Navigate to the `training-images` folder you just downloaded
-* Select all the images marked as `american-staffordshire-terrier` in the folder, and select `Open`.
-* Enter `american-staffordshire-terrier`for the tag and select `Upload 8 files`
+* Select all the images marked as `american-staffordshire-terrier` in the folder, and click `Open`.
+* Enter `american-staffordshire-terrier` for the tag and click `Upload 8 files`
 * Ckick `Done`
 * Repeat the above steps for the other breeds.
   * `australian-shepherd`
@@ -119,7 +119,7 @@ In the Custom Vision portal:
 Now that you have uploaded and tagged your images, it's time to train your model.
 
 * Ckick `Train` to open the training dialog.
-* Leave `Quick Training`selected and click `Train` to begin the training process.
+* Leave `Quick Training` selected and click `Train` to begin the training process.
 
 It will take a few minutes to train your model.
 
