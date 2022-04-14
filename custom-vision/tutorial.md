@@ -11,7 +11,15 @@ title: Objectives & Prerequesites
 
 In this workshop, you will learn how to build a model to detect dog breeds. You'll start by installing and configuring the necessary tools, then creating the custom model by uploading and tagging images. And finally, you will use the model using the Custom Vision REST API and the Software Development Kit (SDK).
 
-![Add a Dev Container](media/result.png)
+<center><small>Train your model on the Custom Vision portal</small></center>
+
+![Add a Dev Container](images/result.png)
+
+<center><small>Deploy an application to detect dog breeds</small></center>
+
+![Add a Dev Container](images/result-frontend.png)
+
+
 
 ### Prerequisites
 
