@@ -191,10 +191,10 @@ Oh, and did I forget to mention there is a Free tier for Static Web Apps? You ca
 
 --sep--
 ---
-title: Start with a website
+title: Get the website template
 ---
 
-## Start with a website
+## Get the website template
 
 Once upon a time, there was a website that needed a place to live, be visible to the world and have a backend to be more interactive.
 
@@ -250,7 +250,7 @@ Azure Static Web Apps can handle several well-known frontend frameworks and can 
 
 In our case, we have a very simple JavaScript appliation which does not require anything to run. So, let's choose `Custom`.
 * In the `App location`, enter the `/www` folder as this is where our frontend is.
-* In the `Api location`, enter the `/api` folder as this is where our backend is.
+* In the `Api location`, enter the `/api-nodejs` or `api-python` (depending on your preference) folder as this is where our backend is.
 * In the `Output`, enter the `/www` folder as your frontend does not need any build system to run.
 
 ![Enter GitHub information when creating SWA](images/swa-github.png)
@@ -350,27 +350,12 @@ The CLI offers many options, but in our case we want it to serve both our API lo
 In your terminal, type the following command to start your project:
 
 ```bash
-swa start ./www --api-location ./api
+swa start ./www --api-location ./api-python
 ```
 
 This CLI gives you two urls:
 
 * <a href="http://localhost:4280" target="blank">http://localhost:4280</a> corresponding to your frontend.
-
-<div class="box tip">
-<div>
-<div>
-The CLI may take more time than usual to launch your Azure Function, especially the first time. The default timeout is 30 seconds but you can increase it by using the <code>--devserver-timeout=60000</code> parameter
-</div>
-<div>
-If you have an error like:
-<code>
-'func' is not recognized as an internal or external command
- </code>
-Don't hesitate to restart your IDE, Terminal or computer and verify by taping func in another terminal to see if you have correctly install <a href="https://docs.microsoft.com/fr-fr/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cportal%2Cbash%2Ckeda">Azure functions core tools</a>
-</div>
-</div>
-</div>
 
 Congratulations, you now have everything you need to test your app on your computer! 🥳
 
@@ -406,7 +391,7 @@ So, let's create our Functions App and a Function to retrieve our task list for 
 
 * In VSCode, open the Command panel using `Ctrl + Shift + p` and search for `Azure Functions: Create new project`. 
 * Select the `api` folder. This is where our Function App will be created.
-* Choose `JavaScript` as this is the langage we are going to use to write our Function.
+* Choose `JavaScript` or `Python` depending of the language you prefer as this is the langage we are going to use to write our Function.
 
 <div class="box info">
 Azure Static Web Apps don't support all the languages you can develop Azure Functions with. Supported backends can be developed using  JavaScript, TypeScript, Python or C#.
@@ -422,7 +407,7 @@ If you want to learn more about the different authorization levels for Functions
 </div>
 </div>
 
-A Function scaffold will be created for you so you don't start with a blank project. Let's modify the scaffold for our needs.
+A "Hello world" Function will be created for you so you don't start with a blank project. Let's modify it for our needs.
 
 
 --sep--
@@ -430,19 +415,20 @@ A Function scaffold will be created for you so you don't start with a blank proj
 title: Call your model using the REST API
 ---
 
-## Call your model using the REST API
+## Call your model using the REST API  
+
 There are two ways to call your model. You can either use the `REST API` or use the `Custom Vision SDK`.
 
 ### Using Node.js
 
 Let's start by using the `REST API`.
-* Go to the `Performance` screen and click select the `Prediction URL`
-We are going to use the web interface we deployed in the previous step of this tutorial. You don't have to change anything in the front end. All we will do is going to be in the `index.je` file of the Azure Function.
+* Go to the `Performance` screen and click select the `Prediction URL`  
+We are going to use the web interface we deployed in the previous step of this tutorial. You don't have to change anything in the front end. All we will do is going to be in the `index.js` or `__init__.py` file of the Azure Function.
 
-The first thing to do is to get the image in the function. You can use a 3rd party library to do so. We recommand you use <a href="https://www.npmjs.com/package/@anzp/azure-function-multipart" target="_blank">azure-function-multipart</a> but any library will do.
-The `fetch` API was only recently added to node.js. Therefore, you may also need to use a 3rd party library to make the API call. We recommand that you use <a href="https://www.npmjs.com/package/node-fetch" target="_blank">node-fetch</a>.
+The first thing to do is to retrieve the image in the function. You can use a 3rd party library to do so. We recommand you use <a href="https://www.npmjs.com/package/@anzp/azure-function-multipart" target="_blank">azure-function-multipart</a> but any library will do.  
+The `fetch` API was only recently added to node.js. Therefore, you may also need to use a 3rd party library to make the API call to the Custom Vision REST API. We recommand that you use <a href="https://www.npmjs.com/package/node-fetch" target="_blank">node-fetch</a>.
 
-Once you have installed these libraries, you can start coding.
+Once you have installed these libraries using `npm install <LIBRARY_NAME>`, you can start coding.
 Add these two lines at the top of your `index.js` file to use the libraries.
 
 ```js	
@@ -450,11 +436,20 @@ const parseMultipartFormData = require('@anzp/azure-function-multipart').default
 const fetch = require('node-fetch');
 ```	
 
+You can then easily get the file sent by the frontend by doing
+
+```js
+const file = files[0].bufferFile
+```
+  
+Don't hesitate to read the documentation of these two libraries to understand how they work and how to use thema.
+
 <div class="box assignment">
   Use parseMultipartFormData to get the file and fetch to call the REST API using the prediction URL. 
+  Return the response to the frontend.
 </div>
 
-Use one of the images in the `testing-images| folder to test you code. You should see the prediction like in the screenshot below.
+Use one of the images in the `testing-images` folder to test you code. You should see the prediction like in the screenshot below.
 ![Enter GitHub information when creating SWA](images/result-frontend.png)
 
 
