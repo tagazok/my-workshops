@@ -41,7 +41,7 @@ title: Create a Custom Vision Resource
 
 As with any project, a few tools are going to be needed. In particular you'll need a code editor, an Azure subscription, and a couple of keys for Custom Vision.
 
-Start by opening the <a href="https://ms.portal.azure.com/#blade/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/CustomVision?ocid=OCID&wt.mc_id=WTMCID" target="_blank">Custom Vision dashboard</a> in the Azure Portal. Then, click on the `Create` button. This link will take you to the Custom Vision creation form. You may be prompted to log into your Azure Subscription. If you don't have one you can create a Free trial.  
+Start by opening the <a href="https://ms.portal.azure.com/#blade/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/CustomVision?ocid=OCID&wt.mc_id=WTMCID" target="_blank">Custom Vision dashboard</a> in the Azure Portal. Then, click on the `+ Create` button or the `Create custom vision` button if you don't have any custome vision yet. This link will take you to the Custom Vision creation form. You may be prompted to log into your Azure Subscription. If you don't have one you can create a Free trial.  
 
 Let's fill it out!
 
@@ -53,15 +53,15 @@ Let's fill it out!
 In Azure, a Resource Group is a logical structure that holds resources usually related to an application or a project. A Resource Group can contain virtual machines, storage accounts, web applications, databases and more.
 </div>
 
-* Select `West Europe` as Region if you are in Europe. Or choose the closed region you are in.
-* Give a Name to your Project.
+* Select `West Europe` as Region if you are in Europe or choose the region closest to you.
+* Give a Name to your project, for instance "simplon-workshop".
 * Select the Free `F0 Plan` for the training and prediction pricing tiers.
 
 <div class="box tip">
-It is recommended to host your resourcse in a Region close to your users.
+It is recommended to host your resource in a region close to your users.
 </div>
 
-* Click on `Review + Create` and then on `Create`.
+* Click on `Review + Create` (not on `Next`) and then on `Create`.
 
 After a few minutes, your Custom Vision resource will be created on Azure.
 
