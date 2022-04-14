@@ -6,6 +6,7 @@ title: Machine Learning with Custom Vision
 ---
 title: Objectives & Prerequesites
 ---
+
 ## Objectives & Prerequesites
 
 ### Objectives
@@ -577,7 +578,7 @@ Congratulations, you've reach the end of this workshop! 🚀
 
 Did you know? You had the soltution all along ;)
 You can checkout the `solution branch` of the template repository to get the complete code of this workshop.
-Or, you can download it from <a href="https://github.com/tagazok/template-customvision-workshop/tree/solution" target="_blank">here</a>
+Or, you can download it from <a href="https://github.com/tagazok/template-customvision-workshop/tree/solution" target="_blank">here</a>.
 
 ## Credits ❤️
 
