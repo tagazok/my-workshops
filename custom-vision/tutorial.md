@@ -200,7 +200,7 @@ Once upon a time, there was a website that needed a place to live, be visible to
 
 For this workshop, we won't ask you to create a website from scratch. As we want you to focus on the Custom Vision integration, we have build one for you.
 
-Go to <a href="https://github.com/tagazok/customvision-workshop" target="_blank">this GitHub repository</a> and click on `Use this template`. 
+Go to <a href="https://github.com/tagazok/template-customvision-workshop" target="_blank">this GitHub repository</a> and click on `Use this template`. 
 
 ![GitHub template](media/githubtemplate.png)
 
@@ -250,7 +250,7 @@ Azure Static Web Apps can handle several well-known frontend frameworks and can 
 
 In our case, we have a very simple JavaScript appliation which does not require anything to run. So, let's choose `Custom`.
 * In the `App location`, enter the `/www` folder as this is where our frontend is.
-* In the `Api location`, enter the `/api-nodejs` or `api-python` (depending on your preference) folder as this is where our backend is.
+* In the `Api location`, enter the `/api` or `api` (depending on your preference) folder as this is where our backend is.
 * In the `Output`, enter the `/www` folder as your frontend does not need any build system to run.
 
 ![Enter GitHub information when creating SWA](media/swa-github.png)
@@ -350,7 +350,7 @@ The CLI offers many options, but in our case we want it to serve both our API lo
 In your terminal, type the following command to start your project:
 
 ```bash
-swa start ./www --api-location ./api-python
+swa start ./www --api-location ./api
 ```
 
 This CLI gives you two urls:
@@ -564,21 +564,6 @@ In the `Overview` menu, you can find the public url of your website. Click on it
 
 You've made it. You have published your website on Azure.
 
-
---sep--
----
-Title: Bonus
----
-
-## Bonus
-
-
-<div class="box assignment">
-<div>
-Create an <a href="https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview?ocid=OCID&wt.mc_id=WTMCID" target="_blank">Application Insights</a> resource in your Resource Group and connect it to your Static Web App.
-</div>
-</div>
-
 --sep--
 ---
 Title: Conclusion
@@ -588,6 +573,14 @@ Title: Conclusion
 
 Congratulations, you've reach the end of this workshop!
 
+https://github.com/tagazok/template-customvision-workshop/tree/solution
+
+## Solution
+
+Did you know? You had the soltution all along ;)
+You can checkout the `solution branch` of the template repository to get the complete code of this workshop.
+Or, you can download it from <a href="https://github.com/tagazok/template-customvision-workshop/tree/solution" target="_blank">here</a>
+
+## Credits
+
 This workshop is based of <a href="https://github.com/jlooper/workshop-library/tree/main/full/ml-model-custom-vision" target="_blank">this workshop</a>.
-
-
