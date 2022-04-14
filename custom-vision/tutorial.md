@@ -571,9 +571,7 @@ Title: Conclusion
 
 ## Conclusion
 
-Congratulations, you've reach the end of this workshop!
-
-https://github.com/tagazok/template-customvision-workshop/tree/solution
+Congratulations, you've reach the end of this workshop! 🚀
 
 ## Solution
 
@@ -581,6 +579,6 @@ Did you know? You had the soltution all along ;)
 You can checkout the `solution branch` of the template repository to get the complete code of this workshop.
 Or, you can download it from <a href="https://github.com/tagazok/template-customvision-workshop/tree/solution" target="_blank">here</a>
 
-## Credits
+## Credits ❤️
 
-This workshop is based of <a href="https://github.com/jlooper/workshop-library/tree/main/full/ml-model-custom-vision" target="_blank">this workshop</a>.
+This workshop is based of <a href="https://github.com/jlooper/workshop-library/tree/main/full/ml-model-custom-vision" target="_blank">this workshop</a> created by <a href="https://twitter.com/jenlooper" target="_blank">Jen Looper</a>.
