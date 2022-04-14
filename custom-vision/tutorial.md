@@ -469,6 +469,7 @@ content = file.stream.read()
 </div>
 
 Use one of the images in the `testing-images` folder to test you code. You should see the prediction like in the screenshot below.
+
 ![Enter GitHub information when creating SWA](media/result-frontend.png)
 
 
@@ -574,6 +575,7 @@ You could have also added the settings in the portal by going to your Static Web
 Now that you have secured your code, you only need to push it to your GitHub repository. This will trigger a GitHub Action and your project will be automaticaly deployed on Azure
 
 Go back to your Custom Vision resource in the Azure portal
+
 ![Resource overview of your project](media/resource-overview.png)
 In the `Overview` menu, you can find the public url of your website. Click on it.
 
