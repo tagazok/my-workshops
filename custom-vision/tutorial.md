@@ -153,7 +153,7 @@ Playing with your model in the Custom Vision portal is funny. But, the goal of c
 
 * Go to the `Performance` tab and click `Publish`
 * Enter `dogs` as `Model name`
-* xxxx
+* Select the resource in your subscription
 * Click `Publish`
 
 --sep--
@@ -554,6 +554,18 @@ The `local.settings.json` file should be in your `.gitignore` file and therefore
 ### Publish your sensitive information to Azure
 
 There is two ways to create settings for your project. You can go to your project in the `Azure Portal` or you can do it directly from `VSCode` using the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps" target="_blank">Static Web Apps extension</a>.
+Install the extension and login with your Azure Account if you haven't done it before.  
+* Click on the Azure icon on the sidenav and then on the `Static Web Apps` tab.
+* Open your project and right click on `Application Settings` in your branch
+* Click on `Upload Local Settings`
+![Upload Local Settings menu](media/uploadsettings.png)
+
+Your local settings should now appear in the `Application Settings` section of your project. Check your project using the CLI and it should now work again.
+
+You could have also added the settings in the portal by going to your Static Web App resource in the `Configuration` menu.
+
+![Application Settings in Azure Portal](media/settingsinportal.png)
+
 
 ### Deploy your project
 
