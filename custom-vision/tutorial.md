@@ -359,7 +359,7 @@ The CLI offers many options, but in our case we want it to serve both our API lo
 In your terminal, type the following command to start your project:
 
 ```bash
-swa start ./www
+swa start www
 ```
 
 This CLI gives you two urls:
@@ -394,6 +394,8 @@ You can download the extension either directly from the `Extension panel (Ctrl +
 
 ### Create your Function app
 
+Start by creating an `api` folder at the root of your project. This is where we are going to host our backend.
+
 Azure Functions live in an Azure Functions App. When you create your Function App, a single Azure Function will be created by default. You can then add more Functions as required.
 
 So, let's create our Functions App and a Function to retrieve our task list for our TODO frontend.
@@ -415,6 +417,16 @@ Azure Static Web Apps don't support all the languages you can develop Azure Func
 If you want to learn more about the different authorization levels for Functions and how to secure your API, check out the docs <a href="https://docs.microsoft.com/azure/azure-functions/security-concepts?ocid=OCID&wt.mc_id=WTMCID" target="_blank">here</a>.
 </div>
 </div>
+
+### Start your backend
+
+The `Static Web App` CLI allows you to start both your frontend and your backend.
+
+In your terminal, type the following command to start your project:
+
+```bash
+swa start www --api-location api
+```
 
 A "Hello world" Function will be created for you so you don't start with a blank project. Let's modify it for our needs.
 
@@ -607,4 +619,4 @@ Or, you can download it from <a href="https://github.com/tagazok/template-custom
 
 ## Credits ❤️
 
-This workshop is inspired from <a href="https://github.com/jlooper/workshop-library/tree/main/full/ml-model-custom-vision" target="_blank">this workshop</a> created by <a href="https://twitter.com/jenlooper" target="_blank">Jen Looper</a>.
+This workshop is inspired from <a href="https://github.com/jlooper/workshop-library/tree/main/full/ml-model-custom-vision" target="_blank">this workshop</a> created by <a href="https://twitter.com/GeekTrainer" target="_blank">Christopher Harrison</a>.
