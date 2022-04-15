@@ -476,6 +476,12 @@ Don't hesitate to read the documentation of these two libraries to understand ho
 
 ### Using Python
 
+Make sure you installed all the requirements in your api folder.
+
+```
+pip install -r requirements.txt
+```
+
 To call an API in Python, you will need a 3rd party library. We recommand that you use <a href="https://pypi.org/project/requests/" target="_blank">requests</a>. Go check the documentation to see how to make a POST request using requests <a href="https://docs.python-requests.org/en/latest/user/quickstart/#more-complicated-post-requests" target="_blank">here</a>.
 
 You will need to send the file to the Custom Vision API. Here is how you can do to get the content of the file sent to the Azure function. Add these three lines in the function of your `__init__.py` file.
