@@ -402,7 +402,7 @@ So, let's create our Functions App and a Function to retrieve our task list for 
 
 * In VSCode, open the Command panel using `Ctrl + Shift + p` and search for `Azure Functions: Create new project`. 
 * Select the `api` folder. This is where our Function App will be created.
-* Choose `JavaScript` or `Python` depending of the language you prefer as this is the langage we are going to use to write our Function.
+* Choose `JavaScript` or `Python` depending on the language you prefer as this is the langage we are going to use to write our Function.
 
 <div class="box info">
 Azure Static Web Apps don't support all the languages you can develop Azure Functions with. Supported backends can be developed using  JavaScript, TypeScript, Python or C#.
