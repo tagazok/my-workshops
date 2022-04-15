@@ -25,12 +25,12 @@ In this workshop, you will learn how to build a model to detect dog breeds. You'
 
 To do this workshop, you will need:
 * Basic JavaScript or Python knowledge
-* [A Microsoft Azure account](https://portal.azure.com/?ocid=OCID&wt.mc_id=WTMCID)
-* [A GitHub account](http://github.com/)
-* [Visual Studio Code](https://code.visualstudio.com/) (VSCode)
-* [Node.js 14 installed](https://nodejs.org/download/release/v14.19.1/)
+* <a href="https://portal.azure.com/?ocid=OCID&wt.mc_id=WTMCID" target="_blank">A Microsoft Azure account</a>
+* <a href="http://github.com/" target="_blank">A GitHub account</a>
+* <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code (VSCode)</a>
+* <a href="https://nodejs.org/download/release/v14.19.1/" target="_blank">Node.js 14 installed</a>
 * Python 3.8 or greater with pip installed
-* [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v3%2Clinux%2Ccsharp%2Cportal%2Cbash%2Ckeda#v2&ocid=OCID&wt.mc_id=WTMCID) (V3)
+* <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v3%2Clinux%2Ccsharp%2Cportal%2Cbash%2Ckeda#v2&ocid=OCID&wt.mc_id=WTMCID" target="_blank">Azure Functions Core Tools</a> (V3)
 
 --sep--
 ---
