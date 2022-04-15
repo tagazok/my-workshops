@@ -428,7 +428,8 @@ In your terminal, type the following command to start your project:
 swa start www --api-location api
 ```
 
-A "Hello world" Function will be created for you so you don't start with a blank project. Let's modify it for our needs.
+You can test your api here: <a href="http://localhost:7071/api/dogs" target="blank">http://localhost:7071/api/dogs</a>.
+A "Hello world" Function has been created for you so you don't start with a blank project. Let's modify it for our needs.
 
 
 --sep--
