@@ -442,7 +442,7 @@ title: Call your model using the REST API
 There are two ways to call your model. You can either use the `REST API` or use the `Custom Vision SDK`.
 
 Let's start by using the `REST API`.
-* Go to the `Performance` screen and click select the `Prediction URL`  
+* In your custom vision portal, Go to the `Performance` screen and click select the `Prediction URL`  
 
 We are going to use the web interface we deployed in the previous step of this tutorial. You don't have to change anything in the front end. All we will do is going to be in the `index.js` or `__init__.py` file of the Azure Function.
 
