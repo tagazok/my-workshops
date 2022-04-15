@@ -354,9 +354,9 @@ We are only going to use a few features of the CLI so if you want to become a SW
 
 ### Run your project locally
 
-The CLI offers many options, but in our case we want it to serve both our API located in our `api` folder and our web application located in our `www` folder.
+The CLI offers many options, but in our case we want it to serve both our API and our web application located in our `www` folder.
 
-In your terminal, type the following command to start your project:
+Right now, we don' have an API yet. In your terminal, type the following command to start your project:
 
 ```bash
 swa start www
