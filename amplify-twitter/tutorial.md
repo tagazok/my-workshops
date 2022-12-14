@@ -45,7 +45,7 @@ As we want our images to be only accessible to signed-in users, check the `Uploa
 
 <div class="box info">
 Bucket names must be unique across all AWS accounts in all the AWS Regions within a partition. A partition is a grouping of Regions. AWS currently has three partitions: `aws` (Standard Regions), `aws-cn` (China Regions), and `aws-us-gov` (AWS GovCloud (US)).
-</info>
+</div>
 
 
 ![Storage creation screen in Amplify Studio](/media/create-bucket_studio.png)
