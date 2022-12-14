@@ -29,8 +29,8 @@ Don't forget to:
 Nothing is more simple than adding storage capability to your project.
 As for the API, we can either add the storage to our project from the CLI or from the AWS Studio
 
-:::::tabs
-::::tab{id="studio" label="Using Amplify Studio"}
+:tabs
+:tab{id="studio" label="Using Amplify Studio"}
 
 Go to the `Storage` menu in the Amplify Studio. Here, we can either an existing Amazon S3 bucket to your project, or create a new one.
 
