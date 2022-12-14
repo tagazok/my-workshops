@@ -102,8 +102,14 @@ TODO: Add way to display image using S3Component`
 <a href="#tab3">item 3</a>
 <a href="#default">clear</a>
 <div class="tabs">
-  <div id="tab1">... item 1...</div>
-  <div id="tab2">... item 2...</div>
+  <div id="tab1">
+  ... item 1...
+  </div>
+  <div id="tab2">
+  ```javascript
+  let i = 0;
+  ```
+  </div>
   <div id="bab3">...</div>
   <div id="default"></div>
 </div>
