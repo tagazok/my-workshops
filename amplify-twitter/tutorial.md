@@ -96,3 +96,14 @@ Choose your prefered method (CLI or Studio) and add a storage to your Amplify pr
 </div>
 
 TODO: Add way to display image using S3Component`
+
+<a href="#tab1">item 1</a>
+<a href="#tab2">item 2</a>
+<a href="#tab3">item 3</a>
+<a href="#default">clear</a>
+<div class="tabs">
+  <div id="tab1">... item 1...</div>
+  <div id="tab2">... item 2...</div>
+  <div id="bab3">...</div>
+  <div id="default"></div>
+</div>
