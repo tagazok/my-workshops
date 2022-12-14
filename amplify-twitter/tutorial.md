@@ -26,9 +26,15 @@ title: Objectives & Prerequesites
 
 :tabs
 :tab{id="studio" label="Using Amplify Studio"}
+Coucou
 :endtab
 
 :tab{id="studio2" label="Using Amplify Studio 2"}
+### awesome
+
+```javascript
+let i = 0;
+```
 :endtab
 
 :endtabs
