@@ -18,7 +18,7 @@ To do that, we will need to do two things:
 
 Go back to your model in the Data menu of `Amplify Studio` and modify your post to add an `image` field of type `String`. This time, we don't need to make it mandatory and we don't expect users to always have an immage to attach to their Post.
 
-![Storage creation screen in Amplify Studio](/media/storage_postmodel_image.png)
+![Storage creation screen in Amplify Studio](media/storage_postmodel_image.png)
 
 Don't forget to:
  1. `Save and Deploy` your new model
@@ -48,7 +48,7 @@ Bucket names must be unique across all AWS accounts in all the AWS Regions withi
 </div>
 
 
-![Storage creation screen in Amplify Studio](/media/create-bucket_studio.png)
+![Storage creation screen in Amplify Studio](media/create-bucket_studio.png)
 
 Click next.
 
