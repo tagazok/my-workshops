@@ -113,3 +113,12 @@ TODO: Add way to display image using S3Component`
   <div id="tab3">...</div>
   <div id="default"></div>
 </div>
+
+:tabs
+:tab{id="studio" label="Using Amplify Studio"}
+:endtab
+
+:tab{id="studio2" label="Using Amplify Studio 2"}
+:endtab
+
+:endtabs
