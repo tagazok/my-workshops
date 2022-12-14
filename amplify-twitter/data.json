@@ -1,0 +1,15 @@
+{
+    "infos": {
+        "title": "Amplify",
+        "github": "https://github.com/tagazok/my-workshops",
+        "description": "Let's rock!"
+    },
+    "authors": [
+        {
+            "name": "Olivier Leplus",
+            "url": "https://twitter.com/olivierleplus",
+            "avatar": "olivier.png"
+        }
+    ],
+    "resources": []
+}
