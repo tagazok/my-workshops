@@ -48,7 +48,7 @@ Bucket names must be unique across all AWS accounts in all the AWS Regions withi
 </info>
 
 
-![Storage creation screen in Amplify Studio](/static/create-bucket_studio.png)
+![Storage creation screen in Amplify Studio](/media/create-bucket_studio.png)
 
 Click next.
 
