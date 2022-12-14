@@ -110,6 +110,6 @@ TODO: Add way to display image using S3Component`
   let i = 0;
   ```
   </div>
-  <div id="bab3">...</div>
+  <div id="tab3">...</div>
   <div id="default"></div>
 </div>
