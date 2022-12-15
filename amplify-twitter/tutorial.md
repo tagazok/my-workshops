@@ -25,7 +25,7 @@ title: Objectives & Prerequesites
 </div>
 
 :tabs
-:tab{id:"studio", label:"Using Amplify Studio"}
+:tab{"id":"studio", "label":"Using Amplify Studio"}
 Coucou
 :endtab
 
