@@ -29,7 +29,7 @@ title: Objectives & Prerequesites
 Coucou
 :endtab
 
-:tab{id:"studio2", label:"Using Amplify Studio 2"}
+:tab{"id":"studio2", "label":"Using Amplify Studio 2"}
 ### awesome
 
 ```javascript
